@@ -6,87 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MyGame2d_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyGame2d.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/Tile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/TileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/SuperObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_marichka131020010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_marichka2280.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_marichka_backdround0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_marichka_backdround1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_marichka_backdround2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_path0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_path1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_path2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_path3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_path4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_path5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_path90.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_trava0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss00.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2280.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2281.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2282.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2283.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2284.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_item0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_item1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_item2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_item3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_item4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_item5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_item6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/maps/map1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/maps/map2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/maps/map3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/maps/mapMarichka.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka00.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/sounds/back_song_demo.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/sounds/coin.wav" afterDir="false" />
-    </list>
+    <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="Yura Frits" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,18 +32,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background" />
@@ -177,7 +97,16 @@
       <workItem from="1679872086242" duration="31744000" />
       <workItem from="1680034454692" duration="1682000" />
       <workItem from="1680104469524" duration="15430000" />
+      <workItem from="1680270430386" duration="351000" />
     </task>
+    <task id="LOCAL-00001" summary="Yura Frits">
+      <created>1680270720883</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680270720884</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,6 +122,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Yura Frits" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yura Frits" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
