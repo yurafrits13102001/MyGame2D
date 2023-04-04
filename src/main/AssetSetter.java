@@ -14,8 +14,8 @@ public class AssetSetter {
     public void setObject(){
 
         gamePanel.obj[0] = new OBJ_Key("Key_Blue");
-        gamePanel.obj[0].worldX = 24 * gamePanel.tileSize;
-        gamePanel.obj[0].worldY = 18 * gamePanel.tileSize;
+        gamePanel.obj[0].worldX = 26 * gamePanel.tileSize;
+        gamePanel.obj[0].worldY = 29 * gamePanel.tileSize;
 
         gamePanel.obj[1] = new OBJ_Key("Key_Purple");
         gamePanel.obj[1].worldX = 40 * gamePanel.tileSize;

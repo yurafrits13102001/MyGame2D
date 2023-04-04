@@ -7,7 +7,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="Yura Frits">
+      <change afterPath="$PROJECT_DIR$/src/entity/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_ugol0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_ugol1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/maps/sprite_lvl10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/maps/sprite_lvl110.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/maps/sprite_lvllvl0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/maps/sprite_lvlmap0.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/maps/map2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/maps/map2.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,29 +68,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\maps" />
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background\newTexture" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\sounds" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\items" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\maps" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d" />
     </key>
   </component>
   <component name="RunManager">
@@ -108,7 +137,9 @@
       <workItem from="1679872086242" duration="31744000" />
       <workItem from="1680034454692" duration="1682000" />
       <workItem from="1680104469524" duration="15430000" />
-      <workItem from="1680270430386" duration="2103000" />
+      <workItem from="1680270430386" duration="8031000" />
+      <workItem from="1680361348158" duration="12725000" />
+      <workItem from="1680554697412" duration="15240000" />
     </task>
     <task id="LOCAL-00001" summary="Yura Frits">
       <created>1680270720883</created>
@@ -124,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680271073943</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Yura Frits">
+      <created>1680274918156</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680274918156</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,5 +245,10 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/MyGame2d$Main.ic" NAME="Main Coverage Results" MODIFIED="1680553496724" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.*</FILTER>
+    </SUITE>
   </component>
 </project>

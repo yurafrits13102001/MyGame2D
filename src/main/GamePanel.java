@@ -5,6 +5,7 @@ import object.SuperObject;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -20,8 +21,8 @@ public class GamePanel extends JPanel implements Runnable {
     public final int screenHeight = tileSize * maxScreenRow;
 
     //WORLD SETTINGS
-    public final int maxWorldCol = 50;
-    public final int maxWorldRow = 50;
+    public int maxWorldCol = 70;
+    public int maxWorldRow = 70;
     public final int worldWidth = tileSize * maxScreenCol;
     public final int worldHeight = tileSize * maxScreenRow;
 
@@ -54,7 +55,7 @@ public class GamePanel extends JPanel implements Runnable {
 //    int playerSpeed = 4;
 
 
-    public GamePanel() {
+    public GamePanel() throws IOException {
 
         this.setPreferredSize(new Dimension(screenWidth, screenHeight));
         this.setBackground(Color.BLACK);
