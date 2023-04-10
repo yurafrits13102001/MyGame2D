@@ -107,162 +107,65 @@ public class TileManager {
 
     public void getTileImage() {
 
-        try {
-            tiles[0] = new Tile();
-            tiles[0].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_trava0.png")));
 
-            tiles[1] = new Tile();
-            tiles[1].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_marichka_backdround1.png")));
+        setup(0, "sprite_trava0", false );
+        setup(1, "sprite_marichka_backdround1", false );
+        setup(2, "sprite_0", true );
+        setup(3, "sprite_world_marichka22810", true );
+        setup(4, "sprite_world_marichka2282", false );
+        setup(5, "sprite_world_marichka2283", false );
+        setup(6, "sprite_treeNew1", true );
+        setup(7, "sprite_watergarss00", true );
+        setup(8, "sprite_watergarss010", true );
+        setup(9, "sprite_watergarss02", true );
+        setup(10, "sprite_watergarss03", true );
+        setup(11, "sprite_watergarss04", true );
+        setup(12, "sprite_watergarss05", true );
+        setup(13, "sprite_watergarss06", true );
+        setup(14, "sprite_watergarss07", true );
+        setup(15, "sprite_watergarss08", true );
+        setup(16, "sprite_watergarss09", true );
+        setup(17, "sprite_watergarss10", true );
+        setup(18, "sprite_watergarss11", true );
+        setup(19, "sprite_ugol0", false );
+        setup(20, "sprite_ugol1", false );
+        setup(21, "sprite_path0", false );
+        setup(22, "sprite_path1", false );
+        setup(23, "sprite_path2", false );
+        setup(24, "sprite_path3", false );
+        setup(25, "sprite_path4", false );
+        setup(26, "sprite_path5", false );
+        setup(27, "sprite_path90", false );
+        setup(28, "newTexture/sprite_earthboarder00", false );
+        setup(29, "newTexture/sprite_earthboarder01", false );
+        setup(30, "newTexture/sprite_earthboarder02", false );
+        setup(31, "newTexture/sprite_earthboarder03", false );
+        setup(32, "newTexture/sprite_earthboarder04", false );
+        setup(33, "newTexture/sprite_earthboarder05", false );
+        setup(34, "newTexture/sprite_earthboarder06", false );
+        setup(35, "newTexture/sprite_earthboarder07", false );
+        setup(36, "newTexture/sprite_earthboarder08", false );
+        setup(37, "newTexture/sprite_earthboarder09", false );
+        setup(38, "newTexture/sprite_earthboarder10", false );
+        setup(39, "newTexture/sprite_earthboarder11", false );
+        setup(40, "newTexture/sprite_earthboarder12", false );
+        setup(41, "newTexture/sprite_earthboarder13", false );
+        setup(42, "newTexture/sprite_earthboarder14", false );
+        setup(43, "newTexture/sprite_earthboarder15", false );
+    }
 
-            tiles[2] = new Tile();
-            tiles[2].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_0.png")));
+    public void setup(int index, String imagePath, boolean collision){
 
-            tiles[3] = new Tile();
-            tiles[3].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_world_marichka2281.png")));
-            tiles[3].collision = true;
+        UtilityTool utilityTool = new UtilityTool();
 
-            tiles[4] = new Tile();
-            tiles[4].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_world_marichka2282.png")));
-
-            tiles[5] = new Tile();
-            tiles[5].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_world_marichka2283.png")));
-
-            tiles[6] = new Tile();
-            tiles[6].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_world_marichka2284.png")));
-            tiles[6].collision = true;
-
-            tiles[7] = new Tile();
-            tiles[7].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss00.png")));
-            tiles[7].collision = true;
-
-            tiles[8] = new Tile();
-            tiles[8].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss01.png")));
-            tiles[8].collision = true;
-
-            tiles[9] = new Tile();
-            tiles[9].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss02.png")));
-            tiles[9].collision = true;
-
-            tiles[10] = new Tile();
-            tiles[10].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss03.png")));
-            tiles[10].collision = true;
-
-            tiles[11] = new Tile();
-            tiles[11].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss04.png")));
-            tiles[11].collision = true;
-
-            tiles[12] = new Tile();
-            tiles[12].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss05.png")));
-            tiles[12].collision = true;
-
-            tiles[13] = new Tile();
-            tiles[13].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss06.png")));
-            tiles[13].collision = true;
-
-            tiles[14] = new Tile();
-            tiles[14].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss07.png")));
-            tiles[14].collision = true;
-
-            tiles[15] = new Tile();
-            tiles[15].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss08.png")));
-            tiles[15].collision = true;
-
-            tiles[16] = new Tile();
-            tiles[16].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss09.png")));
-            tiles[16].collision = true;
-
-            tiles[17] = new Tile();
-            tiles[17].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss10.png")));
-            tiles[17].collision = true;
-
-            tiles[18] = new Tile();
-            tiles[18].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_watergarss11.png")));
-            tiles[18].collision = true;
-
-            tiles[19] = new Tile();
-            tiles[19].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_ugol0.png")));
-            tiles[19].collision = true;
-
-            tiles[20] = new Tile();
-            tiles[20].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_ugol1.png")));
-            tiles[20].collision = true;
-
-            tiles[21] = new Tile();
-            tiles[21].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_path0.png")));
+        try{
+            tiles[index] = new Tile();
+            tiles[index].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/" + imagePath + ".png")));
+            tiles[index].image = utilityTool.scaleImage(tiles[index].image, gamePanel.tileSize, gamePanel.tileSize);
+            tiles[index].collision = collision;
 
 
-            tiles[22] = new Tile();
-            tiles[22].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_path1.png")));
-
-
-            tiles[23] = new Tile();
-            tiles[23].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_path2.png")));
-
-
-            tiles[24] = new Tile();
-            tiles[24].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_path3.png")));
-
-
-            tiles[25] = new Tile();
-            tiles[25].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_path4.png")));
-
-
-            tiles[26] = new Tile();
-            tiles[26].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_path5.png")));
-
-            tiles[27] = new Tile();
-            tiles[27].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/sprite_path90.png")));
-
-            tiles[28] = new Tile();
-            tiles[28].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder00.png")));
-
-            tiles[29] = new Tile();
-            tiles[29].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder01.png")));
-
-            tiles[30] = new Tile();
-            tiles[30].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder02.png")));
-
-            tiles[31] = new Tile();
-            tiles[31].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder03.png")));
-
-            tiles[32] = new Tile();
-            tiles[32].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder04.png")));
-
-            tiles[33] = new Tile();
-            tiles[33].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder05.png")));
-
-            tiles[34] = new Tile();
-            tiles[34].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder06.png")));
-
-            tiles[35] = new Tile();
-            tiles[35].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder07.png")));
-
-            tiles[36] = new Tile();
-            tiles[36].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder08.png")));
-
-            tiles[37] = new Tile();
-            tiles[37].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder09.png")));
-
-            tiles[38] = new Tile();
-            tiles[38].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder10.png")));
-
-            tiles[39] = new Tile();
-            tiles[39].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder11.png")));
-
-            tiles[40] = new Tile();
-            tiles[40].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder12.png")));
-
-            tiles[41] = new Tile();
-            tiles[41].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder13.png")));
-
-            tiles[42] = new Tile();
-            tiles[42].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder14.png")));
-
-            tiles[43] = new Tile();
-            tiles[43].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/newTexture/sprite_earthboarder15.png")));
-
-
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
         }
     }
@@ -301,7 +204,7 @@ public class TileManager {
                     worldY + gamePanel.tileSize > gamePanel.player.worldY - gamePanel.player.screenY &&
                     worldY - gamePanel.tileSize < gamePanel.player.worldY + gamePanel.player.screenY) {
 
-                g2.drawImage(tiles[tileNum].image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
+                g2.drawImage(tiles[tileNum].image, screenX, screenY, null);
 
 
             }

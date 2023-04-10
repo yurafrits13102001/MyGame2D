@@ -1,11 +1,17 @@
 package object;
 
+import main.GamePanel;
+
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
 public class OBJ_Key extends SuperObject {
 
-    public OBJ_Key(String name) {
+    GamePanel gamePanel;
+
+    public OBJ_Key(String name, GamePanel gamePanel) {
+
+        this.gamePanel = gamePanel;
 
         switch (this.name = name) {
 
@@ -13,6 +19,7 @@ public class OBJ_Key extends SuperObject {
                 try {
 
                     image = ImageIO.read(getClass().getResourceAsStream("/items/sprite_item0.png"));
+                    utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -24,6 +31,7 @@ public class OBJ_Key extends SuperObject {
                 try {
 
                     image = ImageIO.read(getClass().getResourceAsStream("/items/sprite_item1.png"));
+                    utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
 
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -35,6 +43,7 @@ public class OBJ_Key extends SuperObject {
                 try {
 
                     image = ImageIO.read(getClass().getResourceAsStream("/items/sprite_item2.png"));
+                    utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
 
                 } catch (IOException e) {
                     e.printStackTrace();

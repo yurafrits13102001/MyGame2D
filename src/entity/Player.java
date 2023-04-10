@@ -2,6 +2,7 @@ package entity;
 
 import main.GamePanel;
 import main.KeyHandler;
+import main.UtilityTool;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -49,22 +50,31 @@ public class Player extends Entity {
 
     public void getPlayerImage() {
 
-        try {
 
-            stay1 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka07.png")));
-            stay2 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka04.png")));
-            up1 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka08.png")));
-            up2 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka09.png")));
-            down1 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka05.png")));
-            down2 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka06.png")));
-            left1 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka00.png")));
-            left2 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka02.png")));
-            right1 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka01.png")));
-            right2 = ImageIO.read((getClass().getResourceAsStream("/res/player/sprite_marichka03.png")));
+        stay1 = setup("sprite_marichka_new_model0");
+        stay2 = setup("sprite_marichka04");
+        up1 = setup("sprite_marichka_newmodel20");
+        up2 = setup("sprite_marichka_newmodel21");
+        down1 = setup("sprite_marichka_newmodel10");
+        down2 = setup("sprite_marichka_newmodel11");
+        left1 = setup("sprite_marichka_newmodel31");
+        left2 = setup("sprite_marichka_newmodel41");
+        right1 = setup("sprite_marichka_newmodel30");
+        right2 = setup("sprite_marichka_newmodel40");
+    }
 
-        } catch (IOException e) {
+    public BufferedImage setup(String filePath) {
+
+        UtilityTool utilityTool = new UtilityTool();
+        BufferedImage image = null;
+
+        try{
+            image = ImageIO.read((getClass().getResourceAsStream("/res/player/" + filePath + ".png")));
+            image = utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
+        }catch (IOException e){
             e.printStackTrace();
         }
+        return  image;
     }
 
     public void update() {
