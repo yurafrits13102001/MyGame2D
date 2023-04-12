@@ -7,36 +7,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="Yura Frits">
-      <change afterPath="$PROJECT_DIR$/src/main/UtilityTool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_treeNew1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/background/sprite_world_marichka22810.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_pause0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_pause20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_pause30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_new_model0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel41.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/fonts/8-BIT WONDER.TTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/fonts/Daydream.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/fonts/Gamer.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_old_man2222.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_old_man_stay1111.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman00.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman101010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman3333.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman4444.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman5555.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman6666.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman7777.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman8888.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/npc/sprite_oldman9999.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/SuperObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/SuperObject.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/background/sprite_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss00.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/background/sprite_watergarss00.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man-up1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/npc/sprite_old_man_up1.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,30 +73,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "18",
-    "last_opened_file_path": "C:/Users/38050/OneDrive/Рабочий стол/MyProj/EmployeeCrudApplication",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/38050/OneDrive/Рабочий стол/MyProj/EmployeeCrudApplication&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\fonts" />
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\npc" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\items" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\player" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\maps" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background\newTexture" />
     </key>
   </component>
   <component name="RunManager">
@@ -140,7 +145,12 @@
       <workItem from="1680104469524" duration="15430000" />
       <workItem from="1680270430386" duration="8031000" />
       <workItem from="1680361348158" duration="12725000" />
-      <workItem from="1680554697412" duration="55940000" />
+      <workItem from="1680554697412" duration="62752000" />
+      <workItem from="1681150471425" duration="644000" />
+      <workItem from="1681151220878" duration="4327000" />
+      <workItem from="1681208826915" duration="7921000" />
+      <workItem from="1681232128562" duration="30322000" />
+      <workItem from="1681333293000" duration="2576000" />
     </task>
     <task id="LOCAL-00001" summary="Yura Frits">
       <created>1680270720883</created>
@@ -170,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680627781240</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Yura Frits">
+      <created>1681143218079</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681143218079</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

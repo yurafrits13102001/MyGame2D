@@ -12,29 +12,31 @@ import java.util.Objects;
 
 public class Player extends Entity {
 
-    GamePanel gamePanel;
+
     KeyHandler keyHandler;
 
     public final int screenX;
-    public final  int screenY;
+    public final int screenY;
     public int hasPurpleKey = 0;
     public int hasBlueKey = 0;
     public int hasOrangeKey = 0;
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
-        this.gamePanel = gamePanel;
+        super(gamePanel);
+
+
         this.keyHandler = keyHandler;
 
-        screenX = gamePanel.worldWidth/2 - (gamePanel.tileSize/2);
-        screenY = gamePanel.worldHeight/2 - (gamePanel.tileSize/2);
+        screenX = gamePanel.worldWidth / 2 - (gamePanel.tileSize / 2);
+        screenY = gamePanel.worldHeight / 2 - (gamePanel.tileSize / 2);
 
         solidArea = new Rectangle();
-        solidArea.x = 8;
-        solidArea.y = 20;
+        solidArea.x = 13;
+        solidArea.y = 21;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
         solidArea.width = 16;
-        solidArea.height = 16;
+        solidArea.height = 18;
 
         setDefaultValues();
         getPlayerImage();
@@ -51,31 +53,18 @@ public class Player extends Entity {
     public void getPlayerImage() {
 
 
-        stay1 = setup("sprite_marichka_new_model0");
-        stay2 = setup("sprite_marichka04");
-        up1 = setup("sprite_marichka_newmodel20");
-        up2 = setup("sprite_marichka_newmodel21");
-        down1 = setup("sprite_marichka_newmodel10");
-        down2 = setup("sprite_marichka_newmodel11");
-        left1 = setup("sprite_marichka_newmodel31");
-        left2 = setup("sprite_marichka_newmodel41");
-        right1 = setup("sprite_marichka_newmodel30");
-        right2 = setup("sprite_marichka_newmodel40");
+        stay1 = setup("player/sprite_marichka_new_model0");
+        stay2 = setup("player/sprite_marichka04");
+        up1 = setup("player/sprite_marichka_newmodel20");
+        up2 = setup("player/sprite_marichka_newmodel21");
+        down1 = setup("player/sprite_marichka_newmodel10");
+        down2 = setup("player/sprite_marichka_newmodel11");
+        left1 = setup("player/sprite_marichka_newmodel31");
+        left2 = setup("player/sprite_marichka_newmodel41");
+        right1 = setup("player/sprite_marichka_newmodel30");
+        right2 = setup("player/sprite_marichka_newmodel40");
     }
 
-    public BufferedImage setup(String filePath) {
-
-        UtilityTool utilityTool = new UtilityTool();
-        BufferedImage image = null;
-
-        try{
-            image = ImageIO.read((getClass().getResourceAsStream("/res/player/" + filePath + ".png")));
-            image = utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        return  image;
-    }
 
     public void update() {
         if (!keyHandler.leftPressed || !keyHandler.rightPressed || !keyHandler.upPressed ||
@@ -112,10 +101,18 @@ public class Player extends Entity {
                 int objIndex = gamePanel.collisionChecker.checkObject(this, true);
                 pickupObject(objIndex);
 
-                //IF COLLISION ID FALSE - PLAYER CAN MOVE
-                if(collisionOn == false){
+                //CHECK NPC COLLISION:
+                int mpcIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.npc);
+                interactNpc(mpcIndex);
 
-                    switch(direction){
+                //CHECK PLAYER COLLISION:
+
+
+
+                //IF COLLISION ID FALSE - PLAYER CAN MOVE
+                if (collisionOn == false) {
+
+                    switch (direction) {
                         case "up":
                             worldY -= speed;
                             break;
@@ -131,14 +128,6 @@ public class Player extends Entity {
                     }
                 }
 
-
-//        if (!keyHandler.rightPressed || !keyHandler.leftPressed ||
-//                !keyHandler.upPressed || !keyHandler.downPressed){
-//            direction = "stay";
-//        }
-//
-
-
                 spriteCounter++;
                 if (spriteCounter > 12) {
                     if (spriteNum == 1) {
@@ -153,13 +142,13 @@ public class Player extends Entity {
         }
     }
 
-    public void pickupObject(int index){
+    public void pickupObject(int index) {
 
-        if(index != 999){
+        if (index != 999) {
 
             String objectName = gamePanel.obj[index].name;
 
-            switch (objectName){
+            switch (objectName) {
                 case "Key_Purple":
                     gamePanel.playMusic(1);
                     hasPurpleKey++;
@@ -178,19 +167,19 @@ public class Player extends Entity {
                     gamePanel.obj[index] = null;
                     break;
                 case "Door_Purple":
-                    if(hasPurpleKey > 0) {
+                    if (hasPurpleKey > 0) {
                         gamePanel.obj[index] = null;
                         hasPurpleKey--;
                     }
                     break;
                 case "Door_Blue":
-                    if(hasBlueKey > 0) {
+                    if (hasBlueKey > 0) {
                         gamePanel.obj[index] = null;
                         hasBlueKey--;
                     }
                     break;
                 case "Door_Orange":
-                    if(hasOrangeKey > 0) {
+                    if (hasOrangeKey > 0) {
                         gamePanel.obj[index] = null;
                         hasOrangeKey--;
                     }
@@ -198,6 +187,30 @@ public class Player extends Entity {
 
             }
         }
+    }
+
+    public void interactNpc(int index) {
+
+        if (index != 999) {
+
+            if(gamePanel.keyHandler.enterPressed == true) {
+
+                gamePanel.gameState = gamePanel.dialogueState;
+                gamePanel.npc[index].speak();
+
+
+            }
+
+        }
+       // gamePanel.keyHandler.enterPressed = false;
+
+    }
+
+    public void interactPlayer() {
+
+        System.out.println("Player collision");
+
+
     }
 
     public void draw(Graphics2D g2) {
