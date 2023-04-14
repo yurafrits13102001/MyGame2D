@@ -1,54 +1,31 @@
 package object;
 
+import entity.Entity;
 import main.GamePanel;
 
 import javax.imageio.ImageIO;
 import java.io.IOException;
 
-public class OBJ_Key extends SuperObject {
+public class OBJ_Key extends Entity {
 
-    GamePanel gamePanel;
 
     public OBJ_Key(String name, GamePanel gamePanel) {
 
-        this.gamePanel = gamePanel;
+        super(gamePanel);
+
 
         switch (this.name = name) {
 
             case "Key_Purple":
-                try {
-
-                    image = ImageIO.read(getClass().getResourceAsStream("/items/sprite_item0.png"));
-                    utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-
-                }
+                stay1 = setup("/items/sprite_item0");
                 collision = true;
                 break;
             case "Key_Blue":
-                try {
-
-                    image = ImageIO.read(getClass().getResourceAsStream("/items/sprite_item1.png"));
-                    utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-
-                }
+                stay1 = setup("/items/sprite_item1");
                 collision = true;
                 break;
-            case  "Key_Orange":
-                try {
-
-                    image = ImageIO.read(getClass().getResourceAsStream("/items/sprite_item2.png"));
-                    utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-
-                }
+            case "Key_Orange":
+                stay1 = setup("/items/sprite_item2");
                 collision = true;
 
         }

@@ -8,7 +8,7 @@ public class KeyHandler implements KeyListener {
 
     GamePanel gamePanel;
 
-    public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, anyKeyPressed;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, anyKeyPressed, spasePressed;
 
     public KeyHandler(GamePanel gamePanel) {
 
@@ -26,28 +26,32 @@ public class KeyHandler implements KeyListener {
         int code = e.getKeyCode();
 
         //MAIN MENU
-        if(gamePanel.gameState == gamePanel.mainMenuState){
+        if (gamePanel.gameState == gamePanel.mainMenuState) {
 
             if (code == KeyEvent.VK_W) {
-                gamePanel.ui.commandNum --;
-                if(gamePanel.ui.commandNum < 0){
+                gamePanel.ui.commandNum--;
+                if (gamePanel.ui.commandNum < 0) {
                     gamePanel.ui.commandNum = 2;
                 }
             }
             if (code == KeyEvent.VK_S) {
-                gamePanel.ui.commandNum ++;
-                if(gamePanel.ui.commandNum > 2){
+                gamePanel.ui.commandNum++;
+                if (gamePanel.ui.commandNum > 2) {
                     gamePanel.ui.commandNum = 0;
                 }
             }
-            if(code == KeyEvent.VK_ENTER){
-                if(gamePanel.ui.commandNum == 0){
+            if (code == KeyEvent.VK_ENTER) {
+                if (gamePanel.ui.commandNum == 0) {
+
+
                     gamePanel.gameState = gamePanel.playState;
                 }
-                if(gamePanel.ui.commandNum == 1){
+
+
+                if (gamePanel.ui.commandNum == 1) {
                     //something
                 }
-                if(gamePanel.ui.commandNum == 2){
+                if (gamePanel.ui.commandNum == 2) {
                     System.exit(0);
                 }
             }
@@ -76,8 +80,11 @@ public class KeyHandler implements KeyListener {
             if (code == KeyEvent.VK_ENTER) {
                 enterPressed = true;
             }
-            if(code == KeyEvent.VK_ALL_CANDIDATES){
+            if (code == KeyEvent.VK_ALL_CANDIDATES) {
                 anyKeyPressed = true;
+            }
+            if (code == KeyEvent.VK_SPACE) {
+                spasePressed = true;
             }
 
 
@@ -85,9 +92,8 @@ public class KeyHandler implements KeyListener {
             if (code == KeyEvent.VK_P) {
                 gamePanel.gameState = gamePanel.playState;
             }
-        }
-        else if (gamePanel.gameState == gamePanel.dialogueState) {
-            if(enterPressed == false){
+        } else if (gamePanel.gameState == gamePanel.dialogueState) {
+            if (code == KeyEvent.VK_ENTER) {
                 gamePanel.gameState = gamePanel.playState;
             }
 

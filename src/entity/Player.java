@@ -40,6 +40,7 @@ public class Player extends Entity {
 
         setDefaultValues();
         getPlayerImage();
+        setSpeech();
     }
 
     public void setDefaultValues() {
@@ -48,6 +49,18 @@ public class Player extends Entity {
         worldY = 624;
         speed = 4;
         direction = "down";
+
+        //player health
+        maxLife = 6;
+        life = 6;
+    }
+
+    public void setSpeech(){
+
+        speech[0] = "Marichka: Oh no!!!! Where i am?????!!!!\n I have to be home by 10 pm!!!! ";
+        speech[1] = "Spreader: Hello!!! you got into this world by accident!!\n To return to Novoselitsa, you must find a portal!!!";
+        speech[2] = "Great adventures and even dangerous challenges await you ahead!!\n Be careful! Good luck!!!";
+        speech[3]  = null;
     }
 
     public void getPlayerImage() {
@@ -107,6 +120,14 @@ public class Player extends Entity {
 
                 //CHECK PLAYER COLLISION:
 
+                //CHECK EVENT
+
+                gamePanel.eventHandler.checkEvent();
+
+                //start
+
+
+
 
 
                 //IF COLLISION ID FALSE - PLAYER CAN MOVE
@@ -140,6 +161,12 @@ public class Player extends Entity {
             }
 
         }
+    }
+
+    @Override
+    public void startingSpeech(){
+
+        super.startingSpeech();
     }
 
     public void pickupObject(int index) {
@@ -205,6 +232,11 @@ public class Player extends Entity {
        // gamePanel.keyHandler.enterPressed = false;
 
     }
+
+
+
+
+
 
     public void interactPlayer() {
 

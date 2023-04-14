@@ -17,7 +17,7 @@ public class Entity {
     public int speed;
 
     public BufferedImage stay1, stay2, up1, up2, down1, down2, left1, left2, right1, right2;
-    public String direction;
+    public String direction = "stay";
 
     public int spriteCounter = 0;
     public int spriteNum = 1;
@@ -30,7 +30,17 @@ public class Entity {
     public int actionLockCounter = 0;
 
     public ArrayList<String> dialogues = new ArrayList<>();
+    public String[] speech = new String[20];
     public int dialogueIndex = 0;
+    public int speechIndex = 0;
+
+    //CHARACTER STATUS
+    public int maxLife;
+    public int life;
+
+    public BufferedImage image, image2, image3;
+    public String name;
+    public boolean collision = false;
 
     public Entity(GamePanel gamePanel) {
 
@@ -39,6 +49,19 @@ public class Entity {
     }
 
     public void setAction() {
+    }
+
+    public void startingSpeech(){
+
+
+
+        if (gamePanel.player.speech[speechIndex] == null) {
+            speechIndex = 0;
+        }
+        gamePanel.ui.currentSpeech = gamePanel.player.speech[speechIndex];
+        speechIndex++;
+
+        gamePanel.keyHandler.enterPressed = false;
     }
 
 
@@ -76,6 +99,8 @@ public class Entity {
             case "left":
                 direction = "right";
                 break;
+            default:
+                direction = "pick";
         }
 
 

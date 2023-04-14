@@ -2,11 +2,14 @@ package main;
 
 import entity.Entity;
 import entity.Player;
-import object.SuperObject;
+
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -36,6 +39,7 @@ public class GamePanel extends JPanel implements Runnable {
     public int playState = 1;
     public int pauseState = 2;
     public int dialogueState = 3;
+    public int startingGameState = 4;
 
     TileManager tileManager = new TileManager(this);
 
@@ -48,6 +52,8 @@ public class GamePanel extends JPanel implements Runnable {
 
     public AssetSetter assetSetter = new AssetSetter(this);
     public UI ui = new UI(this);
+
+    public EventHandler eventHandler = new EventHandler(this);
     Thread gameThread;
 
 
@@ -55,8 +61,10 @@ public class GamePanel extends JPanel implements Runnable {
     //ENTITY AND OBJECT
     public Player player = new Player(this, keyHandler);
 
-    public SuperObject[] obj = new SuperObject[10];
+    public Entity[] obj = new Entity[10];
     public Entity[] npc = new Entity[10];
+
+    ArrayList<Entity> entityList = new ArrayList<>();
 
     //set player's default position
 //    int playerX = 100;
@@ -165,7 +173,12 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void update() {
 
+      
+
         if(gameState == playState) {
+
+            //start
+
 
             //player update
             player.update();
@@ -181,8 +194,10 @@ public class GamePanel extends JPanel implements Runnable {
 
         }
         if(gameState == pauseState){
-            //nothing else yet
+            //nothing
         }
+
+
 
 
 
@@ -197,38 +212,68 @@ public class GamePanel extends JPanel implements Runnable {
 
         //MAIN MENU
         if(gameState == mainMenuState){
-
             ui.draw(g2);
+
 
         }
         //OThERS
         else{
 
+
+
             //TILE
             tileManager.draw(g2);
 
-            //ITEMS
-            for(int i = 0; i < obj.length; i++){
-                if(obj[i] != null){
-                    obj[i].draw(g2, this);
-                }
-            }
-            //NPC
-            for(int i = 0; i < npc.length; i++){
+
+            //ADD ENTITIES TO THE LIST
+            entityList.add(player);
+
+
+            for (int i = 0; i < npc.length; i++) {
                 if(npc[i] != null){
-                    npc[i].draw(g2);
+                    entityList.add(npc[i]);
                 }
             }
 
+            for (int i = 0; i < obj.length; i++) {
+                if(obj[i] != null){
+                    entityList.add(obj[i]);
+                }
+            }
 
-            //PLAYER
-            player.draw(g2);
+            //SORT
+
+            Collections.sort(entityList, new Comparator<Entity>() {
+                @Override
+                public int compare(Entity e1, Entity e2) {
+
+                    int result = Integer.compare(e1.worldY, e2.worldY);
+                    return result;
+                }
+            });
+
+            //DRAW ENTITIES
+            for(int i = 0; i < entityList.size(); i++){
+                entityList.get(i).draw(g2);
+            }
+            //EMPTY ENTITY LIST
+            for(int i = 0; i < entityList.size(); i++){
+                entityList.remove(i);
+            }
+
+
+
+
+
+
+
+
 
             //UI
 
             ui.draw(g2);
 
-            g2.dispose();
+
 
         }
 

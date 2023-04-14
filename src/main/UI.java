@@ -1,24 +1,28 @@
 package main;
 
+import entity.Entity;
+import object.OBJ_Door;
+import object.OBJ_Health;
 import object.OBJ_Key;
+
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class UI {
 
     GamePanel gamePanel;
     Font daydream, gamer;
-    BufferedImage purpleKeyImage;
-    BufferedImage blueKeyImage;
-    BufferedImage orangeKeyImage;
+    BufferedImage heartFull, heartHalf, heartBlank;
+    BufferedImage purpleKeyImage,  blueKeyImage, orangeKeyImage, purpleDoorimage, blueDoorImage, orangeDoorImage;
+
     Graphics2D g2;
 
     public String currentDialogue = "";
+    public String currentSpeech = "";
     public int dialogueIndex = 0;
     public int commandNum = 0;
 
@@ -36,12 +40,29 @@ public class UI {
           e.printStackTrace();
       }
 
+      //KEYS
         OBJ_Key purpleKey = new OBJ_Key("Key_Purple", gamePanel);
         OBJ_Key blueKey = new OBJ_Key("Key_Blue", gamePanel);
         OBJ_Key orangeKey = new OBJ_Key("Key_Orange", gamePanel);
-        purpleKeyImage = purpleKey.image;
-        blueKeyImage = blueKey.image;
-        orangeKeyImage = orangeKey.image;
+        purpleKeyImage = purpleKey.up1;
+        blueKeyImage = blueKey.stay1;
+        orangeKeyImage = orangeKey.stay1;
+
+        //DOORS
+        OBJ_Door purpleDoor = new OBJ_Door("Door_Purple", gamePanel);
+        OBJ_Door blueDoor = new OBJ_Door("Door_Blue", gamePanel);
+        OBJ_Door orangeDoor = new OBJ_Door("Door_Orange", gamePanel);
+        purpleDoorimage = purpleDoor.stay1;
+        blueDoorImage = blueDoor.up1;
+        orangeDoorImage = orangeDoor.stay1;
+
+
+        //HEALTH
+        Entity heart = new OBJ_Health(gamePanel);
+        heartFull = heart.image;
+        heartHalf = heart.image2;
+        heartBlank = heart.image3;
+
     }
 
     public void draw(Graphics2D g2){
@@ -50,12 +71,12 @@ public class UI {
 
         g2.setFont(gamer);
         g2.setColor(Color.white);
-        g2.drawImage(purpleKeyImage, gamePanel.tileSize/2, gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
-        g2.drawImage(blueKeyImage, gamePanel.tileSize/2, gamePanel.tileSize + gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
-        g2.drawImage(orangeKeyImage, gamePanel.tileSize/2, gamePanel.tileSize + gamePanel.tileSize + gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
-        g2.drawString("x" + gamePanel.player.hasPurpleKey, 70, 68);
-        g2.drawString("x" + gamePanel.player.hasBlueKey, 70, 118);
-        g2.drawString("x" + gamePanel.player.hasOrangeKey, 70, 166);
+//        g2.drawImage(purpleKeyImage, gamePanel.tileSize/2, gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
+//        g2.drawImage(blueKeyImage, gamePanel.tileSize/2, gamePanel.tileSize + gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
+//        g2.drawImage(orangeKeyImage, gamePanel.tileSize/2, gamePanel.tileSize + gamePanel.tileSize + gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
+//        g2.drawString("x" + gamePanel.player.hasPurpleKey, 70, 68);
+//        g2.drawString("x" + gamePanel.player.hasBlueKey, 70, 118);
+//        g2.drawString("x" + gamePanel.player.hasOrangeKey, 70, 166);
 
         if(gamePanel.gameState == gamePanel.mainMenuState){
             drawMainMenuScreen();
@@ -63,12 +84,54 @@ public class UI {
 
         if(gamePanel.gameState == gamePanel.playState){
 
+            drawPlayerHealth();
+
         }
         if(gamePanel.gameState == gamePanel.pauseState){
+            drawPlayerHealth();
+
             drawPauseScreen();
         }
         if(gamePanel.gameState == gamePanel.dialogueState){
+            drawPlayerHealth();
             drawDialogueScreen();
+
+        }
+
+    }
+
+    public void drawPlayerHealth(){
+
+        int x = gamePanel.tileSize/2;
+        int y = gamePanel.tileSize/2;
+        int i = 0;
+
+        //draw max life
+
+        while(i < gamePanel.player.maxLife/2){
+            g2.drawImage(heartBlank, x, y, null);
+            i++;
+            x += gamePanel.tileSize;
+        }
+
+        //reset
+
+         x = gamePanel.tileSize/2;
+         y = gamePanel.tileSize/2;
+         i = 0;
+
+         //draw current life
+        while(i < gamePanel.player.life){
+            g2.drawImage(heartHalf, x, y, null);
+            i++;
+            if(i < gamePanel.player.life){
+                g2.drawImage(heartFull, x, y, null);
+                i++;
+                x += gamePanel.tileSize;
+            }
+
+
+
 
         }
     }
@@ -126,6 +189,8 @@ public class UI {
         }
 
     }
+
+
 
     public void drawPauseScreen() {
 
