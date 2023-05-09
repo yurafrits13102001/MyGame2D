@@ -111,7 +111,7 @@ public class TileManager {
         setup(0, "sprite_trava0", false );
         setup(1, "sprite_marichka_backdround1", false );
         setup(2, "sprite_0", true );
-        setup(3, "sprite_world_marichka22810", true );
+        setup(3, "newTexture/sprite_new_tree10", true );
         setup(4, "sprite_world_marichka2282", false );
         setup(5, "sprite_world_marichka2283", false );
         setup(6, "sprite_treeNew1", true );

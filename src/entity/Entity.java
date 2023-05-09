@@ -28,17 +28,20 @@ public class Entity {
     public boolean collisionOn = false;
 
     public int actionLockCounter = 0;
+    public boolean invincible = false;
+    public int invincibleCounter = 0;
 
     public ArrayList<String> dialogues = new ArrayList<>();
     public String[] speech = new String[20];
     public int dialogueIndex = 0;
     public int speechIndex = 0;
+    public int type;
 
     //CHARACTER STATUS
     public int maxLife;
     public int life;
 
-    public BufferedImage image, image2, image3;
+    public BufferedImage image, image2, image3, imageApple;
     public String name;
     public boolean collision = false;
 
@@ -115,7 +118,17 @@ public class Entity {
         collisionOn = false;
         gamePanel.collisionChecker.checkTile(this);
         gamePanel.collisionChecker.checkObject(this, false);
-        gamePanel.collisionChecker.checkPlayer(this);
+        gamePanel.collisionChecker.checkEntity(this, gamePanel.npc);
+        gamePanel.collisionChecker.checkEntity(this, gamePanel.monster);
+        boolean contactPlayer = gamePanel.collisionChecker.checkPlayer(this);
+
+        if(this.type == 2 && contactPlayer == true){
+            if(gamePanel.player.invincible == false){
+                gamePanel.player.life -= 1;
+                gamePanel.player.invincible = true;
+            }
+
+        }
 
         if (collisionOn == false) {
 

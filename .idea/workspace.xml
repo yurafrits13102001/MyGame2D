@@ -7,18 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="Yura Frits">
-      <change afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/EventRect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Health.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/SlideshowPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Apple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/items/sprite_apple0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/mobs/sprite_slime10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/slides/1slide.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/slides/2slide.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/slides/3slide.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/slides/image1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/slides/image2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/slides/image3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/video/2022-12-28 19.23.08.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/video/video.mp4" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyGame2d.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyGame2d.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/SuperObject.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,35 +58,45 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2MXqnTkGaJSu4B6u6YpsRt6AfM5" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/38050/OneDrive/Рабочий стол/MyProj/EmployeeCrudApplication&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "18",
+    "last_opened_file_path": "C:/Users/38050/OneDrive/Рабочий стол/lib",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.editor"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;ChangesTree.GroupingKeys&quot;: [
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="main" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\slides" />
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\video" />
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background\newTexture" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\items" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\fonts" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\npc" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\player" />
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\mobs" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="main" />
     </key>
   </component>
   <component name="RunManager">
@@ -130,7 +153,12 @@
       <workItem from="1681333293000" duration="6048000" />
       <workItem from="1681400922827" duration="13206000" />
       <workItem from="1681426955720" duration="3866000" />
-      <workItem from="1681486690300" duration="11524000" />
+      <workItem from="1681486690300" duration="11793000" />
+      <workItem from="1681910760857" duration="519000" />
+      <workItem from="1682166466925" duration="12412000" />
+      <workItem from="1683322542860" duration="9069000" />
+      <workItem from="1683554118924" duration="35000" />
+      <workItem from="1683557319816" duration="24800000" />
     </task>
     <task id="LOCAL-00001" summary="Yura Frits">
       <created>1680270720883</created>
@@ -174,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681339171712</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Yura Frits">
+      <created>1681508617712</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681508617713</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,6 +280,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Yura Frits" />
     <option name="LAST_COMMIT_MESSAGE" value="Yura Frits" />
   </component>

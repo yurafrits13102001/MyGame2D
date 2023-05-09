@@ -8,7 +8,8 @@ public class KeyHandler implements KeyListener {
 
     GamePanel gamePanel;
 
-    public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed, anyKeyPressed, spasePressed;
+    public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed,  spasePressed, mousePressed;
+    public boolean anyKeyPressed = false;
 
     public KeyHandler(GamePanel gamePanel) {
 
@@ -80,6 +81,7 @@ public class KeyHandler implements KeyListener {
             if (code == KeyEvent.VK_ENTER) {
                 enterPressed = true;
             }
+
             if (code == KeyEvent.VK_ALL_CANDIDATES) {
                 anyKeyPressed = true;
             }
@@ -98,9 +100,8 @@ public class KeyHandler implements KeyListener {
             }
 
         }
-
-
     }
+
 
 
     @Override
@@ -120,6 +121,10 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_D) {
             rightPressed = false;
         }
+        if(code == KeyEvent.VK_ALL_CANDIDATES){
+            anyKeyPressed = false;
+        }
+
 
 
     }

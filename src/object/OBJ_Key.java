@@ -27,6 +27,10 @@ public class OBJ_Key extends Entity {
             case "Key_Orange":
                 stay1 = setup("/items/sprite_item2");
                 collision = true;
+                break;
+            case "Apple":
+                stay1 = setup("/items/sprite_apple0");
+                collision = true;
 
         }
     }

@@ -1,6 +1,8 @@
 package main;
 
 import entity.NPC_OldMan;
+import monster.MON_GreenSlime;
+import object.OBJ_Apple;
 import object.OBJ_Door;
 import object.OBJ_Key;
 
@@ -13,6 +15,8 @@ public class AssetSetter {
     }
 
     public void setObject(){
+
+
 
         gamePanel.obj[0] = new OBJ_Key("Key_Blue", gamePanel);
         gamePanel.obj[0].worldX = 26 * gamePanel.tileSize;
@@ -34,6 +38,12 @@ public class AssetSetter {
         gamePanel.obj[4].worldX = 50 * gamePanel.tileSize;
         gamePanel.obj[4].worldY = 16 * gamePanel.tileSize;
 
+        gamePanel.obj[5] = new OBJ_Key("Apple" ,gamePanel);
+        gamePanel.obj[5].worldX = 25 * gamePanel.tileSize;
+        gamePanel.obj[5].worldY = 29 * gamePanel.tileSize;
+
+
+
 
 
     }
@@ -43,5 +53,11 @@ public class AssetSetter {
         gamePanel.npc[0] = new NPC_OldMan(gamePanel);
         gamePanel.npc[0].worldX = 40 * gamePanel.tileSize;
         gamePanel.npc[0].worldY = 29 * gamePanel.tileSize;
+    }
+
+    public void setMonster(){
+        gamePanel.monster[0] = new MON_GreenSlime(gamePanel);
+        gamePanel.monster[0].worldX = 28 * gamePanel.tileSize;
+        gamePanel.monster[0].worldY = 29 * gamePanel.tileSize;
     }
 }

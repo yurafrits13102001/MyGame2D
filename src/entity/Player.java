@@ -20,6 +20,8 @@ public class Player extends Entity {
     public int hasPurpleKey = 0;
     public int hasBlueKey = 0;
     public int hasOrangeKey = 0;
+    public int hasApple = 0;
+    public int damageAnimationCounter = 0;
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         super(gamePanel);
@@ -86,7 +88,7 @@ public class Player extends Entity {
 
 
             if (keyHandler.downPressed == true || keyHandler.upPressed == true ||
-                    keyHandler.leftPressed == true || keyHandler.rightPressed == true) {
+                    keyHandler.leftPressed == true || keyHandler.rightPressed == true ) {
 
 
                 if (keyHandler.upPressed) {
@@ -115,8 +117,12 @@ public class Player extends Entity {
                 pickupObject(objIndex);
 
                 //CHECK NPC COLLISION:
-                int mpcIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.npc);
-                interactNpc(mpcIndex);
+                int npcIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.npc);
+                interactNpc(npcIndex);
+
+                //CHECK MONSTER COLLISION:
+                int monsterIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.monster);
+                contactMonster(monsterIndex);
 
                 //CHECK PLAYER COLLISION:
 
@@ -160,6 +166,13 @@ public class Player extends Entity {
                 }
             }
 
+        }
+        if(invincible == true){
+            invincibleCounter++;
+            if(invincibleCounter > 60){
+                invincible = false;
+                invincibleCounter = 0;
+            }
         }
     }
 
@@ -211,6 +224,14 @@ public class Player extends Entity {
                         hasOrangeKey--;
                     }
                     break;
+                case "Apple":
+                    gamePanel.playMusic(1);
+                    hasApple++;
+                    gamePanel.obj[index] = null;
+                    if(hasApple > 0){
+                        life = maxLife;
+                    }
+
 
             }
         }
@@ -242,7 +263,16 @@ public class Player extends Entity {
 
         System.out.println("Player collision");
 
+    }
 
+    public void contactMonster(int i){
+
+        if(i != 999){
+            if(invincible == false) {
+                life -= 1;
+                invincible = true;
+            }
+        }
     }
 
     public void draw(Graphics2D g2) {
@@ -294,8 +324,17 @@ public class Player extends Entity {
             }
         }
 
+        if(invincible == true) {
+
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.2f));
+
+
+        }
+
 
         g2.drawImage(image, screenX, screenY, gamePanel.tileSize, gamePanel.tileSize, null);
+
+        g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1f));
     }
 }
 
