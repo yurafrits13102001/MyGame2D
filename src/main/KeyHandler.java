@@ -75,6 +75,9 @@ public class KeyHandler implements KeyListener {
             if (code == KeyEvent.VK_D) {
                 rightPressed = true;
             }
+            if(code == KeyEvent.VK_C){
+                gamePanel.gameState = gamePanel.inventoryState;
+            }
             if (code == KeyEvent.VK_P) {
                 gamePanel.gameState = gamePanel.pauseState;
             }
@@ -99,6 +102,35 @@ public class KeyHandler implements KeyListener {
                 gamePanel.gameState = gamePanel.playState;
             }
 
+        }else if (gamePanel.gameState == gamePanel.inventoryState){
+            if(code == KeyEvent.VK_C){
+                gamePanel.gameState = gamePanel.playState;
+            }
+            if(code == KeyEvent.VK_W){
+                if(gamePanel.ui.slotRow != 0) {
+
+                    gamePanel.playMusic(2);
+                    gamePanel.ui.slotRow--;
+                }
+            }
+            if(code == KeyEvent.VK_S){
+                if(gamePanel.ui.slotRow != 5) {
+                    gamePanel.playMusic(2);
+                    gamePanel.ui.slotRow++;
+                }
+            }
+            if(code == KeyEvent.VK_A){
+                if(gamePanel.ui.slotCol != 0) {
+                    gamePanel.playMusic(2);
+                    gamePanel.ui.slotCol--;
+                }
+            }
+            if(code == KeyEvent.VK_D){
+                if(gamePanel.ui.slotCol != 6) {
+                    gamePanel.playMusic(2);
+                    gamePanel.ui.slotCol++;
+                }
+            }
         }
     }
 

@@ -3,11 +3,14 @@ package entity;
 import main.GamePanel;
 import main.KeyHandler;
 import main.UtilityTool;
+import object.OBJ_Axe;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Player extends Entity {
@@ -22,6 +25,9 @@ public class Player extends Entity {
     public int hasOrangeKey = 0;
     public int hasApple = 0;
     public int damageAnimationCounter = 0;
+
+    public ArrayList<Entity> inventory = new ArrayList<>();
+    public final int inventorySize = 20;
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         super(gamePanel);
@@ -43,6 +49,7 @@ public class Player extends Entity {
         setDefaultValues();
         getPlayerImage();
         setSpeech();
+        setItems();
     }
 
     public void setDefaultValues() {
@@ -55,6 +62,13 @@ public class Player extends Entity {
         //player health
         maxLife = 6;
         life = 6;
+    }
+
+    public Entity currentInstrument = new OBJ_Axe(gamePanel);
+
+    public void setItems(){
+        inventory.add(currentInstrument);
+
     }
 
     public void setSpeech(){

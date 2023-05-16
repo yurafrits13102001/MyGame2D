@@ -45,6 +45,10 @@ public class Entity {
     public String name;
     public boolean collision = false;
 
+
+    public String description = "";
+
+
     public Entity(GamePanel gamePanel) {
 
         this.gamePanel = gamePanel;

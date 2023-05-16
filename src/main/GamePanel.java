@@ -34,8 +34,8 @@ public class GamePanel extends JPanel implements Runnable {
 
     public final int tileSize = originalTileSize * scale; // 48x48 tile
 
-    public final int maxScreenCol = 16;//768
-    public final int maxScreenRow = 12;//576
+    public final int maxScreenCol = 20;//960
+    public final int maxScreenRow = 16;//768
     public final int screenWidth = tileSize * maxScreenCol;
     public final int screenHeight = tileSize * maxScreenRow;
 
@@ -55,6 +55,7 @@ public class GamePanel extends JPanel implements Runnable {
     public int dialogueState = 3;
     public int introState = 5;
     public int startingGameState = 4;
+    public int inventoryState = 6;
 
     TileManager tileManager = new TileManager(this);
 
@@ -253,7 +254,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void update() {
 
-      
+
 
         if(gameState == playState) {
 
@@ -300,6 +301,8 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
 
         Graphics2D g2 = (Graphics2D) g;
+
+
 
         //MAIN MENU
         if(gameState == introState){

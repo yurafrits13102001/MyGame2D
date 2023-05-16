@@ -9,7 +9,7 @@ public class Main {
 
         JFrame window = new JFrame();
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
+        window.setResizable(true);
         window.setTitle("Марічка Adventure 2D");
 
         GamePanel gamePanel = new GamePanel();

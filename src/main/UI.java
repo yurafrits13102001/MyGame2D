@@ -8,20 +8,11 @@ import object.OBJ_Key;
 
 
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-import static com.sun.java.accessibility.util.AWTEventMonitor.addKeyListener;
 
 public class UI {
 
@@ -38,6 +29,9 @@ public class UI {
     public String currentSpeech = "";
     public int dialogueIndex = 0;
     public int commandNum = 0;
+
+    public int slotCol = 0;
+    public int slotRow = 0;
 
     public UI(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
@@ -97,7 +91,7 @@ public class UI {
 //        g2.drawString("x" + gamePanel.player.hasOrangeKey, 70, 166);
 
         if (gamePanel.gameState == gamePanel.introState) {
-            drawIntroScreen();
+           // drawIntroScreen();
 
         }
 
@@ -119,6 +113,10 @@ public class UI {
             drawPlayerHealth();
             drawDialogueScreen();
 
+        }
+        if(gamePanel.gameState == gamePanel.inventoryState){
+            drawInventory();
+            drawPlayerHealth();
         }
 
     }
@@ -177,6 +175,7 @@ public class UI {
         y = (gamePanel.screenHeight / 2) - 117;
         g2.drawImage(gamePanel.player.stay1, x, y, gamePanel.tileSize * 2, gamePanel.tileSize * 2, null);
 
+
         text = "New Game";
         x = getXForCenteredText(text);
         y += gamePanel.tileSize * 4;
@@ -213,14 +212,20 @@ public class UI {
     }
 
     public void drawIntroScreen() {
-        BufferedImage[] images = new BufferedImage[3];
+        BufferedImage[] images = new BufferedImage[10];
         try {
-            images[0] = ImageIO.read(getClass().getResourceAsStream("/res/slides/image1.png"));
-            images[1] = ImageIO.read(getClass().getResourceAsStream("/res/slides/image2.png"));
-            images[2] = ImageIO.read(getClass().getResourceAsStream("/res/slides/image3.png"));
+            images[0] = ImageIO.read(getClass().getResourceAsStream("/res/slides/alarmClock1.jpg"));
+
+            images[1] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide1.jpg"));
+            images[1].getScaledInstance(gamePanel.screenWidth,gamePanel.screenHeight,Image.SCALE_DEFAULT);
+            images[2] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide2.jpg"));
+            images[3] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide3.jpg"));
+            images[4] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide$.jpg"));
+            images[5] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide5.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         Graphics2D g2 = (Graphics2D) gamePanel.getGraphics();
         float alpha = 0f;
@@ -228,7 +233,14 @@ public class UI {
 
         while (alpha <= 1f) {
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
+            BufferedImage image = images[index];
+            double x = (gamePanel.screenWidth - 960) / 2;
+            double y = (gamePanel.screenHeight - 768) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            transform.translate(x, y);
+            transform.scale((double) gamePanel.screenWidth / image.getWidth(), (double) gamePanel.screenHeight / image.getHeight());
+            g2.drawImage(image, transform, null);
+//            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
             alpha += 0.01f;
 
             try {
@@ -244,13 +256,20 @@ public class UI {
             e.printStackTrace();
         }
 
-        alpha = 1f;
-        index = 1 ;
+        alpha = 0f;
 
-        while (alpha >= 0f) {
+
+        while (alpha <= 1f) {
+            index = 1;
+
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
-            alpha -= 0.01f;
+            BufferedImage image = images[index];
+            double x = (gamePanel.screenWidth - 960) / 2;
+            double y = (gamePanel.screenHeight - 768) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            transform.translate(x, y);
+            g2.drawImage(image, transform, null);
+            alpha += 0.01f;
 
             try {
                 Thread.sleep(30); // чекаємо 30 мілісекунд
@@ -264,12 +283,18 @@ public class UI {
             e.printStackTrace();
         }
 
-        alpha = 1f;
-        index = 2;
-        while (alpha >= 0f) {
+        alpha = 0f;
+
+        while (alpha <= 1f) {
+            index = 2;
+
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
-            alpha -= 0.01f;
+            BufferedImage image = images[index];
+            int x = (gamePanel.screenWidth - image.getWidth()) / 2;
+            int y = (gamePanel.screenHeight - image.getHeight()) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            g2.drawImage(image, transform, null);
+            alpha += 0.01f;
 
             try {
                 Thread.sleep(30); // чекаємо 30 мілісекунд
@@ -282,10 +307,138 @@ public class UI {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        alpha = 0f;
+
+        while (alpha <= 1f) {
+            index = 3;
+            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
+            alpha += 0.01f;
+
+            try {
+                Thread.sleep(30); // чекаємо 30 мілісекунд
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            Thread.sleep(3000); // чекаємо 3 секунди
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        alpha = 0f;
+
+        while (alpha <= 1f) {
+            index = 4;
+            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
+            alpha += 0.01f;
+
+            try {
+                Thread.sleep(30); // чекаємо 30 мілісекунд
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            Thread.sleep(3000); // чекаємо 3 секунди
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        alpha = 0f;
+
+        while (alpha <= 1f) {
+            index = 5;
+            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+            g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
+            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
+            alpha += 0.01f;
+
+            try {
+                Thread.sleep(30); // чекаємо 30 мілісекунд
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            Thread.sleep(3000); // чекаємо 3 секунди
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        alpha = 0f;
+    }
+
+    public void drawInventory(){
+
+        //FRAME
+        int frameX = gamePanel.tileSize * 11;
+        int frameY = gamePanel.tileSize;
+        int frameWidth = gamePanel.tileSize * 8;
+        int frameHeight = gamePanel.tileSize * 7;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+        //SLOT
+        final int slotXStart = frameX + 20;
+        final int slotYStart = frameY + 20;
+        int slotX = slotXStart;
+        int slotY = slotYStart;
+
+        //CURSOR
+        int cursorX = slotXStart + (gamePanel.tileSize * slotCol);
+        int cursorY = slotYStart + (gamePanel.tileSize * slotRow);
+        int cursorWidth = gamePanel.tileSize;
+        int cursorHeight = gamePanel.tileSize;
+
+        //DRAW CURSOR
+        g2.setColor(Color.white);
+        g2.setStroke(new BasicStroke(3));
+        g2.drawRoundRect(cursorX, cursorY, cursorWidth, cursorHeight, 10, 10);
+
+        //DRAW INVENTORY
+        for(int i = 0; i < gamePanel.player.inventory.size(); i++){
+
+            g2.drawImage(gamePanel.player.inventory.get(i).down1, slotX, slotY, null);
+
+            slotX += gamePanel.tileSize;
+
+            if(i == 4 || i == 9 || i == 14){
+                slotX = slotXStart;
+                slotY += gamePanel.tileSize;
+            }
+        }
+
+        //DESCRIPTION FRAME
+
+        int dFrameX = frameX;
+        int dFrameY = frameY + frameHeight;
+        int dFrameWidth = frameWidth;
+        int dFrameHeight = gamePanel.tileSize * 3;
+        drawSubWindow(dFrameX, dFrameY, dFrameWidth, dFrameHeight);
+
+        //DRAW DESCRIPTION TEXT
+        int textX = dFrameX + 20;
+        int textY = dFrameY + gamePanel.tileSize;
+
+
+
     }
 
 
-;;    public void drawPauseScreen() {
+    public void drawPauseScreen() {
 
         BufferedImage image = null;
         try {
