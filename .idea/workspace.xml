@@ -7,40 +7,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="Yura">
-      <change afterPath="$PROJECT_DIR$/src/interactiveTiles/IT_DryTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/interactiveTiles/InteractiveTile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/MouseListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/interactiveTiles/sprite_dryTree0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/interactiveTiles/sprite_dryTree1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitDown0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitDown1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitDown2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitLeft0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitLeft1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitLeft2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitRight0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitRight1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitRight2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitUp0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitUp1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitUp2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/sounds/20279__koops__apple_crunch_16.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entity/Particle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/interactiveTiles/sprite_dryTree0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/interactiveTiles/sprite_dryTree1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/background/interactiveTiles/sprite_dryTree10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/sounds/korotkiy-gluhoy-zvuk-udara-po-derevu.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/res/sounds/korotkiy-moschnyiy-zamah.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interactiveTiles/IT_DryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interactiveTiles/IT_DryTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/interactiveTiles/InteractiveTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interactiveTiles/InteractiveTile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Apple.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/OBJ_Axe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Axe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Health.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Health.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/interactiveTiles/sprite_dryTree0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/interactiveTiles/sprite_dryTree1.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,11 +84,11 @@
       <recent name="main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\sounds" />
+      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\background\interactiveTiles" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\interactiveTiles" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\player\attackAxe" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\sounds" />
       <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\items" />
-      <recent name="C:\Users\38050\Downloads\MyGame2d\src\res\slides" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="main" />
@@ -176,7 +162,9 @@
       <workItem from="1684430087247" duration="7580000" />
       <workItem from="1684446235353" duration="254000" />
       <workItem from="1684504038888" duration="1984000" />
-      <workItem from="1684537541943" duration="6955000" />
+      <workItem from="1684537541943" duration="7635000" />
+      <workItem from="1684593732275" duration="5252000" />
+      <workItem from="1684613664249" duration="7099000" />
     </task>
     <task id="LOCAL-00001" summary="Yura Frits">
       <created>1680270720883</created>
@@ -241,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684231936073</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Yura">
+      <created>1684545354974</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1684545354974</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

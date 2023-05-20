@@ -81,7 +81,7 @@ public class UI {
 //        g2.drawString("x" + gamePanel.player.hasOrangeKey, 70, 166);
 
         if (gamePanel.gameState == gamePanel.introState) {
-           // drawIntroScreen();
+            drawIntroScreen();
 
         }
 

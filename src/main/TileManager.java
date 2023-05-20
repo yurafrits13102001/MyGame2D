@@ -152,6 +152,7 @@ public class TileManager {
         setup(41, "newTexture/sprite_earthboarder13", false );
         setup(42, "newTexture/sprite_earthboarder14", false );
         setup(43, "newTexture/sprite_earthboarder15", false );
+        setup(44, "interactiveTiles/sprite_dryTree10", false );
     }
 
     public void setup(int index, String imagePath, boolean collision){

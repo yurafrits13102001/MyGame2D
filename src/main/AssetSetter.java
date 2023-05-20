@@ -4,6 +4,7 @@ import entity.NPC_OldMan;
 import interactiveTiles.IT_DryTree;
 import monster.MON_GreenSlime;
 import object.OBJ_Apple;
+import object.OBJ_Axe;
 import object.OBJ_Door;
 import object.OBJ_Key;
 
@@ -15,6 +16,9 @@ public class AssetSetter {
         this.gamePanel = gamePanel;
     }
 
+
+
+
     public void setObject(){
 
         int i = 0;
@@ -22,8 +26,8 @@ public class AssetSetter {
 
 
         gamePanel.obj[i] = new OBJ_Key( gamePanel);
-        gamePanel.obj[i].worldX = 26 * gamePanel.tileSize;
-        gamePanel.obj[i].worldY = 29 * gamePanel.tileSize;
+        gamePanel.obj[i].worldX = 18 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 35 * gamePanel.tileSize;
         i++;
 
         gamePanel.obj[i] = new OBJ_Key( gamePanel);
@@ -55,7 +59,15 @@ public class AssetSetter {
         gamePanel.obj[i].worldY = 29 * gamePanel.tileSize;
         i++;
 
+        gamePanel.obj[i] = new OBJ_Apple("Apple" ,gamePanel);
+        gamePanel.obj[i].worldX = 23 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 38 * gamePanel.tileSize;
+        i++;
 
+        gamePanel.obj[i] = new OBJ_Axe(gamePanel);
+        gamePanel.obj[i].worldX = 35 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 33 * gamePanel.tileSize;
+        i++;
 
 
 

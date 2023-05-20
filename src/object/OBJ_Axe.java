@@ -15,6 +15,7 @@ public class OBJ_Axe extends Entity {
         stay1 = setup("/items/sprite_axe0", gamePanel.tileSize, gamePanel.tileSize);
         direction = "stay";
         description = "< Axe >";
+        collision = true;
 
 
     }

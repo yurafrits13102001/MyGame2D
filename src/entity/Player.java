@@ -54,7 +54,7 @@ public class Player extends Entity {
         getPlayerImage();
         getPlayerAxeImages();
         setSpeech();
-        setItems();
+
     }
 
     public void setDefaultValues() {
@@ -69,13 +69,9 @@ public class Player extends Entity {
         life = 6;
     }
 
-    public Entity currentInstrument = new OBJ_Axe(gamePanel);
-
-    public void setItems() {
-        inventory.add(currentInstrument);
+    public Entity currentInstrument;
 
 
-    }
 
     public void setSpeech() {
 
@@ -121,8 +117,9 @@ public class Player extends Entity {
 
         if (attacking == true) {
 
-
             attacking();
+
+
         } else if (!keyHandler.leftPressed || !keyHandler.rightPressed || !keyHandler.upPressed ||
                 !keyHandler.downPressed) {
             direction = "stay";
@@ -164,6 +161,9 @@ public class Player extends Entity {
                 //CHECK MONSTER COLLISION:
                 int monsterIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.monster);
                 contactMonster(monsterIndex);
+
+                //CHECK INTERACTIVE COLLISION
+                int iTileIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.iTile);
 
 
 
@@ -220,6 +220,9 @@ public class Player extends Entity {
     private void damageInteractiveTiles(int i) {
 
         if(i != 999 && gamePanel.iTile[i].destructible == true){
+            gamePanel.playMusic(5);
+
+            generateParticle(gamePanel.iTile[i], gamePanel.iTile[i]);
 
             gamePanel.iTile[i] = null;
         }
@@ -232,6 +235,9 @@ public class Player extends Entity {
     }
 
     public void attacking() {
+
+
+
 
         spriteCounter++;
 
@@ -259,8 +265,8 @@ public class Player extends Entity {
             solidArea.width = attackArea.width;
             solidArea.height = attackArea.height;
 
-            int treeIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.iTile);
-            damageInteractiveTiles(treeIndex);
+            int iTileIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.iTile);
+            damageInteractiveTiles(iTileIndex);
 
             worldX = currentWorldX;
             worldY = currentWorldY;
@@ -309,8 +315,11 @@ public class Player extends Entity {
         }
 
             if(keyHandler.kPressed == true) {
-                attacking = true;
-                keyHandler.kPressed = false;
+                if(currentInstrument != null) {
+                    attacking = true;
+                    keyHandler.kPressed = false;
+                    gamePanel.playMusic(4);
+                }
             }
 
 

@@ -16,6 +16,8 @@ public class Sound {
         soundURL[1] = getClass().getResource("/res/sounds/coin.wav");
         soundURL[2] = getClass().getResource("/res/sounds/sound83.wav");
         soundURL[3] = getClass().getResource("/res/sounds/20279__koops__apple_crunch_16.wav");
+        soundURL[4] = getClass().getResource("/res/sounds/korotkiy-moschnyiy-zamah.wav");
+        soundURL[5] = getClass().getResource("/res/sounds/korotkiy-gluhoy-zvuk-udara-po-derevu.wav");
     }
 
     public void setFile(int index) {

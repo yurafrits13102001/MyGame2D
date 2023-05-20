@@ -16,7 +16,7 @@ public class Entity {
     public int worldX, worldY;
     public int speed;
 
-    public BufferedImage stay1, stay2, up1, up2, down1, down2, left1, left2, right1, right2, item;
+    public BufferedImage stay1, stay2, up1, up2, down1, down2, left1, left2, right1, right2, itemDest;
     public String direction = "stay";
 
     public int spriteCounter = 0;
@@ -124,6 +124,32 @@ public class Entity {
         }
 
 
+
+    }
+    public Color getParticleColor(){
+
+        Color color = null;
+        return color;
+    }
+
+    public int getParticleSize(){
+        int size = 0;
+        return size;
+    }
+
+    public int getParticleSpeed(){
+        int speed = 0;
+        return speed;
+    }
+
+    public void generateParticle(Entity generator, Entity target){
+
+        Color color = getParticleColor();
+        int size = getParticleSize();
+        int speed = getParticleSpeed();
+
+        Particle particle1 = new Particle(gamePanel, generator, color, size, speed, -1 ,-1);
+        gamePanel.particleList.add(particle1);
 
     }
 
