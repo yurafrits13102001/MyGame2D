@@ -10,6 +10,7 @@ public class KeyHandler implements KeyListener {
 
     public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed,  spasePressed, mousePressed;
     public boolean anyKeyPressed = false;
+    public boolean kPressed = false;
 
     public KeyHandler(GamePanel gamePanel) {
 
@@ -91,6 +92,10 @@ public class KeyHandler implements KeyListener {
             if (code == KeyEvent.VK_SPACE) {
                 spasePressed = true;
             }
+            if(code == KeyEvent.VK_K){
+                kPressed = true;
+
+            }
 
 
         } else if (gamePanel.gameState == gamePanel.pauseState) {
@@ -130,6 +135,9 @@ public class KeyHandler implements KeyListener {
                     gamePanel.playMusic(2);
                     gamePanel.ui.slotCol++;
                 }
+            }
+            if(code == KeyEvent.VK_ENTER){
+                gamePanel.player.selectItem();
             }
         }
     }

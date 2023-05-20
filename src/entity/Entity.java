@@ -16,13 +16,14 @@ public class Entity {
     public int worldX, worldY;
     public int speed;
 
-    public BufferedImage stay1, stay2, up1, up2, down1, down2, left1, left2, right1, right2;
+    public BufferedImage stay1, stay2, up1, up2, down1, down2, left1, left2, right1, right2, item;
     public String direction = "stay";
 
     public int spriteCounter = 0;
     public int spriteNum = 1;
 
     public Rectangle solidArea = new Rectangle(8, 20, 16, 16);
+    public Rectangle attackArea = new Rectangle(0, 0, 0, 0);
 
     public int solidAreaDefaultX, solidAreaDefaultY;
     public boolean collisionOn = false;
@@ -35,18 +36,30 @@ public class Entity {
     public String[] speech = new String[20];
     public int dialogueIndex = 0;
     public int speechIndex = 0;
-    public int type;
+    boolean attacking = false;
+
 
     //CHARACTER STATUS
     public int maxLife;
     public int life;
 
     public BufferedImage image, image2, image3, imageApple;
+    public BufferedImage axeUp1, axeUp2, axeUp3, axeDown1, axeDown2, axeDown3, axeLeft1, axeLeft2, axeLeft3,
+            axeRight1, axeRight2, axeRight3;
     public String name;
     public boolean collision = false;
 
 
     public String description = "";
+
+    //TYPE
+    public int type;
+    public final int typePlayer = 0;
+    public final int typeNpc = 1;
+    public final int typeMonster = 2;
+    public final int typeAxe = 3;
+    public final int typeApple = 4;
+    public final int typeKey = 5;
 
 
     public Entity(GamePanel gamePanel) {
@@ -226,14 +239,14 @@ public class Entity {
 
     }
 
-    public BufferedImage setup(String filePath) {
+    public BufferedImage setup(String filePath, int width, int height) {
 
         UtilityTool utilityTool = new UtilityTool();
         BufferedImage image = null;
 
         try {
             image = ImageIO.read((getClass().getResourceAsStream("/res/" + filePath + ".png")));
-            image = utilityTool.scaleImage(image, gamePanel.tileSize, gamePanel.tileSize);
+            image = utilityTool.scaleImage(image, width, height);
         } catch (IOException e) {
             e.printStackTrace();
         }

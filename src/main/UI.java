@@ -21,7 +21,7 @@ public class UI {
     Font daydream, gamer;
     BufferedImage apple1;
     BufferedImage heartFull, heartHalf, heartBlank;
-    BufferedImage purpleKeyImage, blueKeyImage, orangeKeyImage, purpleDoorimage, blueDoorImage, orangeDoorImage;
+
 
     Graphics2D g2;
 
@@ -48,20 +48,10 @@ public class UI {
         }
 
         //KEYS
-        OBJ_Key purpleKey = new OBJ_Key("Key_Purple", gamePanel);
-        OBJ_Key blueKey = new OBJ_Key("Key_Blue", gamePanel);
-        OBJ_Key orangeKey = new OBJ_Key("Key_Orange", gamePanel);
-        purpleKeyImage = purpleKey.up1;
-        blueKeyImage = blueKey.stay1;
-        orangeKeyImage = orangeKey.stay1;
+
 
         //DOORS
-        OBJ_Door purpleDoor = new OBJ_Door("Door_Purple", gamePanel);
-        OBJ_Door blueDoor = new OBJ_Door("Door_Blue", gamePanel);
-        OBJ_Door orangeDoor = new OBJ_Door("Door_Orange", gamePanel);
-        purpleDoorimage = purpleDoor.stay1;
-        blueDoorImage = blueDoor.up1;
-        orangeDoorImage = orangeDoor.stay1;
+
 
 
         //HEALTH
@@ -101,6 +91,7 @@ public class UI {
 
         if (gamePanel.gameState == gamePanel.playState) {
 
+
             drawPlayerHealth();
 
         }
@@ -120,6 +111,7 @@ public class UI {
         }
 
     }
+
 
 
     public void drawPlayerHealth() {
@@ -411,14 +403,17 @@ public class UI {
         //DRAW INVENTORY
         for(int i = 0; i < gamePanel.player.inventory.size(); i++){
 
-            g2.drawImage(gamePanel.player.inventory.get(i).down1, slotX, slotY, null);
+            //DRAW ITEM EQUIP
+            if(gamePanel.player.inventory.get(i) == gamePanel.player.currentInstrument){
+                g2.setColor(new Color(234, 134, 243));
+                g2.fillRoundRect(slotX, slotY, gamePanel.tileSize, gamePanel.tileSize, 10, 10);
+            }
+
+            g2.drawImage(gamePanel.player.inventory.get(i).stay1, slotX, slotY, null);
 
             slotX += gamePanel.tileSize;
 
-            if(i == 4 || i == 9 || i == 14){
-                slotX = slotXStart;
-                slotY += gamePanel.tileSize;
-            }
+
         }
 
         //DESCRIPTION FRAME
@@ -432,9 +427,30 @@ public class UI {
         //DRAW DESCRIPTION TEXT
         int textX = dFrameX + 20;
         int textY = dFrameY + gamePanel.tileSize;
+        g2.setFont(g2.getFont().deriveFont(40F));
+
+        int itemIndex = getItemIndexOnSlot();
+
+        if(itemIndex < gamePanel.player.inventory.size()){
 
 
 
+            for(String line: gamePanel.player.inventory.get(itemIndex).description.split("\n")){
+                g2.drawString(line, textX, textY);
+                textY += 32;
+            }
+        }
+        if(itemIndex >= gamePanel.player.inventory.size()){
+            g2.drawString("< none >", textX, textY);
+        }
+
+
+
+    }
+
+    public int getItemIndexOnSlot(){
+        int itemIndex = slotCol + (slotRow * 6);
+        return itemIndex;
     }
 
 

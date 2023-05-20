@@ -18,7 +18,7 @@ public class OBJ_Door extends Entity {
 
             case "Door_Purple":
 
-                stay1 = setup("/items/sprite_item4");
+                stay1 = setup("/items/sprite_item4", gamePanel.tileSize, gamePanel.tileSize);
                 collision = true;
                 solidArea.x = 0;
                 solidArea.y = 16;
@@ -28,7 +28,7 @@ public class OBJ_Door extends Entity {
                 solidAreaDefaultY = solidArea.y;
                 break;
             case "Door_Blue":
-                up1 = setup("/items/sprite_item5");
+                up1 = setup("/items/sprite_item5", gamePanel.tileSize, gamePanel.tileSize);
                 collision = true;
                 solidArea.x = 0;
                 solidArea.y = 32;
@@ -39,7 +39,7 @@ public class OBJ_Door extends Entity {
 
                 break;
             case  "Door_Orange":
-                stay1 = setup("/items/sprite_item6");
+                stay1 = setup("/items/sprite_item6", gamePanel.tileSize, gamePanel.tileSize);
                 collision = true;
                 solidArea.x = 0;
                 solidArea.y = 16;

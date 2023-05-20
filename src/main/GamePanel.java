@@ -2,6 +2,7 @@ package main;
 
 import entity.Entity;
 import entity.Player;
+import interactiveTiles.InteractiveTile;
 import javafx.geometry.Rectangle2D;
 
 import javafx.scene.Group;
@@ -81,6 +82,7 @@ public class GamePanel extends JPanel implements Runnable {
     public Entity[] npc = new Entity[10];
 
     public Entity[] monster = new Entity[20];
+    public InteractiveTile[] iTile = new InteractiveTile[50];
 
     ArrayList<Entity> entityList = new ArrayList<>();
 
@@ -111,6 +113,7 @@ public class GamePanel extends JPanel implements Runnable {
         assetSetter.setObject();
         assetSetter.setNpc();
         assetSetter.setMonster();
+        assetSetter.setInteractive();
 
         playMusic(0);
 
@@ -283,6 +286,12 @@ public class GamePanel extends JPanel implements Runnable {
                 }
             }
 
+            for(int i = 0; i < iTile.length; i++){
+                if(iTile[i] != null){
+                    iTile[i].update();
+                }
+            }
+
 
         }
         if(gameState == pauseState){
@@ -302,6 +311,10 @@ public class GamePanel extends JPanel implements Runnable {
 
         Graphics2D g2 = (Graphics2D) g;
 
+        //INVENTORY
+        if(gameState == inventoryState){
+            ui.draw(g2);
+        }
 
 
         //MAIN MENU
@@ -321,6 +334,12 @@ public class GamePanel extends JPanel implements Runnable {
 
             //TILE
             tileManager.draw(g2);
+
+            for (int i = 0; i < iTile.length; i++) {
+                if(iTile[i] != null){
+                    iTile[i].draw(g2);
+                }
+            }
 
 
             //ADD ENTITIES TO THE LIST

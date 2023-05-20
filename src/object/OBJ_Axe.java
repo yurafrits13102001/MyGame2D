@@ -9,9 +9,13 @@ public class OBJ_Axe extends Entity {
     public OBJ_Axe(GamePanel gamePanel) {
         super(gamePanel);
 
+        type = typeAxe;
+
         name = "Axe";
-        down1 = setup("/items/sprite_axe0");
-        description = "[Axe]";
+        stay1 = setup("/items/sprite_axe0", gamePanel.tileSize, gamePanel.tileSize);
+        direction = "stay";
+        description = "< Axe >";
+
 
     }
 }

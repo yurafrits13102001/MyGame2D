@@ -7,10 +7,14 @@ import java.util.Random;
 
 public class MON_GreenSlime extends Entity {
 
+    GamePanel gamePanel;
+
     public MON_GreenSlime(GamePanel gamePanel) {
         super(gamePanel);
 
-        type = 2;
+        this.gamePanel = gamePanel;
+
+        type = typeMonster;
 
         name = "Grean Slime";
         speed = 1;
@@ -29,14 +33,14 @@ public class MON_GreenSlime extends Entity {
 
     public void getImage(){
 
-        up1 = setup("/mobs/sprite_slime0");
-        up2 = setup("/mobs/sprite_slime10");
-        down1 = setup("/mobs/sprite_slime0");
-        down2 = setup("/mobs/sprite_slime10");
-        left1 = setup("/mobs/sprite_slime0");
-        left2 = setup("/mobs/sprite_slime10");
-        right1 = setup("/mobs/sprite_slime0");
-        right2 = setup("/mobs/sprite_slime10");
+        up1 = setup("/mobs/sprite_slime0", gamePanel.tileSize, gamePanel.tileSize);
+        up2 = setup("/mobs/sprite_slime10", gamePanel.tileSize, gamePanel.tileSize);
+        down1 = setup("/mobs/sprite_slime0", gamePanel.tileSize, gamePanel.tileSize);
+        down2 = setup("/mobs/sprite_slime10", gamePanel.tileSize, gamePanel.tileSize);
+        left1 = setup("/mobs/sprite_slime0", gamePanel.tileSize, gamePanel.tileSize);
+        left2 = setup("/mobs/sprite_slime10", gamePanel.tileSize, gamePanel.tileSize);
+        right1 = setup("/mobs/sprite_slime0", gamePanel.tileSize, gamePanel.tileSize);
+        right2 = setup("/mobs/sprite_slime10", gamePanel.tileSize, gamePanel.tileSize);
     }
 
     public void setAction(){

@@ -9,11 +9,14 @@ public class OBJ_Apple extends Entity {
 
         super(gamePanel);
 
+        type = typeApple;
+
         this.name = name;
 
-        imageApple = setup("/items/sprite_apple0");
+        stay1 = setup("/items/sprite_apple0", gamePanel.tileSize, gamePanel.tileSize);
 
         collision = true;
+        description = "< Apple > \n Restore full health";
 
 
 

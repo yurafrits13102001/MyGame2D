@@ -15,6 +15,7 @@ public class Sound {
         soundURL[0] = getClass().getResource("/res/sounds/back_song_demo.wav");
         soundURL[1] = getClass().getResource("/res/sounds/coin.wav");
         soundURL[2] = getClass().getResource("/res/sounds/sound83.wav");
+        soundURL[3] = getClass().getResource("/res/sounds/20279__koops__apple_crunch_16.wav");
     }
 
     public void setFile(int index) {

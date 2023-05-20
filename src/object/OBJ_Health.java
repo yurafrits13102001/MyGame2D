@@ -17,9 +17,9 @@ public class OBJ_Health extends Entity {
 
         name = "Health";
 
-        image = setup("/items/sprite_health0");
-        image2 = setup("/items/sprite_health1");
-        image3 = setup("/items/sprite_health2");
+        image = setup("/items/sprite_health0", gamePanel.tileSize, gamePanel.tileSize);
+        image2 = setup("/items/sprite_health1", gamePanel.tileSize, gamePanel.tileSize);
+        image3 = setup("/items/sprite_health2", gamePanel.tileSize, gamePanel.tileSize);
 
 
         collision = true;

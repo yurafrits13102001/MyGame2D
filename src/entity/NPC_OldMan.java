@@ -15,6 +15,8 @@ public class NPC_OldMan extends Entity {
 
         super(gamePanel);
 
+        type = typeNpc;
+
         direction = "stay";
         speed = 1;
 
@@ -33,16 +35,16 @@ public class NPC_OldMan extends Entity {
     public void getNpcImage() {
 
 
-        stay1 = setup("npc/sprite_old_man2222");
-        stay2 = setup("npc/sprite_oldman111111");
-        up1 = setup("npc/sprite_oldman9999");
-        up2 = setup("npc/sprite_oldman101010");
-        down1 = setup("npc/sprite_oldman3333");
-        down2 = setup("npc/sprite_oldman4444");
-        left1 = setup("npc/sprite_oldman5555");
-        left2 = setup("npc/sprite_oldman6666");
-        right1 = setup("npc/sprite_oldman7777");
-        right2 = setup("npc/sprite_oldman8888");
+        stay1 = setup("npc/sprite_old_man2222", gamePanel.tileSize, gamePanel.tileSize);
+        stay2 = setup("npc/sprite_oldman111111", gamePanel.tileSize, gamePanel.tileSize);
+        up1 = setup("npc/sprite_oldman9999", gamePanel.tileSize, gamePanel.tileSize);
+        up2 = setup("npc/sprite_oldman101010", gamePanel.tileSize, gamePanel.tileSize);
+        down1 = setup("npc/sprite_oldman3333", gamePanel.tileSize, gamePanel.tileSize);
+        down2 = setup("npc/sprite_oldman4444", gamePanel.tileSize, gamePanel.tileSize);
+        left1 = setup("npc/sprite_oldman5555", gamePanel.tileSize, gamePanel.tileSize);
+        left2 = setup("npc/sprite_oldman6666", gamePanel.tileSize, gamePanel.tileSize);
+        right1 = setup("npc/sprite_oldman7777", gamePanel.tileSize, gamePanel.tileSize);
+        right2 = setup("npc/sprite_oldman8888", gamePanel.tileSize, gamePanel.tileSize);
     }
 
     public void setDialogue(){

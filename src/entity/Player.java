@@ -4,6 +4,7 @@ import main.GamePanel;
 import main.KeyHandler;
 import main.UtilityTool;
 import object.OBJ_Axe;
+import object.OBJ_Key;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -46,8 +47,12 @@ public class Player extends Entity {
         solidArea.width = 16;
         solidArea.height = 18;
 
+        attackArea.width = 16;
+        attackArea.height = 18;
+
         setDefaultValues();
         getPlayerImage();
+        getPlayerAxeImages();
         setSpeech();
         setItems();
     }
@@ -66,43 +71,65 @@ public class Player extends Entity {
 
     public Entity currentInstrument = new OBJ_Axe(gamePanel);
 
-    public void setItems(){
+    public void setItems() {
         inventory.add(currentInstrument);
+
 
     }
 
-    public void setSpeech(){
+    public void setSpeech() {
 
         speech[0] = "Marichka: Oh no!!!! Where i am?????!!!!\n I have to be home by 10 pm!!!! ";
         speech[1] = "Spreader: Hello!!! you got into this world by accident!!\n To return to Novoselitsa, you must find a portal!!!";
         speech[2] = "Great adventures and even dangerous challenges await you ahead!!\n Be careful! Good luck!!!";
-        speech[3]  = null;
+        speech[3] = null;
     }
 
     public void getPlayerImage() {
 
 
-        stay1 = setup("player/sprite_marichka_new_model0");
-        stay2 = setup("player/sprite_marichka04");
-        up1 = setup("player/sprite_marichka_newmodel20");
-        up2 = setup("player/sprite_marichka_newmodel21");
-        down1 = setup("player/sprite_marichka_newmodel10");
-        down2 = setup("player/sprite_marichka_newmodel11");
-        left1 = setup("player/sprite_marichka_newmodel31");
-        left2 = setup("player/sprite_marichka_newmodel41");
-        right1 = setup("player/sprite_marichka_newmodel30");
-        right2 = setup("player/sprite_marichka_newmodel40");
+        stay1 = setup("player/sprite_marichka_new_model0", gamePanel.tileSize, gamePanel.tileSize);
+        stay2 = setup("player/sprite_marichka04", gamePanel.tileSize, gamePanel.tileSize);
+        up1 = setup("player/sprite_marichka_newmodel20", gamePanel.tileSize, gamePanel.tileSize);
+        up2 = setup("player/sprite_marichka_newmodel21", gamePanel.tileSize, gamePanel.tileSize);
+        down1 = setup("player/sprite_marichka_newmodel10", gamePanel.tileSize, gamePanel.tileSize);
+        down2 = setup("player/sprite_marichka_newmodel11", gamePanel.tileSize, gamePanel.tileSize);
+        left1 = setup("player/sprite_marichka_newmodel31", gamePanel.tileSize, gamePanel.tileSize);
+        left2 = setup("player/sprite_marichka_newmodel41", gamePanel.tileSize, gamePanel.tileSize);
+        right1 = setup("player/sprite_marichka_newmodel30", gamePanel.tileSize, gamePanel.tileSize);
+        right2 = setup("player/sprite_marichka_newmodel40", gamePanel.tileSize, gamePanel.tileSize);
+    }
+
+    public void getPlayerAxeImages() {
+
+        axeDown1 = setup("/player/attackAxe/sprite_axeHitDown0", gamePanel.tileSize, gamePanel.tileSize);
+        axeDown2 = setup("/player/attackAxe/sprite_axeHitDown1", gamePanel.tileSize, gamePanel.tileSize);
+        axeDown3 = setup("/player/attackAxe/sprite_axeHitDown2", gamePanel.tileSize, gamePanel.tileSize);
+        axeUp1 = setup("/player/attackAxe/sprite_axeHitUp0", gamePanel.tileSize, gamePanel.tileSize);
+        axeUp2 = setup("/player/attackAxe/sprite_axeHitUp1", gamePanel.tileSize, gamePanel.tileSize);
+        axeUp3 = setup("/player/attackAxe/sprite_axeHitUp1", gamePanel.tileSize, gamePanel.tileSize);
+        axeLeft1 = setup("/player/attackAxe/sprite_axeHitLeft0", gamePanel.tileSize, gamePanel.tileSize);
+        axeLeft2 = setup("/player/attackAxe/sprite_axeHitLeft1", gamePanel.tileSize, gamePanel.tileSize);
+        axeLeft3 = setup("/player/attackAxe/sprite_axeHitLeft2", 100, gamePanel.tileSize);
+        axeRight1 = setup("/player/attackAxe/sprite_axeHitRight0", gamePanel.tileSize, gamePanel.tileSize);
+        axeRight2 = setup("/player/attackAxe/sprite_axeHitRight1", gamePanel.tileSize, gamePanel.tileSize);
+        axeRight3 = setup("/player/attackAxe/sprite_axeHitRight2", 100, gamePanel.tileSize);
     }
 
 
     public void update() {
-        if (!keyHandler.leftPressed || !keyHandler.rightPressed || !keyHandler.upPressed ||
+
+        if (attacking == true) {
+
+
+            attacking();
+        } else if (!keyHandler.leftPressed || !keyHandler.rightPressed || !keyHandler.upPressed ||
                 !keyHandler.downPressed) {
             direction = "stay";
 
 
             if (keyHandler.downPressed == true || keyHandler.upPressed == true ||
-                    keyHandler.leftPressed == true || keyHandler.rightPressed == true ) {
+                    keyHandler.leftPressed == true || keyHandler.rightPressed == true) {
 
 
                 if (keyHandler.upPressed) {
@@ -138,6 +165,9 @@ public class Player extends Entity {
                 int monsterIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.monster);
                 contactMonster(monsterIndex);
 
+
+
+
                 //CHECK PLAYER COLLISION:
 
                 //CHECK EVENT
@@ -145,9 +175,6 @@ public class Player extends Entity {
                 gamePanel.eventHandler.checkEvent();
 
                 //start
-
-
-
 
 
                 //IF COLLISION ID FALSE - PLAYER CAN MOVE
@@ -181,96 +208,114 @@ public class Player extends Entity {
             }
 
         }
-        if(invincible == true){
+        if (invincible == true) {
             invincibleCounter++;
-            if(invincibleCounter > 60){
+            if (invincibleCounter > 60) {
                 invincible = false;
                 invincibleCounter = 0;
             }
         }
     }
 
+    private void damageInteractiveTiles(int i) {
+
+        if(i != 999 && gamePanel.iTile[i].destructible == true){
+
+            gamePanel.iTile[i] = null;
+        }
+    }
+
     @Override
-    public void startingSpeech(){
+    public void startingSpeech() {
 
         super.startingSpeech();
+    }
+
+    public void attacking() {
+
+        spriteCounter++;
+
+        if (spriteCounter < 5) {
+            spriteNum = 1;
+        }
+        if (spriteCounter > 5 && spriteCounter < 10) {
+            spriteNum = 2;
+        }
+        if (spriteCounter > 10 && spriteCounter < 25) {
+            spriteNum = 3;
+
+            int currentWorldX = worldX;
+            int currentWorldY = worldY;
+            int solidAreaWidth = solidArea.width;
+            int solidAreaHeight = solidArea.height;
+
+            switch (direction){
+                case "up": worldY -= attackArea.height; break;
+                case "down": worldY += attackArea.height; break;
+                case  "left": worldX -= attackArea.width; break;
+                case "right": worldX += attackArea.width; break;
+            }
+
+            solidArea.width = attackArea.width;
+            solidArea.height = attackArea.height;
+
+            int treeIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.iTile);
+            damageInteractiveTiles(treeIndex);
+
+            worldX = currentWorldX;
+            worldY = currentWorldY;
+            solidArea.width = solidAreaWidth;
+            solidArea.height = solidAreaHeight;
+
+
+        }
+        if (spriteCounter > 25) {
+            spriteNum = 1;
+            spriteCounter = 0;
+            attacking = false;
+
+        }
+
     }
 
     public void pickupObject(int index) {
 
         if (index != 999) {
+            String text = "";
 
-            String objectName = gamePanel.obj[index].name;
-
-            switch (objectName) {
-                case "Key_Purple":
-                    gamePanel.playMusic(1);
-                    hasPurpleKey++;
-                    gamePanel.obj[index] = null;
-
-                    break;
-                case "Key_Blue":
-                    gamePanel.playMusic(1);
-                    hasBlueKey++;
-                    gamePanel.obj[index] = null;
-
-                    break;
-                case "Key_Orange":
-                    gamePanel.playMusic(1);
-                    hasOrangeKey++;
-                    gamePanel.obj[index] = null;
-                    break;
-                case "Door_Purple":
-                    if (hasPurpleKey > 0) {
-                        gamePanel.obj[index] = null;
-                        hasPurpleKey--;
-                    }
-                    break;
-                case "Door_Blue":
-                    if (hasBlueKey > 0) {
-                        gamePanel.obj[index] = null;
-                        hasBlueKey--;
-                    }
-                    break;
-                case "Door_Orange":
-                    if (hasOrangeKey > 0) {
-                        gamePanel.obj[index] = null;
-                        hasOrangeKey--;
-                    }
-                    break;
-                case "Apple":
-                    gamePanel.playMusic(1);
-                    hasApple++;
-                    gamePanel.obj[index] = null;
-                    if(hasApple > 0){
-                        life = maxLife;
-                    }
+            if (inventory.size() != inventorySize) {
 
 
+                inventory.add(gamePanel.obj[index]);
+                gamePanel.playMusic(1);
+
+
+            } else {
+                text = "You can not carry any more items!";
             }
+            gamePanel.obj[index] = null;
         }
     }
 
     public void interactNpc(int index) {
+        if (gamePanel.keyHandler.enterPressed == true) {
 
-        if (index != 999) {
+            if (index != 999) {
 
-            if(gamePanel.keyHandler.enterPressed == true) {
 
                 gamePanel.gameState = gamePanel.dialogueState;
                 gamePanel.npc[index].speak();
+            }
+        }
 
-
+            if(keyHandler.kPressed == true) {
+                attacking = true;
+                keyHandler.kPressed = false;
             }
 
-        }
-       // gamePanel.keyHandler.enterPressed = false;
 
-    }
-
-
-
-
+}
+    // gamePanel.keyHandler.enterPressed = false;
 
 
     public void interactPlayer() {
@@ -279,12 +324,31 @@ public class Player extends Entity {
 
     }
 
-    public void contactMonster(int i){
+    public void contactMonster(int i) {
 
-        if(i != 999){
-            if(invincible == false) {
+        if (i != 999) {
+            if (invincible == false) {
                 life -= 1;
                 invincible = true;
+            }
+        }
+    }
+
+    public void selectItem() {
+
+        int itemIndex = gamePanel.ui.getItemIndexOnSlot();
+        if (itemIndex < inventory.size()) {
+
+            Entity selectedItem = inventory.get(itemIndex);
+
+            if (selectedItem.type == typeAxe) {
+
+                currentInstrument = selectedItem;
+            }
+            if (selectedItem.type == typeApple) {
+                gamePanel.playMusic(3);
+                life = maxLife;
+                inventory.remove(itemIndex);
             }
         }
     }
@@ -295,50 +359,109 @@ public class Player extends Entity {
 //        g2.fillRect(x, y, gamePanel.tileSize, gamePanel.tileSize);
 
         BufferedImage image = null;
+        switch (direction) {
 
-        if (Objects.equals(direction, "up")) {
-            if (spriteNum == 1) {
-                image = up1;
-            }
-            if (spriteNum == 2) {
-                image = up2;
-            }
-        }
-        if (Objects.equals(direction, "down")) {
-            if (spriteNum == 1) {
-                image = down1;
-            }
-            if (spriteNum == 2) {
-                image = down2;
-            }
+            case "up":
+                if (attacking == false) {
+                    if (spriteNum == 1) {
+                        image = up1;
+                    }
+                    if (spriteNum == 2) {
+                        image = up2;
+                    }
+                }
+                if (attacking == true) {
+                    if (spriteNum == 1) {
+                        image = axeUp1;
+                    }
+                    if (spriteNum == 2) {
+                        image = axeUp2;
+                    }
+                    if (spriteNum == 3) {
+                        image = axeUp3;
+                    }
+                }
+                break;
 
-        }
-        if (Objects.equals(direction, "left")) {
-            if (spriteNum == 1) {
-                image = left1;
-            }
-            if (spriteNum == 2) {
-                image = left2;
-            }
-        }
-        if (Objects.equals(direction, "right")) {
-            if (spriteNum == 1) {
-                image = right1;
-            }
-            if (spriteNum == 2) {
-                image = right2;
-            }
-        }
-        if (Objects.equals(direction, "stay")) {
-            if (spriteNum == 1) {
-                image = stay1;
-            }
-            if (spriteNum == 2) {
-                image = stay1;
-            }
+            case "down":
+                if (attacking == false) {
+                    if (spriteNum == 1) {
+                        image = down1;
+                    }
+                    if (spriteNum == 2) {
+                        image = down2;
+                    }
+                }
+                if (attacking == true) {
+                    if (spriteNum == 1) {
+                        image = axeDown1;
+                    }
+                    if (spriteNum == 2) {
+                        image = axeDown2;
+                    }
+                    if (spriteNum == 3) {
+                        image = axeDown3;
+                    }
+                }
+                break;
+
+            case "left":
+                if (attacking == false) {
+                    if (spriteNum == 1) {
+                        image = left1;
+                    }
+                    if (spriteNum == 2) {
+                        image = left2;
+                    }
+                } else {
+                    if (spriteNum == 1) {
+                        image = axeLeft1;
+                    }
+                    if (spriteNum == 2) {
+                        image = axeLeft2;
+                    }
+                    if (spriteNum == 3) {
+                        image = axeLeft3;
+                    }
+                }
+                break;
+
+            case "right":
+                if (attacking == false) {
+
+
+                    if (spriteNum == 1) {
+                        image = right1;
+                    }
+                    if (spriteNum == 2) {
+                        image = right2;
+                    }
+                }
+                if (attacking == true) {
+                    if (spriteNum == 1) {
+                        image = axeRight1;
+                    }
+                    if (spriteNum == 2) {
+                        image = axeRight2;
+                    }
+                    if (spriteNum == 3) {
+                        image = axeRight3;
+                    }
+                }
+                break;
+
+            case "stay":
+
+                if (spriteNum == 1) {
+                    image = stay1;
+                }
+                if (spriteNum == 2) {
+                    image = stay1;
+                }
         }
 
-        if(invincible == true) {
+
+        if (invincible == true) {
 
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.2f));
 

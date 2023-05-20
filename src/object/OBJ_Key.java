@@ -9,30 +9,17 @@ import java.io.IOException;
 public class OBJ_Key extends Entity {
 
 
-    public OBJ_Key(String name, GamePanel gamePanel) {
+    public OBJ_Key( GamePanel gamePanel) {
 
         super(gamePanel);
+        type = typeKey;
+        name = "Key";
+        stay1 = setup("/items/sprite_item2", gamePanel.tileSize, gamePanel.tileSize);
+        collision = true;
+        description = " < Key >" + "\n to open the doors";
 
 
-        switch (this.name = name) {
 
-            case "Key_Purple":
-                stay1 = setup("/items/sprite_item0");
-                collision = true;
-                break;
-            case "Key_Blue":
-                stay1 = setup("/items/sprite_item1");
-                collision = true;
-                break;
-            case "Key_Orange":
-                stay1 = setup("/items/sprite_item2");
-                collision = true;
-                break;
-            case "Apple":
-                stay1 = setup("/items/sprite_apple0");
-                collision = true;
-
-        }
     }
 }
 
