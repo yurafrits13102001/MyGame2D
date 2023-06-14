@@ -14,7 +14,7 @@ public class OBJ_Key extends Entity {
         super(gamePanel);
         type = typeKey;
         name = "Key";
-        stay1 = setup("/items/sprite_item2", gamePanel.tileSize, gamePanel.tileSize);
+        stay1 = setup("/items/sprite_newKey0", gamePanel.tileSize, gamePanel.tileSize);
         collision = true;
         description = " < Key >" + "\n to open the doors";
 

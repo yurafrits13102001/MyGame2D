@@ -2,9 +2,9 @@ package main;
 
 import entity.Entity;
 import object.OBJ_Apple;
-import object.OBJ_Door;
+import object.OBJ_Coin;
 import object.OBJ_Health;
-import object.OBJ_Key;
+import object.OBJ_Mana;
 
 
 import javax.imageio.ImageIO;
@@ -13,6 +13,7 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class UI {
 
@@ -21,6 +22,7 @@ public class UI {
     Font daydream, gamer;
     BufferedImage apple1;
     BufferedImage heartFull, heartHalf, heartBlank;
+    BufferedImage manaFull, manaHalf, manaBlank;
 
 
     Graphics2D g2;
@@ -32,16 +34,19 @@ public class UI {
 
     public int slotCol = 0;
     public int slotRow = 0;
+    public int subState = 0;
+    public ArrayList<String> message = new ArrayList<>();
+    public ArrayList<Integer> messageCounter = new ArrayList<>();
 
     public UI(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
 
         try {
 
-            InputStream is = getClass().getResourceAsStream("/res/fonts/Daydream.ttf");
+            InputStream is = getClass().getResourceAsStream("/fonts/Daydream.ttf");
             daydream = Font.createFont(Font.TRUETYPE_FONT, is);
 
-            InputStream is2 = getClass().getResourceAsStream("/res/fonts/Gamer.ttf");
+            InputStream is2 = getClass().getResourceAsStream("/fonts/Dited.ttf");
             gamer = Font.createFont(Font.TRUETYPE_FONT, is2);
         } catch (TypeNotPresentException | FontFormatException | IOException e) {
             e.printStackTrace();
@@ -60,9 +65,19 @@ public class UI {
         heartHalf = heart.image2;
         heartBlank = heart.image3;
 
+        //MANA
+        Entity mana = new OBJ_Mana(gamePanel);
+        manaFull = mana.image;
+        manaHalf = mana.image2;
+        manaBlank = mana.image3;
+
+
         //APPLE
         OBJ_Apple apple = new OBJ_Apple("Apple", gamePanel);
         apple1 = apple.imageApple;
+
+        OBJ_Coin coin = new OBJ_Coin(gamePanel);
+        apple1 = coin.image;
 
 
     }
@@ -73,15 +88,13 @@ public class UI {
 
         g2.setFont(gamer);
         g2.setColor(Color.white);
-//        g2.drawImage(purpleKeyImage, gamePanel.tileSize/2, gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
-//        g2.drawImage(blueKeyImage, gamePanel.tileSize/2, gamePanel.tileSize + gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
-//        g2.drawImage(orangeKeyImage, gamePanel.tileSize/2, gamePanel.tileSize + gamePanel.tileSize + gamePanel.tileSize/2, gamePanel.tileSize, gamePanel.tileSize, null);
-//        g2.drawString("x" + gamePanel.player.hasPurpleKey, 70, 68);
-//        g2.drawString("x" + gamePanel.player.hasBlueKey, 70, 118);
-//        g2.drawString("x" + gamePanel.player.hasOrangeKey, 70, 166);
+//        g2.drawImage(apple1, 600, 68, gamePanel.tileSize, gamePanel.tileSize, null);
+//
+//        g2.drawString("coins" + gamePanel.player.value, 70, 68);
+
 
         if (gamePanel.gameState == gamePanel.introState) {
-            drawIntroScreen();
+            //drawIntroScreen();
 
         }
 
@@ -90,24 +103,98 @@ public class UI {
         }
 
         if (gamePanel.gameState == gamePanel.playState) {
-
-
             drawPlayerHealth();
+            drawPlayerMana();
+            drawMessage();
 
         }
         if (gamePanel.gameState == gamePanel.pauseState) {
             drawPlayerHealth();
+            drawPlayerMana();
 
             drawPauseScreen();
         }
         if (gamePanel.gameState == gamePanel.dialogueState) {
             drawPlayerHealth();
+            drawPlayerMana();
             drawDialogueScreen();
 
         }
         if(gamePanel.gameState == gamePanel.inventoryState){
             drawInventory();
             drawPlayerHealth();
+            drawPlayerMana();
+        }
+        if(gamePanel.gameState == gamePanel.optionsState){
+            drawOptionScreen();
+        }
+
+    }
+
+    public void addMessage(String text){
+
+        message.add(text);
+        messageCounter.add(0);
+    }
+
+    public void drawMessage(){
+
+        int messageX = gamePanel.tileSize;
+        int messageY = gamePanel.tileSize * 4;
+
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 32));
+
+        for(int i = 0; i < message.size(); i++){
+
+            if(message.get(i) != null){
+
+                g2.setColor(Color.white);
+                g2.drawString(message.get(i), messageX, messageY);
+
+                int counter = messageCounter.get(i) + 1;
+                messageCounter.set(i, counter);
+                
+                messageY += 50;
+
+                if(messageCounter.get(i) > 180){
+                    message.remove(i);
+                    messageCounter.remove(i);
+                }
+            }
+        }
+    }
+
+    public void drawPlayerMana() {
+
+        int x = gamePanel.tileSize / 2;
+        int y = gamePanel.tileSize / 2 + gamePanel.tileSize;
+        int i = 0;
+
+        //draw max life
+
+        while (i < gamePanel.player.maxMana / 2) {
+            g2.drawImage(manaBlank, x, y, null);
+            i++;
+            x += gamePanel.tileSize;
+        }
+
+        //reset
+
+        x = gamePanel.tileSize / 2;
+        y = gamePanel.tileSize / 2 + gamePanel.tileSize;
+        i = 0;
+
+        //draw current life
+        while (i < gamePanel.player.mana) {
+            g2.drawImage(manaHalf, x, y, null);
+            i++;
+            if (i < gamePanel.player.mana) {
+                g2.drawImage(manaFull, x, y, null);
+                i++;
+                x += gamePanel.tileSize;
+            }
+
+
         }
 
     }
@@ -206,14 +293,14 @@ public class UI {
     public void drawIntroScreen() {
         BufferedImage[] images = new BufferedImage[10];
         try {
-            images[0] = ImageIO.read(getClass().getResourceAsStream("/res/slides/alarmClock1.jpg"));
+            images[0] = ImageIO.read(getClass().getResourceAsStream("/slides/alarmClock1.jpg"));
 
-            images[1] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide1.jpg"));
+            images[1] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide1.jpg"));
             images[1].getScaledInstance(gamePanel.screenWidth,gamePanel.screenHeight,Image.SCALE_DEFAULT);
-            images[2] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide2.jpg"));
-            images[3] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide3.jpg"));
-            images[4] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide$.jpg"));
-            images[5] = ImageIO.read(getClass().getResourceAsStream("/res/slides/marichkaSlide5.jpg"));
+            images[2] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide2.jpg"));
+            images[3] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide3.jpg"));
+            images[4] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide$.jpg"));
+            images[5] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide5.jpg"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -446,6 +533,198 @@ public class UI {
 
 
 
+    }
+    public void drawOptionScreen(){
+
+        g2.setColor(Color.white);
+        g2.setFont(g2.getFont().deriveFont(32F));
+
+        //sub window
+        int frameX = gamePanel.tileSize*6;
+        int frameY = gamePanel.tileSize;
+        int frameWidth = gamePanel.tileSize*8;
+        int frameHeight = gamePanel.tileSize*10;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+        switch (subState){
+            case 0: optionsTop(frameX, frameY); break;
+            case 1: optionsControl(frameX, frameY); break;
+            case 3: mainMenuConfirmation(frameX, frameY); break;
+        }
+    }
+
+    public void optionsTop(int frameX, int frameY){
+
+        int textX;
+        int textY;
+
+        //title
+        String text = "Options";
+        textX = getXForCenteredText(text);
+        textY = frameY + gamePanel.tileSize;
+        g2.drawString(text, textX, textY);
+
+        //music
+        textX = frameX + gamePanel.tileSize;
+        textY += gamePanel.tileSize*2;
+        g2.drawString("Music", textX, textY);
+        if(commandNum == 0){
+            g2.drawString(">", textX - 25, textY);
+        }
+
+
+        //se
+        textY += gamePanel.tileSize;
+        g2.drawString("SE", textX, textY);
+        if(commandNum == 1){
+            g2.drawString(">", textX - 25, textY);
+        }
+
+
+        //control
+        textY += gamePanel.tileSize;
+        g2.drawString("Control", textX, textY);
+        if(commandNum == 2){
+            g2.drawString(">", textX - 25, textY);
+            if(gamePanel.keyHandler.enterPressed == true){
+                subState = 1;
+                commandNum = 0;
+                gamePanel.keyHandler.enterPressed = false;
+
+            }
+        }
+
+        //end game
+        textY += gamePanel.tileSize;
+        g2.drawString("Main Menu", textX, textY);
+        if(commandNum == 3){
+            g2.drawString(">", textX - 25, textY);
+            if(gamePanel.keyHandler.enterPressed == true){
+                subState = 3;
+                commandNum = 0;
+                gamePanel.keyHandler.enterPressed = false;
+
+            }
+        }
+
+        //back
+        textY += gamePanel.tileSize*2;
+        g2.drawString("Back", textX, textY);
+        if(commandNum == 4){
+            g2.drawString(">", textX - 25, textY);
+            if(gamePanel.keyHandler.enterPressed == true){
+                gamePanel.gameState = gamePanel.playState;
+                gamePanel.keyHandler.enterPressed = false;
+
+            }
+        }
+
+        //music volume
+        textX = frameX +  gamePanel.tileSize*5;
+        textY = frameY + gamePanel.tileSize*2 + 24;
+        g2.drawRect(textX, textY, 120, 24);
+        int volumeWidth = 24 * gamePanel.music.volumeScale;
+        g2.fillRect(textX, textY, volumeWidth, 24);
+
+
+        //se volume
+        textY += gamePanel.tileSize;
+        g2.drawRect(textX, textY, 120, 24);
+        volumeWidth = 24 * gamePanel.sound.volumeScale;
+        g2.fillRect(textX, textY, volumeWidth, 24);
+    }
+
+    public void optionsControl(int frameX, int frameY){
+
+        int textX;
+        int textY;
+
+        //title
+        String text = "Control";
+        textX = getXForCenteredText(text);
+        textY = frameY + gamePanel.tileSize;
+
+        g2.drawString(text, textX, textY);
+
+        textX = frameX + gamePanel.tileSize;
+        textY += gamePanel.tileSize;
+        g2.drawString("Move", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Confirm", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Use instrument", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Shoot/Cast", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Inventory Screen", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Pause", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Options", textX, textY); textY += gamePanel.tileSize;
+
+        textX = frameX + gamePanel.tileSize*6;
+        textY = frameY + gamePanel.tileSize*2;
+        g2.drawString("WASD", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Enter", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("K", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("J", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("C", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("P", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("ESC", textX, textY); textY += gamePanel.tileSize;
+
+        //back
+        textX = frameX + gamePanel.tileSize;
+        textY = frameY + gamePanel.tileSize*9;
+        g2.drawString("Back", textX, textY);
+        if (commandNum == 0) {
+            g2.drawString(">", textX - 25, textY);
+            if(gamePanel.keyHandler.enterPressed == true){
+                subState = 0;
+                commandNum = 0;
+            }
+        }
+
+
+    }
+
+    public void mainMenuConfirmation(int frameX, int frameY){
+
+        int textX = frameX + gamePanel.tileSize;
+        int textY = frameY + gamePanel.tileSize*3;
+
+        currentDialogue = "Are you sure to exit?";
+
+        for(String line: currentDialogue.split("/n")) {
+
+            g2.drawString(line, textX, textY);
+            textY += 40;
+        }
+
+        //yes
+        String text = "Yes";
+        textX = getXForCenteredText(text);
+        textY = gamePanel.tileSize*5;
+        g2.drawString(text, textX, textY);
+        if(commandNum == 0){
+            g2.drawString(">", textX - 25, textY);
+            if(gamePanel.keyHandler.enterPressed == true){
+                subState = 0;
+                gamePanel.gameState = gamePanel.mainMenuState;
+                gamePanel.keyHandler.enterPressed = false;
+            }
+        }
+
+
+        //no
+        text = "No";
+        textX = getXForCenteredText(text);
+        textY = gamePanel.tileSize*7;
+        g2.drawString(text, textX, textY);
+        if(commandNum == 1){
+            g2.drawString(">", textX - 25, textY);
+            if(gamePanel.keyHandler.enterPressed == true){
+                subState = 0;
+                commandNum = 3;
+                gamePanel.keyHandler.enterPressed = false;
+
+
+
+            }
+        }
     }
 
     public int getItemIndexOnSlot(){

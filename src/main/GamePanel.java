@@ -3,27 +3,15 @@ package main;
 import entity.Entity;
 import entity.Player;
 import interactiveTiles.InteractiveTile;
-import javafx.geometry.Rectangle2D;
 
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
-import javafx.stage.Screen;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Objects;
 
 public class GamePanel extends JPanel implements Runnable {
@@ -51,18 +39,20 @@ public class GamePanel extends JPanel implements Runnable {
 
     public int gameState;
     public int mainMenuState = 0;
-    public int playState = 1;
-    public int pauseState = 2;
-    public int dialogueState = 3;
-    public int introState = 5;
-    public int startingGameState = 4;
-    public int inventoryState = 6;
+    public final int playState = 1;
+    public final int pauseState = 2;
+    public final int dialogueState = 3;
+    public final int introState = 5;
+    public final int startingGameState = 4;
+    public final int inventoryState = 6;
+    public final int optionsState = 7;
 
     TileManager tileManager = new TileManager(this);
 
     public KeyHandler keyHandler = new KeyHandler(this);
 
     Sound sound = new Sound();
+    Sound music = new Sound();
 
 
     public CollisionChecker collisionChecker = new CollisionChecker(this);
@@ -78,7 +68,7 @@ public class GamePanel extends JPanel implements Runnable {
     //ENTITY AND OBJECT
     public Player player = new Player(this, keyHandler);
 
-    public Entity[] obj = new Entity[10];
+    public Entity[] obj = new Entity[20];
     public Entity[] npc = new Entity[10];
 
     public Entity[] monster = new Entity[20];
@@ -87,6 +77,7 @@ public class GamePanel extends JPanel implements Runnable {
     public ArrayList<Entity> particleList = new ArrayList<>();
 
     ArrayList<Entity> entityList = new ArrayList<>();
+    public ArrayList<Entity> projectileList = new ArrayList<>();
 
     //set player's default position
 //    int playerX = 100;
@@ -260,8 +251,7 @@ public class GamePanel extends JPanel implements Runnable {
     public void update() {
 
 
-
-        if(gameState == playState) {
+        if (gameState == playState) {
 
             //start
 
@@ -271,46 +261,61 @@ public class GamePanel extends JPanel implements Runnable {
 
             //npc update
             for (int i = 0; i < npc.length; i++) {
-                if(npc[i] != null){
+                if (npc[i] != null) {
                     npc[i].update();
                 }
 
             }
-            for(int i = 0; i < monster.length; i++){
-                if(monster[i] != null){
-                    monster[i].update();
+            for (int i = 0; i < monster.length; i++) {
+                if (monster[i] != null) {
+                    if (monster[i].alive == true && monster[i].dying == false) {
+
+                        monster[i].update();
+                    }
+                    if (monster[i].alive == false) {
+                        monster[i].checkDrop();
+                        monster[i] = null;
+                    }
+
                 }
             }
+
 
             for (int i = 0; i < obj.length; i++) {
-                if(obj[i] != null){
-                   obj[i].update();
+                if (obj[i] != null) {
+                    obj[i].update();
                 }
             }
 
-            for(int i = 0; i < iTile.length; i++){
-                if(iTile[i] != null){
+            for (int i = 0; i < iTile.length; i++) {
+                if (iTile[i] != null) {
                     iTile[i].update();
                 }
             }
             for (int i = 0; i < particleList.size(); i++) {
-                if(particleList.get(i) != null){
+                if (particleList.get(i) != null) {
                     particleList.get(i).update();
                 }
+            }
 
+            for (int i = 0; i < projectileList.size(); i++) {
+                if (projectileList.get(i) != null) {
+                    if (projectileList.get(i).alive == true) {
+                        projectileList.get(i).update();
+                    }
+                    if (projectileList.get(i).alive == false) {
+                        projectileList.remove(i);
+                    }
+                }
+
+
+            }
+            if (gameState == pauseState) {
+                //nothing
             }
 
 
         }
-        if(gameState == pauseState){
-            //nothing
-        }
-
-
-
-
-
-
     }
 
     public void paintComponent(Graphics g) {
@@ -357,7 +362,7 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
             for (int i = 0; i < monster.length; i++) {
-                if(monster[i] != null){
+                if(monster[i] != null) {
                     entityList.add(monster[i]);
                 }
             }
@@ -375,6 +380,13 @@ public class GamePanel extends JPanel implements Runnable {
             for (int i = 0; i < particleList.size(); i++) {
                 if(particleList.get(i) != null){
                     entityList.add(particleList.get(i));
+                }
+
+            }
+
+            for (int i = 0; i < projectileList.size(); i++) {
+                if(projectileList.get(i) != null){
+                    entityList.add(projectileList.get(i));
                 }
 
             }
@@ -417,6 +429,13 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void playMusic(int index) {
+
+        music.setFile(index);
+        music.play();
+        music.loop();
+
+    }
+    public void playSound(int index) {
 
         sound.setFile(index);
         sound.play();

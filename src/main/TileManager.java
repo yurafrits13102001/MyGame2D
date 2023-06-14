@@ -4,10 +4,8 @@ import entity.Map;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Objects;
-import java.util.Scanner;
 
 public class TileManager {
     Map maps = new Map();
@@ -108,51 +106,51 @@ public class TileManager {
     public void getTileImage() {
 
 
-        setup(0, "sprite_trava0", false );
-        setup(1, "sprite_marichka_backdround1", false );
-        setup(2, "sprite_0", true );
-        setup(3, "newTexture/sprite_new_tree10", true );
-        setup(4, "sprite_world_marichka2282", false );
-        setup(5, "sprite_world_marichka2283", false );
-        setup(6, "sprite_treeNew1", true );
-        setup(7, "sprite_watergarss00", true );
-        setup(8, "sprite_watergarss010", true );
-        setup(9, "sprite_watergarss02", true );
-        setup(10, "sprite_watergarss03", true );
-        setup(11, "sprite_watergarss04", true );
-        setup(12, "sprite_watergarss05", true );
-        setup(13, "sprite_watergarss06", true );
-        setup(14, "sprite_watergarss07", true );
-        setup(15, "sprite_watergarss08", true );
-        setup(16, "sprite_watergarss09", true );
-        setup(17, "sprite_watergarss10", true );
-        setup(18, "sprite_watergarss11", true );
-        setup(19, "sprite_ugol0", false );
-        setup(20, "sprite_ugol1", false );
-        setup(21, "sprite_path0", false );
-        setup(22, "sprite_path1", false );
-        setup(23, "sprite_path2", false );
-        setup(24, "sprite_path3", false );
-        setup(25, "sprite_path4", false );
-        setup(26, "sprite_path5", false );
-        setup(27, "sprite_path90", false );
-        setup(28, "newTexture/sprite_earthboarder00", false );
-        setup(29, "newTexture/sprite_earthboarder01", false );
-        setup(30, "newTexture/sprite_earthboarder02", false );
-        setup(31, "newTexture/sprite_earthboarder03", false );
-        setup(32, "newTexture/sprite_earthboarder04", false );
-        setup(33, "newTexture/sprite_earthboarder05", false );
-        setup(34, "newTexture/sprite_earthboarder06", false );
-        setup(35, "newTexture/sprite_earthboarder07", false );
-        setup(36, "newTexture/sprite_earthboarder08", false );
-        setup(37, "newTexture/sprite_earthboarder09", false );
-        setup(38, "newTexture/sprite_earthboarder10", false );
-        setup(39, "newTexture/sprite_earthboarder11", false );
-        setup(40, "newTexture/sprite_earthboarder12", false );
-        setup(41, "newTexture/sprite_earthboarder13", false );
-        setup(42, "newTexture/sprite_earthboarder14", false );
-        setup(43, "newTexture/sprite_earthboarder15", false );
-        setup(44, "interactiveTiles/sprite_dryTree10", false );
+        setup(0, "/background/sprite_trava0", false );
+        setup(1, "/background/sprite_marichka_backdround1", false );
+        setup(2, "/background/sprite_0", true );
+        setup(3, "/background/newTexture/sprite_new_tree10", true );
+        setup(4, "/background/sprite_world_marichka2282", false );
+        setup(5, "/background/sprite_world_marichka2283", false );
+        setup(6, "/background/sprite_treeNew1", true );
+        setup(7, "/background/sprite_watergarss00", true );
+        setup(8, "/background/sprite_watergarss010", true );
+        setup(9, "/background/sprite_watergarss02", true );
+        setup(10, "/background/sprite_watergarss03", true );
+        setup(11, "/background/sprite_watergarss04", true );
+        setup(12, "/background/sprite_watergarss05", true );
+        setup(13, "/background/sprite_watergarss06", true );
+        setup(14, "/background/sprite_watergarss07", true );
+        setup(15, "/background/sprite_watergarss08", true );
+        setup(16, "/background/sprite_watergarss09", true );
+        setup(17, "/background/sprite_watergarss10", true );
+        setup(18, "/background/sprite_watergarss11", true );
+        setup(19, "/background/sprite_ugol0", false );
+        setup(20, "/background/sprite_ugol1", false );
+        setup(21, "/background/sprite_path0", false );
+        setup(22, "/background/sprite_path1", false );
+        setup(23, "/background/sprite_path2", false );
+        setup(24, "/background/sprite_path3", false );
+        setup(25, "/background/sprite_path4", false );
+        setup(26, "/background/sprite_path5", false );
+        setup(27, "/background/sprite_path90", false );
+        setup(28, "/background/newTexture/sprite_earthboarder00", false );
+        setup(29, "/background/newTexture/sprite_earthboarder01", false );
+        setup(30, "/background/newTexture/sprite_earthboarder02", false );
+        setup(31, "/background/newTexture/sprite_earthboarder03", false );
+        setup(32, "/background/newTexture/sprite_earthboarder04", false );
+        setup(33, "/background/newTexture/sprite_earthboarder05", false );
+        setup(34, "/background/newTexture/sprite_earthboarder06", false );
+        setup(35, "/background/newTexture/sprite_earthboarder07", false );
+        setup(36, "/background/newTexture/sprite_earthboarder08", false );
+        setup(37, "/background/newTexture/sprite_earthboarder09", false );
+        setup(38, "/background/newTexture/sprite_earthboarder10", false );
+        setup(39, "/background/newTexture/sprite_earthboarder11", false );
+        setup(40, "/background/newTexture/sprite_earthboarder12", false );
+        setup(41, "/background/newTexture/sprite_earthboarder13", false );
+        setup(42, "/background/newTexture/sprite_earthboarder14", false );
+        setup(43, "/background/newTexture/sprite_earthboarder15", false );
+        setup(44, "/background/interactiveTiles/sprite_dryTree10", false );
     }
 
     public void setup(int index, String imagePath, boolean collision){
@@ -161,7 +159,7 @@ public class TileManager {
 
         try{
             tiles[index] = new Tile();
-            tiles[index].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream("/res/background/" + imagePath + ".png")));
+            tiles[index].image = ImageIO.read(Objects.requireNonNull(getClass().getResourceAsStream(  imagePath + ".png")));
             tiles[index].image = utilityTool.scaleImage(tiles[index].image, gamePanel.tileSize, gamePanel.tileSize);
             tiles[index].collision = collision;
 

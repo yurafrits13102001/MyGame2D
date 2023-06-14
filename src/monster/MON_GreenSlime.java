@@ -2,6 +2,8 @@ package monster;
 
 import entity.Entity;
 import main.GamePanel;
+import object.OBJ_Coin;
+import object.OBJ_Mana;
 
 import java.util.Random;
 
@@ -16,9 +18,12 @@ public class MON_GreenSlime extends Entity {
 
         type = typeMonster;
 
-        name = "Grean Slime";
+        name = "Green Slime";
+        attack = 1;
         speed = 1;
         maxLife = 4;
+        alive = true;
+        dying = false;
         life = maxLife;
 
         solidArea.x = 3;
@@ -66,6 +71,33 @@ public class MON_GreenSlime extends Entity {
             }
 
             actionLockCounter = 0;
+        }
+    }
+
+    @Override
+    public void damageReaction(){
+
+        actionLockCounter = 0;
+
+        switch (gamePanel.player.direction){
+            case "up": direction = "down"; break;
+            case "down": direction = "up"; break;
+            case "left": direction = "right"; break;
+            case "right": direction = "left"; break;
+        }
+    }
+
+    public void checkDrop() {
+
+        //cast a die
+        int i = new Random().nextInt(100)  + 1;
+
+        //set the monster drop
+        if(i < 50){
+            dropItem(new OBJ_Coin(gamePanel));
+        }
+        if(i > 50){
+            dropItem(new OBJ_Mana(gamePanel));
         }
     }
 }
