@@ -1,6 +1,7 @@
 package main;
 
 import entity.Entity;
+import entity.NPC_OldMan;
 import object.OBJ_Apple;
 import object.OBJ_Coin;
 import object.OBJ_Health;
@@ -30,6 +31,7 @@ public class UI {
     public String currentDialogue = "";
     public String currentSpeech = "";
     public int dialogueIndex = 0;
+    public Entity npc;
     public int commandNum = 0;
 
     public int slotCol = 0;
@@ -129,6 +131,10 @@ public class UI {
             drawOptionScreen();
         }
 
+        if(gamePanel.gameState == gamePanel.gameOverState){
+            drawGameOverScreen();
+        }
+
     }
 
     public void addMessage(String text){
@@ -163,6 +169,8 @@ public class UI {
             }
         }
     }
+
+
 
     public void drawPlayerMana() {
 
@@ -461,14 +469,51 @@ public class UI {
         alpha = 0f;
     }
 
-    public void drawInventory(){
+    public void drawInventory()  {
+
+        //INFORMATION
+        int frameX = gamePanel.tileSize * 2;
+        int frameY = gamePanel.tileSize;
+        int frameWidth = gamePanel.tileSize * 4;
+        int frameHeight = gamePanel.tileSize * 4;
+        drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+        int textX = frameX + 20;
+        int textY = frameY;
+        g2.setFont(g2.getFont().deriveFont(40F));
+        BufferedImage imageCoin = null;
+
+        try {
+            imageCoin = ImageIO.read(getClass().getResourceAsStream("/items/sprite_coin0.png"));
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        g2.drawImage(imageCoin, textX, textY, null);
+        textX += gamePanel.tileSize*2;
+        textY = frameY + gamePanel.tileSize;
+        String valueOfCoins = String.valueOf(gamePanel.player.coin);
+        g2.drawString(valueOfCoins, textX, textY);
+        textX -= 30;
+        g2.drawString("-", textX, textY);
+
+
+        frameX  = 0;
+        frameY = 0;
+        frameWidth = 0;
+        frameWidth = 0;
+        textX = 0;
+        textY = 0;
+
+
 
         //FRAME
-        int frameX = gamePanel.tileSize * 11;
-        int frameY = gamePanel.tileSize;
-        int frameWidth = gamePanel.tileSize * 8;
-        int frameHeight = gamePanel.tileSize * 7;
+         frameX = gamePanel.tileSize * 11;
+         frameY = gamePanel.tileSize;
+         frameWidth = gamePanel.tileSize * 8;
+         frameHeight = gamePanel.tileSize * 7;
         drawSubWindow(frameX, frameY, frameWidth, frameHeight);
+
+
 
         //SLOT
         final int slotXStart = frameX + 20;
@@ -512,8 +557,8 @@ public class UI {
         drawSubWindow(dFrameX, dFrameY, dFrameWidth, dFrameHeight);
 
         //DRAW DESCRIPTION TEXT
-        int textX = dFrameX + 20;
-        int textY = dFrameY + gamePanel.tileSize;
+         textX = dFrameX + 20;
+         textY = dFrameY + gamePanel.tileSize;
         g2.setFont(g2.getFont().deriveFont(40F));
 
         int itemIndex = getItemIndexOnSlot();
@@ -632,6 +677,8 @@ public class UI {
         g2.drawRect(textX, textY, 120, 24);
         volumeWidth = 24 * gamePanel.sound.volumeScale;
         g2.fillRect(textX, textY, volumeWidth, 24);
+
+        gamePanel.config.saveConfig();
     }
 
     public void optionsControl(int frameX, int frameY){
@@ -737,7 +784,7 @@ public class UI {
 
         BufferedImage image = null;
         try {
-            image = ImageIO.read(getClass().getResourceAsStream("/res/items/sprite_pause30.png"));
+            image = ImageIO.read(getClass().getResourceAsStream("/items/sprite_pause30.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -747,7 +794,7 @@ public class UI {
 
         int y = gamePanel.screenHeight / 2;
 
-        g2.drawString(text, x, y);
+        g2.drawImage(image, x, y, null);
     }
 
     public void drawDialogueScreen() {
@@ -763,15 +810,77 @@ public class UI {
         g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 50F));
 
 
+
+
         x += gamePanel.tileSize;
         y += gamePanel.tileSize;
+
+        if(npc.dialogues[npc.dialogueSet][npc.dialogueIndex] != null){
+            currentDialogue = npc.dialogues[npc.dialogueSet][npc.dialogueIndex];
+
+            if(gamePanel.keyHandler.enterPressed == true){
+
+                if(gamePanel.gameState == gamePanel.dialogueState){
+
+                    npc.dialogueIndex++;
+                    gamePanel.keyHandler.enterPressed = false;
+                }
+            }
+        }
+        else{
+            npc.dialogueIndex = 0;
+
+            if(gamePanel.gameState == gamePanel.dialogueState){
+                gamePanel.gameState = gamePanel.playState;
+            }
+        }
 
 
         for (String line : currentDialogue.split("\n")) {
             g2.drawString(line, x, y);
             y += 40;
         }
+    }
 
+    public void drawGameOverScreen(){
+
+        g2.setColor(new Color(0, 0, 0, 150));
+        g2.fillRect(0, 0, gamePanel.screenWidth, gamePanel.screenHeight);
+
+        int x;
+        int y;
+        String text;
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 110f));
+
+        text = "Game Over";
+        //Shadow
+        g2.setColor(Color.black);
+        x = getXForCenteredText(text);
+        y = gamePanel.tileSize * 4;
+        g2.drawString(text, x, y);
+        //Text
+        g2.setColor(Color.white);
+        g2.drawString(text, x - 4, y -4);
+
+        //Retry
+        g2.setFont(g2.getFont().deriveFont(50f));
+        text = "Retry";
+        x = getXForCenteredText(text);
+        y = gamePanel.tileSize * 6;
+        g2.drawString(text, x, y);
+        if(commandNum == 0){
+            g2.drawString(">", x - 40, y);
+        }
+
+
+        //Back to main menu
+        text = "Quit";
+        x = getXForCenteredText(text);
+        y += 55;
+        g2.drawString(text, x, y);
+        if(commandNum == 1){
+            g2.drawString(">", x - 40, y);
+        }
 
     }
 

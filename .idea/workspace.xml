@@ -7,279 +7,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="Yura">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MyGame2d1_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MyGame2d1_jar2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MyGame2d1_jar3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/MyGame2d.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyGame2d1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/background/sprite_water0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/background/sprite_waterwater0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/background/sprite_waterwater1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/background/sprite_waterwaterwater0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/background/sprite_waterwaterwater1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/background/sprite_waterwaterwater2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/fonts/Dited.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_FireBall7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_arrow3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_bowModel0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_coin0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_ghostAttack0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_ghostAttack1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_ghostAttack2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_ghostAttack3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_mainHand0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_mana0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_mana1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_mana2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_mewDoor0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_mewDoor1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newKey0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_osion0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_osion1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_osion2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_potionNew0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_potionNew1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_potionNew2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/mobs/sprite_ghost7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/player/bow/sprite_BowDown10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/player/bow/sprite_bowRightLeft0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/player/bow/sprite_bowRightLeft1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/player/bow/sprite_bowUp0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/Sound - Magic - FIRECAST.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/doorOpen2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/drink.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/fireballHit.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/fireballHit2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/girlOuch.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/openDoor.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/restoring.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/soundOuchMarichka.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MyGame2d.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/entity/Projectile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/monster/MON_Ghost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Arrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Bow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Coin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_FireballGhost.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_GhostAttack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Hand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Mana.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_PotionMana.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MyGame2d_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/items/sprite_hand0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sounds/gameover.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sounds/music1.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sounds/pikup.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ai/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ai/PathFinder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entity/Projectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Projectile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/CollisionChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/CollisionChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/monster/MON_Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_Ghost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/interactiveTiles/sprite_dryTree0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/interactiveTiles/sprite_dryTree0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/interactiveTiles/sprite_dryTree1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/interactiveTiles/sprite_dryTree1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/interactiveTiles/sprite_dryTree10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/interactiveTiles/sprite_dryTree10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder00.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder00.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder01.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder02.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder03.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder04.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder05.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder06.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder07.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder07.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder08.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder08.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder09.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder11.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder12.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder13.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder14.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_earthboarder15.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_earthboarder15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/newTexture/sprite_new_tree10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/newTexture/sprite_new_tree10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_marichka131020010.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_marichka131020010.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_marichka2280.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_marichka2280.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_marichka_backdround0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_marichka_backdround0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_marichka_backdround1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_marichka_backdround1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_marichka_backdround2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_marichka_backdround2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_path0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_path0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_path1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_path1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_path2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_path2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_path3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_path3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_path4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_path4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_path5.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_path5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_path90.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_path90.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_trava0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_trava0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_treeNew1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_treeNew1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_ugol0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_ugol0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_ugol1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_ugol1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss00.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss00.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss01.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss010.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss010.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss02.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss03.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss04.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss05.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss06.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss07.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss07.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss08.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss08.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss09.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss11.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss12.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_watergarss13.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_watergarss13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2280.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_world_marichka2280.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2281.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_world_marichka2281.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_world_marichka22810.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_world_marichka22810.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2282.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_world_marichka2282.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2283.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_world_marichka2283.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/background/sprite_world_marichka2284.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/background/sprite_world_marichka2284.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/fonts/8-BIT WONDER.TTF" beforeDir="false" afterPath="$PROJECT_DIR$/res/fonts/8-BIT WONDER.TTF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/fonts/Daydream.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/res/fonts/Daydream.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/fonts/Gamer.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/res/fonts/Gamer.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_apple0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_apple0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_axe0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_axe0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_health0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_health0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_health1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_health1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_health2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_health2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_item0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_item0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_item1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_item1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_item2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_item2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_item3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_item3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_item4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_item4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_item5.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_item5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_item6.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_item6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_pause0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_pause0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_pause20.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_pause20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/items/sprite_pause30.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/items/sprite_pause30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/map1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/map1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/map2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/map2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/map3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/map3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/mapMarichka.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/mapMarichka.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/sprite_lvl10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/sprite_lvl10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/sprite_lvl110.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/sprite_lvl110.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/sprite_lvllvl0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/sprite_lvllvl0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/maps/sprite_lvlmap0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/maps/sprite_lvlmap0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/mobs/sprite_slime0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/mobs/sprite_slime0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/mobs/sprite_slime1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/mobs/sprite_slime1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/mobs/sprite_slime10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/mobs/sprite_slime10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/mobs/sprite_slime2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/mobs/sprite_slime2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/mobs/sprite_slime3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/mobs/sprite_slime3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/mobs/sprite_slime4.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/mobs/sprite_slime4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man2222.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man2222.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_down1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_down1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_down2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_down2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_left1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_left1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_left2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_left2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_right1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_right1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_right2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_right2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_stay1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_stay1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_stay1111.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_stay1111.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_stay2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_stay2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_up1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_up1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_old_man_up2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_old_man_up2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman00.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman00.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman01.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman02.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman03.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman04.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman05.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman06.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman06.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman07.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman07.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman08.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman08.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman09.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman101010.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman101010.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman111111.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman111111.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman3333.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman3333.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman4444.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman4444.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman5555.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman5555.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman6666.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman6666.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman7777.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman7777.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman8888.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman8888.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/npc/sprite_oldman9999.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/npc/sprite_oldman9999.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitDown0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitDown0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitDown1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitDown1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitDown2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitDown2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitLeft0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitLeft0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitLeft1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitLeft1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitLeft2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitLeft2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitRight0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitRight0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitRight1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitRight1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitRight2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitRight2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitUp0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitUp0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitUp1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitUp1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/attackAxe/sprite_axeHitUp2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/attackAxe/sprite_axeHitUp2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka00.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka00.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka01.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka01.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka02.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka02.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka03.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka03.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka04.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka04.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka05.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka05.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka07.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka07.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka08.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka08.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka09.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka09.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_new_model0.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_new_model0.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel10.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel11.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel20.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel21.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel30.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel30.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel31.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel31.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel40.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel40.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/player/sprite_marichka_newmodel41.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/player/sprite_marichka_newmodel41.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/1slide.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/1slide.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/2slide.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/2slide.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/3slide.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/3slide.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/Untitled.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/Untitled.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/alarmClock1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/alarmClock1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/image1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/image1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/image2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/image2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/image3.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/image3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/img.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/img.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/img_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/img_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/img_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/img_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/marichkaSlide$.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/marichkaSlide$.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/marichkaSlide1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/marichkaSlide1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/marichkaSlide1intro4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/marichkaSlide1intro4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/marichkaSlide2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/marichkaSlide2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/marichkaSlide3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/marichkaSlide3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/slides/marichkaSlide5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/res/slides/marichkaSlide5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/sounds/20279__koops__apple_crunch_16.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/20279__koops__apple_crunch_16.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/sounds/back_song_demo.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/back_song_demo.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/sounds/coin.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/coin.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/sounds/korotkiy-gluhoy-zvuk-udara-po-derevu.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/korotkiy-gluhoy-zvuk-udara-po-derevu.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/sounds/korotkiy-moschnyiy-zamah.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/korotkiy-moschnyiy-zamah.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/sounds/sound83.wav" beforeDir="false" afterPath="$PROJECT_DIR$/res/sounds/sound83.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/video/2022-12-28 19.23.08.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/res/video/2022-12-28 19.23.08.mp4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/video/video.mp4" beforeDir="false" afterPath="$PROJECT_DIR$/res/video/video.mp4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Axe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Axe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Bow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Bow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Fireball.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Hand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,9 +92,9 @@
       <recent name="main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\fonts" />
-      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\items" />
       <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\sounds" />
+      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\items" />
+      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\fonts" />
       <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\background" />
       <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\mobs" />
     </key>
@@ -447,7 +202,15 @@
       <workItem from="1686489795800" duration="23999000" />
       <workItem from="1686526914909" duration="660000" />
       <workItem from="1686563082666" duration="765000" />
-      <workItem from="1686565230880" duration="15359000" />
+      <workItem from="1686565230880" duration="19623000" />
+      <workItem from="1686762641744" duration="8689000" />
+      <workItem from="1686793302540" duration="3133000" />
+      <workItem from="1686844719436" duration="11230000" />
+      <workItem from="1686865003200" duration="1541000" />
+      <workItem from="1686946705991" duration="3984000" />
+      <workItem from="1687008247083" duration="6956000" />
+      <workItem from="1687028703374" duration="1020000" />
+      <workItem from="1687033800503" duration="16284000" />
     </task>
     <task id="LOCAL-00001" summary="Yura Frits">
       <created>1680270720883</created>
@@ -519,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684545354974</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Yura">
+      <created>1686701289159</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1686701289161</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

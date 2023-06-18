@@ -18,6 +18,9 @@ public class OBJ_Fireball extends Projectile {
         this.gamePanel = gamePanel;
 
 
+        type = typeFireball;
+
+
         name = "Fireball";
         speed = 5;
         maxLife = 80;

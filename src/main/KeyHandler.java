@@ -113,7 +113,7 @@ public class KeyHandler implements KeyListener {
             }
         } else if (gamePanel.gameState == gamePanel.dialogueState) {
             if (code == KeyEvent.VK_ENTER) {
-                gamePanel.gameState = gamePanel.playState;
+
             }
 
         }else if (gamePanel.gameState == gamePanel.inventoryState){
@@ -153,6 +153,10 @@ public class KeyHandler implements KeyListener {
             if(code == KeyEvent.VK_ESCAPE) {
                 gamePanel.gameState = gamePanel.playState;
             }
+
+
+
+
             if(code == KeyEvent.VK_ENTER){
                 enterPressed = true;
             }
@@ -198,6 +202,32 @@ public class KeyHandler implements KeyListener {
                     }
                 }
             }
+        } else if(gamePanel.gameState == gamePanel.gameOverState){
+            if(code == KeyEvent.VK_W){
+                gamePanel.ui.commandNum--;
+                if(gamePanel.ui.commandNum < 0){
+                    gamePanel.ui.commandNum = 1;
+                }
+                gamePanel.playSound(2);
+            }
+            if(code == KeyEvent.VK_S){
+                gamePanel.ui.commandNum++;
+                if(gamePanel.ui.commandNum > 1){
+                    gamePanel.ui.commandNum = 0;
+                }
+                gamePanel.playSound(2);
+            }
+            if(code == KeyEvent.VK_ENTER){
+                if(gamePanel.ui.commandNum == 0){
+                    gamePanel.gameState = gamePanel.playState;
+                    gamePanel.retry();
+                    gamePanel.playMusic(0);
+                }else if(gamePanel.ui.commandNum == 1){
+                    gamePanel.gameState = gamePanel.mainMenuState;
+                    gamePanel.restart();
+                }
+                enterPressed = false;
+            }
         }
     }
 
@@ -226,6 +256,9 @@ public class KeyHandler implements KeyListener {
         if(code == KeyEvent.VK_J){
             shotKeyPressed = false;
 
+        }
+        if(code == KeyEvent.VK_ENTER){
+            enterPressed = false;
         }
 
 

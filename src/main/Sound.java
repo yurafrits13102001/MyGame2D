@@ -17,7 +17,7 @@ public class Sound {
 
     public Sound(){
 
-        soundURL[0] = getClass().getResource("/sounds/back_song_demo.wav");
+        soundURL[0] = getClass().getResource("/sounds/music1.wav");
         soundURL[1] = getClass().getResource("/sounds/coin.wav");
         soundURL[2] = getClass().getResource("/sounds/sound83.wav");
         soundURL[3] = getClass().getResource("/sounds/20279__koops__apple_crunch_16.wav");
@@ -30,6 +30,8 @@ public class Sound {
         soundURL[10] = getClass().getResource("/sounds/openDoor.wav");
         soundURL[11] = getClass().getResource("/sounds/doorOpen2.wav");
         soundURL[12] = getClass().getResource("/sounds/restoring.wav");
+        soundURL[13] = getClass().getResource("/sounds/pikup.wav");
+        soundURL[14] = getClass().getResource("/sounds/gameover.wav");
     }
 
     public void setFile(int index) {

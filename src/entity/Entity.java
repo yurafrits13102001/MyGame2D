@@ -35,10 +35,11 @@ public class Entity {
     public int dyingCounter = 0;
     int hpBarCounter = 0;
 
-    public ArrayList<String> dialogues = new ArrayList<>();
+    public String dialogues[][] = new String[20][20];
     public String[] speech = new String[20];
     public int dialogueIndex = 0;
     public int speechIndex = 0;
+    public int dialogueSet = 0;
     boolean attacking = false;
     boolean magic = false;
     boolean shooting = false;
@@ -65,6 +66,7 @@ public class Entity {
     public String description = "";
     public boolean alive = true;
     public boolean dying = false;
+    public boolean onPath = false;
 
     //TYPE
     public int type;
@@ -79,6 +81,7 @@ public class Entity {
     public final int  typePotion = 8;
     public final int typeDoor = 9;
     public final int typePickupOnly = 10;
+    public final int typeFireball = 11;
     public int value;
     public int coin;
     boolean contactPlayer = false;
@@ -125,21 +128,9 @@ public class Entity {
 
     public void speak() {
 
+    }
 
-        if (dialogues.get(dialogueIndex) == null) {
-            dialogueIndex = 0;
-            gamePanel.gameState = gamePanel.playState;
-
-        }
-
-        gamePanel.ui.currentDialogue = dialogues.get(dialogueIndex);
-
-
-        dialogueIndex++;
-
-
-        gamePanel.keyHandler.enterPressed = false;
-
+    public void facePlayer(){
         switch (gamePanel.player.direction) {
             case "up":
                 direction = "down";
@@ -156,8 +147,13 @@ public class Entity {
             default:
                 direction = "pick";
         }
+    }
 
+    public void startDialogue(Entity entity, int setNum){
 
+        gamePanel.gameState = gamePanel.dialogueState;
+        gamePanel.ui.npc = entity;
+        dialogueSet = setNum;
     }
 
     public Color getParticleColor() {
@@ -187,11 +183,7 @@ public class Entity {
 
     }
 
-
-    public void update() {
-
-        setAction();
-
+    public void checkCollision(){
         collisionOn = false;
         gamePanel.collisionChecker.checkTile(this);
         gamePanel.collisionChecker.checkObject(this, false);
@@ -201,7 +193,13 @@ public class Entity {
         if (this.type == typeMonster && contactPlayer == true) {
             damagePlayer(attack);
         }
+    }
 
+
+    public void update() {
+
+        setAction();
+        checkCollision();
 
 
         if (collisionOn == false) {
@@ -432,6 +430,86 @@ public class Entity {
             e.printStackTrace();
         }
         return image;
+    }
+
+    public void searchPath(int goalCol, int goalRow){
+
+        int startCol = (worldX + solidArea.x)/gamePanel.tileSize;
+        int startRow = (worldY + solidArea.y)/gamePanel.tileSize;
+
+        gamePanel.pFinder.setNodes(startCol, startRow, goalCol, goalRow);
+
+        if(gamePanel.pFinder.search() == true){
+
+            //Next worldX and worldY
+            int nextX = gamePanel.pFinder.pathList.get(0).col * gamePanel.tileSize;
+            int nextY = gamePanel.pFinder.pathList.get(0).row * gamePanel.tileSize;
+
+            //Entity's solidArea position
+            int enLeftX = worldX + solidArea.x;
+            int enRightX = worldX + solidArea.x + solidArea.width;
+            int enTopY = worldY + solidArea.y;
+            int enBottomY = worldY + solidArea.y + solidArea.height;
+
+            if(enTopY > nextY && enLeftX >= nextX && enRightX < nextX + gamePanel.tileSize){
+                direction = "up";
+
+            }
+            else if(enTopY < nextY && enLeftX >= nextX && enRightX < nextX + gamePanel.tileSize){
+                direction = "down";
+
+            }
+            else if(enTopY >= nextY && enBottomY < nextY + gamePanel.tileSize){
+                //left or right
+                if(enLeftX > nextX){
+                    direction = "left";
+                }
+                if(enLeftX < nextX){
+                    direction = "right";
+                }
+            }
+            else if(enTopY > nextY && enLeftX > nextX){
+                //up or left
+                direction = "up";
+                checkCollision();
+                if(collisionOn == true){
+                    direction = "left";
+                }
+            }
+            else if(enTopY > nextY && enLeftX < nextX){
+                //up or right
+                direction = "up";
+                if(collisionOn == true){
+                    direction = "right";
+                }
+            }
+
+            else if(enTopY < nextY && enLeftX > nextX){
+                //down or left
+                direction = "down";
+                checkCollision();
+                if(collisionOn == true){
+                    direction = "left";
+                }
+            }
+            else if(enTopY < nextY && enLeftX < nextX){
+                //down or right
+                direction = "down";
+                checkCollision();
+                if(collisionOn == true){
+                    direction = "right";
+                }
+            }
+
+            int nextCol = gamePanel.pFinder.pathList.get(0).col;
+            int nextRow = gamePanel.pFinder.pathList.get(0).row;
+            if(nextCol == goalCol && nextRow == goalRow){
+                onPath = false;
+            }
+
+
+        }
+
     }
 
 }

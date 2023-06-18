@@ -1,5 +1,6 @@
 package main;
 
+import ai.PathFinder;
 import entity.Entity;
 import entity.Player;
 import interactiveTiles.InteractiveTile;
@@ -46,13 +47,17 @@ public class GamePanel extends JPanel implements Runnable {
     public final int startingGameState = 4;
     public final int inventoryState = 6;
     public final int optionsState = 7;
+    public final int gameOverState = 8;
 
-    TileManager tileManager = new TileManager(this);
+     public TileManager tileManager = new TileManager(this);
 
     public KeyHandler keyHandler = new KeyHandler(this);
+    public PathFinder pFinder = new PathFinder(this);
 
     Sound sound = new Sound();
     Sound music = new Sound();
+
+    Config config = new Config(this);
 
 
     public CollisionChecker collisionChecker = new CollisionChecker(this);
@@ -92,6 +97,31 @@ public class GamePanel extends JPanel implements Runnable {
         this.setDoubleBuffered(true);
         this.addKeyListener(keyHandler);
         this.setFocusable(true);
+
+
+    }
+
+    public void retry(){
+
+        player.setDefaultPositions();
+        player.restoreLifeAndMana();
+        assetSetter.setNpc();
+        assetSetter.setMonster();
+
+    }
+
+    public void restart(){
+
+        player.setDefaultValues();
+        player.setDefaultPositions();
+        player.restoreLifeAndMana();
+        player.setInventory();
+        assetSetter.setObject();
+        assetSetter.setNpc();
+        assetSetter.setMonster();
+        assetSetter.setInteractive();
+
+
 
 
     }
@@ -444,7 +474,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void stopMusic(){
-        sound.stop();
+        music.stop();
     }
 
 

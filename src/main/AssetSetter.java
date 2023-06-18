@@ -41,8 +41,8 @@ public class AssetSetter {
 
 
         gamePanel.obj[i] = new OBJ_Door("Door_Purple", gamePanel);
-        gamePanel.obj[i].worldX = 37 * gamePanel.tileSize;
-        gamePanel.obj[i].worldY = 35 * gamePanel.tileSize;
+        gamePanel.obj[i].worldX = 53 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 59 * gamePanel.tileSize;
         i++;
 
 
@@ -94,26 +94,26 @@ public class AssetSetter {
     public void setNpc(){
 
         gamePanel.npc[0] = new NPC_OldMan(gamePanel);
-        gamePanel.npc[0].worldX = 40 * gamePanel.tileSize;
-        gamePanel.npc[0].worldY = 29 * gamePanel.tileSize;
+        gamePanel.npc[0].worldX = 50 * gamePanel.tileSize;
+        gamePanel.npc[0].worldY = 14 * gamePanel.tileSize;
     }
 
     public void setMonster(){
         gamePanel.monster[0] = new MON_GreenSlime(gamePanel);
         gamePanel.monster[0].worldX = 28 * gamePanel.tileSize;
-        gamePanel.monster[0].worldY = 29 * gamePanel.tileSize;
+        gamePanel.monster[0].worldY = 45 * gamePanel.tileSize;
 
         gamePanel.monster[1] = new MON_GreenSlime(gamePanel);
         gamePanel.monster[1].worldX = 25 * gamePanel.tileSize;
-        gamePanel.monster[1].worldY = 28 * gamePanel.tileSize;
+        gamePanel.monster[1].worldY = 45 * gamePanel.tileSize;
 
         gamePanel.monster[2] = new MON_Ghost(gamePanel);
         gamePanel.monster[2].worldX = 22 * gamePanel.tileSize;
-        gamePanel.monster[2].worldY = 29 * gamePanel.tileSize;
+        gamePanel.monster[2].worldY = 48 * gamePanel.tileSize;
 
         gamePanel.monster[3] = new MON_Ghost(gamePanel);
         gamePanel.monster[3].worldX = 26 * gamePanel.tileSize;
-        gamePanel.monster[3].worldY = 29 * gamePanel.tileSize;
+        gamePanel.monster[3].worldY = 48 * gamePanel.tileSize;
     }
 
     public void setInteractive(){

@@ -39,6 +39,9 @@ public class EventHandler {
 
     public void checkEvent() {
 
+        int replicCounter = 0;
+        boolean replicRead = false;
+
         int xDistance = Math.abs(gamePanel.player.worldX - previousEventX);
         int yDistance = Math.abs(gamePanel.player.worldY - previousEventY);
         int distance = Math.max(xDistance, yDistance);
@@ -48,14 +51,21 @@ public class EventHandler {
 
         if(canTouchEvent == true) {
 
-
-            if (hit(37, 12, "up") == true) {
-                damagePit(37, 12, gamePanel.dialogueState);
-            }
-
-            if (hit(36, 35, "down") == true) {
-                teleport(gamePanel.dialogueState);
-            }
+//            if(replicRead == false) {
+//
+//
+//                if (hit(15, 13, "right") == true) {
+//                    replic(gamePanel.dialogueState);
+//                    replicRead = true;
+//                    canTouchEvent = false;
+//                }
+//            }
+//            if(replicRead == true) {
+//
+//                if (hit(15, 13, "right") == true) {
+//
+//                }
+//            }
         }
 
 
@@ -98,11 +108,10 @@ public class EventHandler {
 
     }
 
-    public void teleport(int gameState) {
+    public void replic(int gameState) {
         gamePanel.gameState = gameState;
-        gamePanel.ui.currentDialogue = "AHAHAH Teleport";
-        gamePanel.player.worldX = 624;
-        gamePanel.player.worldY = 624;
+        gamePanel.ui.currentDialogue = "Hello Marichka!!!";
+
     }
 
 

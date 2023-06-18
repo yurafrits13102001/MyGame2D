@@ -26,10 +26,10 @@ public class MON_GreenSlime extends Entity {
         dying = false;
         life = maxLife;
 
-        solidArea.x = 3;
-        solidArea.y = 18;
+        solidArea.x = 5;
+        solidArea.y = 5;
         solidArea.width = 42;
-        solidArea.height = 30;
+        solidArea.height = 42;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
 
@@ -50,41 +50,51 @@ public class MON_GreenSlime extends Entity {
 
     public void setAction(){
 
-        actionLockCounter++;
+        if (onPath == true) {
 
-        if(actionLockCounter == 120){
+            int goalCol = (gamePanel.player.worldX + gamePanel.player.solidArea.x) / gamePanel.tileSize;
+            int goalRow = (gamePanel.player.worldY + gamePanel.player.solidArea.y) / gamePanel.tileSize;
 
-            Random random = new Random();
-            int i = random.nextInt(100)+1;
+            searchPath(goalCol, goalRow);
 
-            if(i <= 25){
-                direction = "up";
-            }
-            if(i > 25 && i <= 50){
-                direction = "down";
-            }
-            if(i > 50 && i <= 75){
-                direction = "left";
-            }
-            if(i > 75 && i <= 100){
-                direction = "right";
+
+
+        } else {
+
+            actionLockCounter++;
+
+            if (actionLockCounter == 120) {
+
+                Random random = new Random();
+                int i = random.nextInt(100) + 1;
+
+                if (i <= 25) {
+                    direction = "up";
+                }
+                if (i > 25 && i <= 50) {
+                    direction = "down";
+                }
+                if (i > 50 && i <= 75) {
+                    direction = "left";
+                }
+                if (i > 75 && i <= 100) {
+                    direction = "right";
+                }
+
+                actionLockCounter = 0;
             }
 
-            actionLockCounter = 0;
+
         }
     }
+
 
     @Override
     public void damageReaction(){
 
         actionLockCounter = 0;
 
-        switch (gamePanel.player.direction){
-            case "up": direction = "down"; break;
-            case "down": direction = "up"; break;
-            case "left": direction = "right"; break;
-            case "right": direction = "left"; break;
-        }
+      onPath = true;
     }
 
     public void checkDrop() {

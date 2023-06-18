@@ -11,7 +11,7 @@ public class OBJ_Hand extends Entity {
         type = typeHand;
 
         name = "Hand";
-        stay1 = setup("/items/sprite_mainHand0", gamePanel.tileSize, gamePanel.tileSize);
+        stay1 = setup("/items/sprite_hand0", gamePanel.tileSize, gamePanel.tileSize);
         direction = "stay";
         description = "< Hand >";
 

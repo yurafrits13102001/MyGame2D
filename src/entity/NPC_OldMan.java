@@ -49,10 +49,12 @@ public class NPC_OldMan extends Entity {
 
     public void setDialogue(){
 
-        dialogues.add ("Hello!!! Anton Gulpak is LOH!!! \n AHAHAHAHAHAHAHAH ");
-        dialogues.add("AHAHAHAHAHAHHAHA ");
-        dialogues.add("MARICHKA MARICHKA MARICHKA!!! ");
-        dialogues.add(null);
+        dialogues[0][1] = "Hello!!! Anton Gulpak is LOH!!! \n AHAHAHAHAHAHAHAH ";
+        dialogues[0][2] = "AHAHAHAHAHAHHAHA ";
+        dialogues[0][3] = "MARICHKA MARICHKA MARICHKA!!! ";
+
+        dialogues[1][0] = "I wonder how to open thet door...";
+
 
     }
 
@@ -88,7 +90,8 @@ public class NPC_OldMan extends Entity {
     @Override
     public void speak() {
 
-        super.speak();
+       facePlayer();
+       startDialogue(this, dialogueSet);
 
     }
 

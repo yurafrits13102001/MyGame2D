@@ -13,7 +13,7 @@ public class OBJ_Bow extends Entity {
         stay1 = setup("/items/sprite_bowModel0", gamePanel.tileSize, gamePanel.tileSize);
         direction = "stay";
         collision = true;
-        description = "< Bow >";
+        description = "< Bow > \n Coming soon...";
 
     }
 }

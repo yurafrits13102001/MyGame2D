@@ -31,6 +31,9 @@ public class Player extends Entity {
     public ArrayList<Entity> inventory = new ArrayList<>();
     public final int inventorySize = 20;
     boolean hasKey = false;
+    boolean haveFireball = false;
+    OBJ_Fireball fireball = new OBJ_Fireball(gamePanel);
+    OBJ_Hand hand = new OBJ_Hand(gamePanel);
 
     public Player(GamePanel gamePanel, KeyHandler keyHandler) {
         super(gamePanel);
@@ -42,11 +45,11 @@ public class Player extends Entity {
         screenY = gamePanel.worldHeight / 2 - (gamePanel.tileSize / 2);
 
         solidArea = new Rectangle();
-        solidArea.x = 13;
+        solidArea.x = 5;
         solidArea.y = 21;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
-        solidArea.width = 16;
+        solidArea.width = 20;
         solidArea.height = 18;
 
         attackArea.width = 16;
@@ -73,13 +76,41 @@ public class Player extends Entity {
         projectile = new OBJ_Fireball(gamePanel);
         //player health
         maxLife = 6;
-        life = 6;
+        life = maxLife;
         //player mana
         maxMana = 6;
-        mana = 6;
+        mana = maxMana;
+        inventory.add(hand);
+        currentInstrument = hand;
     }
 
     public Entity currentInstrument;
+
+
+    public void setDefaultPositions(){
+
+        worldX = 624;
+        worldY = 624;
+        direction = "down";
+    }
+
+    public void restoreLifeAndMana(){
+        //player health
+        maxLife = 6;
+        life = maxLife;
+        //player mana
+        maxMana = 6;
+        mana = maxMana;
+        invincible = false;
+
+    }
+
+    public void setInventory(){
+
+        inventory.clear();
+        inventory.add(currentInstrument);
+    }
+
 
 
     public void setSpeech() {
@@ -129,6 +160,8 @@ public class Player extends Entity {
 
 
     }
+
+
 
 
     public void update() {
@@ -249,34 +282,33 @@ public class Player extends Entity {
 
         }
 
-        if (gamePanel.keyHandler.shotKeyPressed == true && projectile.alive == false
-                && projectile.haveResource(this) == true) {
+//        if (gamePanel.keyHandler.shotKeyPressed == true && projectile.alive == false
+//                && projectile.haveResource(this) == true && haveFireball == true && currentInstrument.type == typeHand) {
+//
+//
+//
+//
+//            projectile.set(worldX, worldY, direction, true, this);
+//
+//            projectile.subtractResource(this);
+//
+//            gamePanel.projectileList.add(projectile);
+//
+//            gamePanel.playSound(6);
 
 
-            projectile.set(worldX, worldY, direction, true, this);
-
-            projectile.subtractResource(this);
-
-            gamePanel.projectileList.add(projectile);
-
-            gamePanel.playSound(6);
 
 
-            if (attacking == true) {
-
-                projectile.set(worldX, worldY, direction, true, this);
-
-                gamePanel.projectileList.add(projectile);
-
-                gamePanel.playSound(6);
-
-            }
-        }
         if(mana > maxMana){
             mana = maxMana;
         }
         if(life > maxLife){
             life = maxLife;
+        }
+        if(life <= 0){
+            gamePanel.gameState = gamePanel.gameOverState;
+            gamePanel.stopMusic();
+            gamePanel.playSound(14);
         }
 
     }
@@ -378,6 +410,7 @@ public class Player extends Entity {
                     gamePanel.obj[index].use(this);
                     gamePanel.obj[index] = null;
 
+
                 }
 
 
@@ -390,7 +423,7 @@ public class Player extends Entity {
 
 
                         inventory.add(gamePanel.obj[index]);
-                        gamePanel.playSound(1);
+                        gamePanel.playSound(13);
                         gamePanel.ui.addMessage("Pick up a " + gamePanel.obj[index].name);
                     }
 
@@ -415,13 +448,16 @@ public class Player extends Entity {
             if (index != 999) {
 
 
-                gamePanel.gameState = gamePanel.dialogueState;
+
                 gamePanel.npc[index].speak();
+                haveFireball = true;
+
+                attacking = false;
             }
         }
 
         if (keyHandler.kPressed == true) {
-            if (currentInstrument != null) {
+            if (currentInstrument != null && currentInstrument != hand) {
                 attacking = true;
 
                 keyHandler.kPressed = false;
@@ -430,6 +466,29 @@ public class Player extends Entity {
         }
         if (keyHandler.shotKeyPressed == true) {
             if (currentInstrument != null) {
+                if (gamePanel.keyHandler.shotKeyPressed == true && projectile.alive == false
+                        && projectile.haveResource(this) == true && haveFireball == true && currentInstrument.type == typeHand) {
+
+
+
+
+                    projectile.set(worldX, worldY, direction, true, this);
+
+                    projectile.subtractResource(this);
+
+                    gamePanel.projectileList.add(projectile);
+
+                    gamePanel.playSound(6);
+
+
+
+                }
+                if(mana > maxMana){
+                    mana = maxMana;
+                }
+                if(life > maxLife){
+                    life = maxLife;
+                }
 
 
                 keyHandler.shotKeyPressed = false;
@@ -474,6 +533,9 @@ public class Player extends Entity {
                 holdBow = false;
                 attacking = true;
 
+
+
+
             } else if (selectedItem.type == typeApple) {
                 gamePanel.playSound(3);
                 life = maxLife;
@@ -482,9 +544,9 @@ public class Player extends Entity {
             } else if (selectedItem.type == typeHand) {
                 currentInstrument = selectedItem;
                 gamePanel.ui.addMessage("You selected " + inventory.get(itemIndex).name);
-
                 attacking = false;
-                magic = true;
+
+
             } else if (selectedItem.type == typePotion) {
                 gamePanel.playSound(9);
                 mana = maxMana;
@@ -504,7 +566,10 @@ public class Player extends Entity {
                 } else {
                     gamePanel.ui.addMessage("You need a key to open the door");
                 }
-            } else {
+            }
+
+
+            else {
                 // Якщо вибраний предмет не є ні сокирою, ні яблуком, ні луком, скидаємо вибраний інструмент
                 currentInstrument = null;
             }
