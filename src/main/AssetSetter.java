@@ -3,10 +3,14 @@ package main;
 import entity.NPC_OldMan;
 import interactiveTiles.IT_DryTree;
 import monster.MON_Ghost;
+import monster.MON_GhostBig;
 import monster.MON_GreenSlime;
 import object.*;
 
-public class AssetSetter {
+import java.io.Serial;
+import java.io.Serializable;
+
+public class AssetSetter implements Serializable {
 
     GamePanel gamePanel;
 
@@ -34,19 +38,19 @@ public class AssetSetter {
         i++;
 
 
-        gamePanel.obj[i] = new OBJ_Key( gamePanel);
+        gamePanel.obj[i] = new OBJ_Key(gamePanel);
         gamePanel.obj[i].worldX = 57 * gamePanel.tileSize;
         gamePanel.obj[i].worldY = 55 * gamePanel.tileSize;
         i++;
 
 
-        gamePanel.obj[i] = new OBJ_Door("Door_Purple", gamePanel);
+        gamePanel.obj[i] = new OBJ_Door(gamePanel);
         gamePanel.obj[i].worldX = 53 * gamePanel.tileSize;
         gamePanel.obj[i].worldY = 59 * gamePanel.tileSize;
         i++;
 
 
-        gamePanel.obj[i] = new OBJ_Door("Door_Purple", gamePanel);
+        gamePanel.obj[i] = new OBJ_Door(gamePanel);
         gamePanel.obj[i].worldX = 50 * gamePanel.tileSize;
         gamePanel.obj[i].worldY = 16 * gamePanel.tileSize;
         i++;
@@ -57,7 +61,8 @@ public class AssetSetter {
         gamePanel.obj[i].worldY = 29 * gamePanel.tileSize;
         i++;
 
-        gamePanel.obj[i] = new OBJ_Apple("Apple" ,gamePanel);
+        gamePanel.obj[i] = new OBJ_Chest(gamePanel);
+        gamePanel.obj[i].setLoot(new OBJ_Apple("Apple", gamePanel));
         gamePanel.obj[i].worldX = 23 * gamePanel.tileSize;
         gamePanel.obj[i].worldY = 38 * gamePanel.tileSize;
         i++;
@@ -68,9 +73,13 @@ public class AssetSetter {
         i++;
 
         gamePanel.obj[i] = new OBJ_Bow(gamePanel);
-        gamePanel.obj[i].worldX = 36 * gamePanel.tileSize;
-        gamePanel.obj[i].worldY = 35 * gamePanel.tileSize;
+        gamePanel.obj[i].worldX = 51 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 20 * gamePanel.tileSize;
 
+        i++;
+        gamePanel.obj[i] = new OBJ_Door(gamePanel);
+        gamePanel.obj[i].worldX = 37 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 35 * gamePanel.tileSize;
         i++;
 //        gamePanel.obj[i] = new OBJ_Mana(gamePanel);
 //        gamePanel.obj[i].worldX = 28 * gamePanel.tileSize;
@@ -85,7 +94,25 @@ public class AssetSetter {
         gamePanel.obj[i].worldX = 27 * gamePanel.tileSize;
         gamePanel.obj[i].worldY = 30 * gamePanel.tileSize;
         i++;
+        gamePanel.obj[i] = new OBJ_Chest(gamePanel);
 
+        gamePanel.obj[i].worldX = 65 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 14 * gamePanel.tileSize;
+        i++;
+
+        gamePanel.obj[i] = new OBJ_Letter(gamePanel);
+        gamePanel.obj[i].worldX = 16 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 13 * gamePanel.tileSize;
+
+        i++;
+        gamePanel.obj[i] = new OBJ_PotionMana("PotionMana", gamePanel);
+        gamePanel.obj[i].worldX = 40 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 29 * gamePanel.tileSize;
+        i++;
+        gamePanel.obj[i] = new OBJ_Apple("Apple", gamePanel);
+        gamePanel.obj[i].worldX = 42 * gamePanel.tileSize;
+        gamePanel.obj[i].worldY = 29 * gamePanel.tileSize;
+        i++;
 
 
 
@@ -114,6 +141,18 @@ public class AssetSetter {
         gamePanel.monster[3] = new MON_Ghost(gamePanel);
         gamePanel.monster[3].worldX = 26 * gamePanel.tileSize;
         gamePanel.monster[3].worldY = 48 * gamePanel.tileSize;
+
+        gamePanel.monster[4] = new MON_GhostBig(gamePanel);
+        gamePanel.monster[4].worldX = 24 * gamePanel.tileSize;
+        gamePanel.monster[4].worldY = 46 * gamePanel.tileSize;
+
+        gamePanel.monster[5] = new MON_GreenSlime(gamePanel);
+        gamePanel.monster[5].worldX = 28 * gamePanel.tileSize;
+        gamePanel.monster[5].worldY = 29 * gamePanel.tileSize;
+
+        gamePanel.monster[6] = new MON_GreenSlime(gamePanel);
+        gamePanel.monster[6].worldX = 22 * gamePanel.tileSize;
+        gamePanel.monster[6].worldY = 29 * gamePanel.tileSize;
     }
 
     public void setInteractive(){
@@ -167,6 +206,10 @@ public class AssetSetter {
         gamePanel.iTile[i] = new IT_DryTree(gamePanel);
         gamePanel.iTile[i].worldX = 19 * gamePanel.tileSize;
         gamePanel.iTile[i].worldY = 35 * gamePanel.tileSize;
+        i++;
+        gamePanel.iTile[i] = new IT_DryTree(gamePanel);
+        gamePanel.iTile[i].worldX = 38 * gamePanel.tileSize;
+        gamePanel.iTile[i].worldY = 29 * gamePanel.tileSize;
         i++;
 
 

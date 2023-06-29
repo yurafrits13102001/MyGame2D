@@ -24,6 +24,13 @@ public class OBJ_FireballGhost extends Projectile {
         alive = false;
         manaCost = 1;
 
+        solidArea.x = 15;
+        solidArea.y = 15;
+        solidArea.width = 25;
+        solidArea.height = 25;
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
+
         getImage();
     }
 

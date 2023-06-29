@@ -4,8 +4,9 @@ import entity.Entity;
 import main.GamePanel;
 
 import java.awt.*;
+import java.io.Serializable;
 
-public class IT_DryTree extends InteractiveTile{
+public class IT_DryTree extends InteractiveTile implements Serializable {
 
     GamePanel gamePanel;
 
@@ -15,6 +16,7 @@ public class IT_DryTree extends InteractiveTile{
 
         destructible = true;
         collision = true;
+        name = "DryTree";
 
 
         solidArea.x = 0;

@@ -23,14 +23,16 @@ public class OBJ_Mana extends Entity {
         collision = true;
     }
 
-    public void use(Entity entity){
 
-        gamePanel.playMusic(12);
+    public boolean use(Entity entity){
+
+        gamePanel.playSound(12);
         gamePanel.ui.addMessage("Mana + " + value);
         entity.mana += value;
         if(entity.mana > entity.maxMana){
             entity.mana = entity.maxMana;
         }
+        return true;
 
 
     }

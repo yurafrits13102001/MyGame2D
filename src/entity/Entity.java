@@ -2,6 +2,7 @@ package entity;
 
 import main.GamePanel;
 import main.UtilityTool;
+import object.OBJ_Door;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -13,11 +14,37 @@ import java.util.Objects;
 public class Entity {
     GamePanel gamePanel;
 
+    public int getLeftX(){
+        return worldX + solidArea.x;
+    }
+    public int getRightX(){
+        return worldX + solidArea.x + solidArea.width;
+    }
+    public int getTopY(){
+        return worldY + solidArea.y;
+    }
+    public int getBottomY(){
+        return worldY + solidArea.y + solidArea.height;
+    }
+    public int getCol(){
+        return (worldX + solidArea.x)/gamePanel.tileSize;
+    }
+    public int getRow(){
+        return (worldY + solidArea.y)/gamePanel.tileSize;
+    }
+
+    //chest
+    public Entity loot;
+
+
     public int worldX, worldY;
     public int speed;
+    public int currentFrame = 0;
+    public final BufferedImage[] animationFrames = new BufferedImage[3];
     public BufferedImage bowUp1, bowUp2, bowDown1, bowDown2, bowLeft1, bowLeft2, bowRight1, bowRight2;
 
     public BufferedImage stay1, stay2, up1, up2, down1, down2, left1, left2, right1, right2, itemDest;
+    public BufferedImage coin1, coin2, coin3, coin4, coin5, coin6;
     public String direction = "stay";
 
     public int spriteCounter = 0;
@@ -35,7 +62,7 @@ public class Entity {
     public int dyingCounter = 0;
     int hpBarCounter = 0;
 
-    public String dialogues[][] = new String[20][20];
+    public String[][] dialogues = new String[20][20];
     public String[] speech = new String[20];
     public int dialogueIndex = 0;
     public int speechIndex = 0;
@@ -45,6 +72,7 @@ public class Entity {
     boolean shooting = false;
     boolean holdBow = false;
     boolean hpBarOn = false;
+    public  boolean speakWithOldMan = false;
 
 
     //CHARACTER STATUS
@@ -82,9 +110,17 @@ public class Entity {
     public final int typeDoor = 9;
     public final int typePickupOnly = 10;
     public final int typeFireball = 11;
+    public final int typeObstacle = 12;
+    public final int typeLetter = 13;
     public int value;
     public int coin;
+    public boolean opened = false;
     boolean contactPlayer = false;
+    public boolean stackable = false;
+    public int amount = 1;
+    public boolean openFirst = false;
+
+
 
     public Projectile projectile;
 
@@ -95,8 +131,9 @@ public class Entity {
 
     }
 
-    public void use(Entity entity){}
+    public boolean use(Entity entity){return false;}
     public void checkDrop() {}
+    public void setLoot(Entity loot){}
     public void dropItem(Entity droppedItem){
 
         for(int i = 0; i < gamePanel.obj.length; i++){
@@ -112,6 +149,8 @@ public class Entity {
     public void setAction() {}
 
     public void damageReaction(){}
+
+    public void interact(){}
 
     public void startingSpeech() {
 
@@ -154,6 +193,7 @@ public class Entity {
         gamePanel.gameState = gamePanel.dialogueState;
         gamePanel.ui.npc = entity;
         dialogueSet = setNum;
+
     }
 
     public Color getParticleColor() {
@@ -424,7 +464,7 @@ public class Entity {
         BufferedImage image = null;
 
         try {
-            image = ImageIO.read((getClass().getResourceAsStream(filePath + ".png")));
+            image = ImageIO.read((Objects.requireNonNull(getClass().getResourceAsStream(filePath + ".png"))));
             image = utilityTool.scaleImage(image, width, height);
         } catch (IOException e) {
             e.printStackTrace();
@@ -512,4 +552,38 @@ public class Entity {
 
     }
 
+    public int getDetected(Entity user, Entity[] target, String targetName){
+
+        int index = 999;
+
+        //Check the surrounding object
+        int nextWorldX = user.getLeftX();
+        int nextWorldY = user.getTopY();
+
+        switch (user.direction){
+            case "up": nextWorldY = user.getTopY() - 1; break;
+            case "down": nextWorldY = user.getBottomY() + 1; break;
+            case "left": nextWorldX = user.getLeftX() - 1; break;
+            case "right": nextWorldX = user.getRightX() + 1; break;
+        }
+
+        int col = nextWorldX/gamePanel.tileSize;
+        int row = nextWorldY/gamePanel.tileSize;
+
+        for(int i = 0; i < target.length; i++){
+            if(target[i] != null){
+                if(target[i].getCol() == col && target[i].getRow() == row && target[i].name.equals(targetName)){
+
+                    index = i;
+                    break;
+
+                }
+            }
+        }
+        return index;
+
+    }
+
+    protected void read() {
+    }
 }

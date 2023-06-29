@@ -40,6 +40,9 @@ public class UI {
     public ArrayList<String> message = new ArrayList<>();
     public ArrayList<Integer> messageCounter = new ArrayList<>();
 
+    int charIndex = 0;
+    String combinedText = "";
+
     public UI(GamePanel gamePanel) {
         this.gamePanel = gamePanel;
 
@@ -48,7 +51,7 @@ public class UI {
             InputStream is = getClass().getResourceAsStream("/fonts/Daydream.ttf");
             daydream = Font.createFont(Font.TRUETYPE_FONT, is);
 
-            InputStream is2 = getClass().getResourceAsStream("/fonts/Dited.ttf");
+            InputStream is2 = getClass().getResourceAsStream("/fonts/Ticketing.ttf");
             gamer = Font.createFont(Font.TRUETYPE_FONT, is2);
         } catch (TypeNotPresentException | FontFormatException | IOException e) {
             e.printStackTrace();
@@ -96,7 +99,7 @@ public class UI {
 
 
         if (gamePanel.gameState == gamePanel.introState) {
-            //drawIntroScreen();
+            drawIntroScreen();
 
         }
 
@@ -133,6 +136,11 @@ public class UI {
 
         if(gamePanel.gameState == gamePanel.gameOverState){
             drawGameOverScreen();
+        }
+
+        //beta info
+        if(gamePanel.gameState == gamePanel.betaInfoState){
+            drawBetaScreen();
         }
 
     }
@@ -243,10 +251,37 @@ public class UI {
         }
     }
 
+    public void drawBetaScreen(){
+        g2.setColor(new Color(150, 80, 80));
+        g2.fillRect(0, 0, gamePanel.screenWidth, gamePanel.screenHeight);
+        g2.setFont(g2.getFont().deriveFont(Font.BOLD, 40F));
+        String text = "Sorry This is not working yet.";
+        int x = getXForCenteredText(text);
+        int y = gamePanel.screenHeight / 2;
+        g2.setColor(Color.BLACK);
+        g2.drawString(text, x , y );
+        text = " it is still under development! :3";
+        x = getXForCenteredText(text);
+        y += gamePanel.tileSize * 2;
+        g2.drawString(text, x , y );
+
+        x = x + gamePanel.tileSize;
+        y = y + gamePanel.tileSize*2;
+        g2.drawString("Back", x, y);
+        if (commandNum == 0) {
+            g2.drawString(">", x - 25, y);
+            if(gamePanel.keyHandler.enterPressed == true){
+                subState = 0;
+                commandNum = 0;
+            }
+        }
+    }
+
     public void drawMainMenuScreen() {
 
         g2.setColor(new Color(150, 80, 80));
         g2.fillRect(0, 0, gamePanel.screenWidth, gamePanel.screenHeight);
+        
 
         //TILE NAME
         g2.setFont(g2.getFont().deriveFont(Font.BOLD, 80F));
@@ -268,7 +303,15 @@ public class UI {
         y += gamePanel.tileSize * 4;
         g2.setColor(Color.BLACK);
         g2.drawString(text, x + 5, y + 5);
+
         g2.setColor(Color.WHITE);
+        x += 400;
+        g2.drawString("beta", x + 5 , y + 5 );
+
+        g2.setColor(Color.PINK.darker());
+        g2.drawString("beta", x , y );
+        g2.setColor(Color.WHITE);
+        x = getXForCenteredText(text);
         g2.drawString(text, x, y);
         if (commandNum == 0) {
             g2.drawString(">", x - gamePanel.tileSize, y);
@@ -299,6 +342,8 @@ public class UI {
     }
 
     public void drawIntroScreen() {
+
+        gamePanel.playMusic(16);
         BufferedImage[] images = new BufferedImage[10];
         try {
             images[0] = ImageIO.read(getClass().getResourceAsStream("/slides/alarmClock1.jpg"));
@@ -309,10 +354,12 @@ public class UI {
             images[3] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide3.jpg"));
             images[4] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide$.jpg"));
             images[5] = ImageIO.read(getClass().getResourceAsStream("/slides/marichkaSlide5.jpg"));
+            images[6] = ImageIO.read(getClass().getResourceAsStream("/slides/last1.png"));
+            images[7] = ImageIO.read(getClass().getResourceAsStream("/slides/last2.png"));
+            images[8] = ImageIO.read(getClass().getResourceAsStream("/slides/lastSlide.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         Graphics2D g2 = (Graphics2D) gamePanel.getGraphics();
         float alpha = 0f;
@@ -398,12 +445,12 @@ public class UI {
 
         while (alpha <= 1f) {
             index = 3;
-            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-            g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
+            BufferedImage image = images[index];
+            int x = (gamePanel.screenWidth - image.getWidth()) / 2;
+            int y = (gamePanel.screenHeight - image.getHeight()) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            g2.drawImage(image, transform, null);
             alpha += 0.01f;
 
             try {
@@ -422,12 +469,12 @@ public class UI {
 
         while (alpha <= 1f) {
             index = 4;
-            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-            g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
+            BufferedImage image = images[index];
+            int x = (gamePanel.screenWidth - image.getWidth()) / 2;
+            int y = (gamePanel.screenHeight - image.getHeight()) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            g2.drawImage(image, transform, null);
             alpha += 0.01f;
 
             try {
@@ -437,7 +484,7 @@ public class UI {
             }
         }
         try {
-            Thread.sleep(3000); // чекаємо 3 секунди
+            Thread.sleep(800); // чекаємо 3 секунди
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -446,12 +493,12 @@ public class UI {
 
         while (alpha <= 1f) {
             index = 5;
-            g2.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
-            g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-            g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
             g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-            g2.drawImage(images[index], 0, 0, gamePanel.screenWidth, gamePanel.screenHeight, null);
+            BufferedImage image = images[index];
+            int x = (gamePanel.screenWidth - image.getWidth()) / 2;
+            int y = (gamePanel.screenHeight - image.getHeight()) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            g2.drawImage(image, transform, null);
             alpha += 0.01f;
 
             try {
@@ -467,6 +514,75 @@ public class UI {
         }
 
         alpha = 0f;
+        while (alpha <= 1f) {
+            index = 6;
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+            BufferedImage image = images[index];
+            int x = (gamePanel.screenWidth - image.getWidth()) / 2;
+            int y = (gamePanel.screenHeight - image.getHeight()) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            g2.drawImage(image, transform, null);
+            alpha += 0.01f;
+
+            try {
+                Thread.sleep(30); // чекаємо 30 мілісекунд
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            Thread.sleep(3000); // чекаємо 3 секунди
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        alpha = 0f;
+        while (alpha <= 1f) {
+            index = 7;
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+            BufferedImage image = images[index];
+            int x = (gamePanel.screenWidth - image.getWidth()) / 2;
+            int y = (gamePanel.screenHeight - image.getHeight()) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            g2.drawImage(image, transform, null);
+            alpha += 0.01f;
+
+            try {
+                Thread.sleep(30); // чекаємо 30 мілісекунд
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            Thread.sleep(3000); // чекаємо 3 секунди
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        alpha = 0f;
+        while (alpha <= 1f) {
+            index = 8;
+            g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+            BufferedImage image = images[index];
+            int x = (gamePanel.screenWidth - image.getWidth()) / 2;
+            int y = (gamePanel.screenHeight - image.getHeight()) / 2;
+            AffineTransform transform = AffineTransform.getTranslateInstance(x, y);
+            g2.drawImage(image, transform, null);
+            alpha += 0.01f;
+
+            try {
+                Thread.sleep(30); // чекаємо 30 мілісекунд
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        try {
+            Thread.sleep(3000); // чекаємо 3 секунди
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        alpha = 0f;
+        gamePanel.gameState = gamePanel.mainMenuState;
     }
 
     public void drawInventory()  {
@@ -479,7 +595,7 @@ public class UI {
         drawSubWindow(frameX, frameY, frameWidth, frameHeight);
         int textX = frameX + 20;
         int textY = frameY;
-        g2.setFont(g2.getFont().deriveFont(40F));
+        g2.setFont(g2.getFont().deriveFont(35F));
         BufferedImage imageCoin = null;
 
         try {
@@ -541,7 +657,32 @@ public class UI {
                 g2.fillRoundRect(slotX, slotY, gamePanel.tileSize, gamePanel.tileSize, 10, 10);
             }
 
-            g2.drawImage(gamePanel.player.inventory.get(i).stay1, slotX, slotY, null);
+            if (gamePanel.player.inventory.get(i) != null) {
+                g2.drawImage(gamePanel.player.inventory.get(i).stay1, slotX, slotY, null);
+            }
+
+
+
+
+            //draw amount
+            if(gamePanel.player.inventory.get(i).amount > 1){
+                g2.setFont(g2.getFont().deriveFont(32f));
+
+                int amountX;
+                int amountY;
+
+                String s = "" + gamePanel.player.inventory.get(i).amount;
+
+                amountX = getXForAlignToRightText(s, slotX + 44);
+                amountY = slotY + gamePanel.tileSize;
+
+                //shadow
+                g2.setColor(new Color(60, 60, 60));
+                g2.drawString(s, amountX, amountY);
+                //amount number
+                g2.setColor(Color.white);
+                g2.drawString(s, amountX - 3, amountY - 3);
+            }
 
             slotX += gamePanel.tileSize;
 
@@ -696,7 +837,7 @@ public class UI {
         textX = frameX + gamePanel.tileSize;
         textY += gamePanel.tileSize;
         g2.drawString("Move", textX, textY); textY += gamePanel.tileSize;
-        g2.drawString("Confirm", textX, textY); textY += gamePanel.tileSize;
+        g2.drawString("Confirm/Open", textX, textY); textY += gamePanel.tileSize;
         g2.drawString("Use instrument", textX, textY); textY += gamePanel.tileSize;
         g2.drawString("Shoot/Cast", textX, textY); textY += gamePanel.tileSize;
         g2.drawString("Inventory Screen", textX, textY); textY += gamePanel.tileSize;
@@ -751,6 +892,7 @@ public class UI {
             if(gamePanel.keyHandler.enterPressed == true){
                 subState = 0;
                 gamePanel.gameState = gamePanel.mainMenuState;
+                gamePanel.resetGame(true);
                 gamePanel.keyHandler.enterPressed = false;
             }
         }
@@ -807,7 +949,7 @@ public class UI {
 
         drawSubWindow(x, y, width, height);
 
-        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 50F));
+        g2.setFont(g2.getFont().deriveFont(Font.PLAIN, 45F));
 
 
 
@@ -816,16 +958,38 @@ public class UI {
         y += gamePanel.tileSize;
 
         if(npc.dialogues[npc.dialogueSet][npc.dialogueIndex] != null){
-            currentDialogue = npc.dialogues[npc.dialogueSet][npc.dialogueIndex];
+
+          //  currentDialogue = npc.dialogues[npc.dialogueSet][npc.dialogueIndex];
+
+            char[] characters = npc.dialogues[npc.dialogueSet][npc.dialogueIndex].toCharArray();
+
+            if(charIndex < characters.length){
+
+                gamePanel.playSound(17);
+                String s = String.valueOf(characters[charIndex]);
+
+                combinedText = combinedText + s;
+                currentDialogue = combinedText;
+
+                charIndex++;
+            }
+
+
+
 
             if(gamePanel.keyHandler.enterPressed == true){
+
+                charIndex = 0;
+                combinedText = "";
 
                 if(gamePanel.gameState == gamePanel.dialogueState){
 
                     npc.dialogueIndex++;
-                    gamePanel.keyHandler.enterPressed = false;
+
                 }
+
             }
+            gamePanel.keyHandler.enterPressed = false;
         }
         else{
             npc.dialogueIndex = 0;
@@ -840,6 +1004,7 @@ public class UI {
             g2.drawString(line, x, y);
             y += 40;
         }
+
     }
 
     public void drawGameOverScreen(){
@@ -904,6 +1069,13 @@ public class UI {
         int x = gamePanel.screenWidth / 2 - lenght / 2;
         return x;
 
+    }
+
+    public int getXForAlignToRightText(String text, int tailX){
+
+        int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
+        int x = tailX - length/2;
+        return x;
     }
 
 }

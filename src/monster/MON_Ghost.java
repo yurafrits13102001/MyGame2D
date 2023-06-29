@@ -75,7 +75,7 @@ public class MON_Ghost extends Entity {
 
 
             int i = new Random().nextInt(200) + 1;
-            if (i > 197 && projectile.alive == false) {
+            if (i > 170 && projectile.alive == false) {
                 projectile.set(worldX, worldY, direction, true, this);
                 gamePanel.projectileList.add(projectile);
 
@@ -115,6 +115,7 @@ public class MON_Ghost extends Entity {
 
         actionLockCounter = 0;
         onPath = true;
+        speed = 2;
 
 
 //        switch (gamePanel.player.direction){
@@ -131,12 +132,16 @@ public class MON_Ghost extends Entity {
         int i = new Random().nextInt(100) + 1;
 
         //set the monster drop
-        if (i < 50) {
+        if (i < 40) {
             dropItem(new OBJ_Coin(gamePanel));
         }
-        if (i > 50) {
+        if (i > 60) {
             dropItem(new OBJ_Mana(gamePanel));
         }
+
+//        dropItem(new OBJ_Key2(gamePanel));
+
+
     }
 }
 

@@ -95,6 +95,7 @@ public class MON_GreenSlime extends Entity {
         actionLockCounter = 0;
 
       onPath = true;
+      speed = 2;
     }
 
     public void checkDrop() {
@@ -103,10 +104,10 @@ public class MON_GreenSlime extends Entity {
         int i = new Random().nextInt(100)  + 1;
 
         //set the monster drop
-        if(i < 50){
+        if(i < 45){
             dropItem(new OBJ_Coin(gamePanel));
         }
-        if(i > 50){
+        if(i > 55){
             dropItem(new OBJ_Mana(gamePanel));
         }
     }

@@ -24,7 +24,7 @@ public class Sound {
         soundURL[4] = getClass().getResource("/sounds/korotkiy-moschnyiy-zamah.wav");
         soundURL[5] = getClass().getResource("/sounds/korotkiy-gluhoy-zvuk-udara-po-derevu.wav");
         soundURL[6] = getClass().getResource("/sounds/Sound - Magic - FIRECAST.wav");
-        soundURL[7] = getClass().getResource("/sounds/soundOuchMarichka.wav");
+        soundURL[7] = getClass().getResource("/sounds/Teenage Girl Owie 2.wav");
         soundURL[8] = getClass().getResource("/sounds/fireballHit2.wav");
         soundURL[9] = getClass().getResource("/sounds/drink.wav");
         soundURL[10] = getClass().getResource("/sounds/openDoor.wav");
@@ -32,6 +32,9 @@ public class Sound {
         soundURL[12] = getClass().getResource("/sounds/restoring.wav");
         soundURL[13] = getClass().getResource("/sounds/pikup.wav");
         soundURL[14] = getClass().getResource("/sounds/gameover.wav");
+        soundURL[15] = getClass().getResource("/sounds/chestOpen.wav");
+        soundURL[16] = getClass().getResource("/sounds/introSoundtrack.wav");
+        soundURL[17] = getClass().getResource("/sounds/printer3.wav");
     }
 
     public void setFile(int index) {
@@ -61,7 +64,7 @@ public class Sound {
     }
 
     public void loop() {
-        clip.loop(0);
+        clip.loop(3);
 
     }
 

@@ -9,47 +9,48 @@ import java.io.IOException;
 public class OBJ_Door extends Entity {
 
     GamePanel gamePanel;
+    boolean opened = false;
 
-    public OBJ_Door(String name, GamePanel gamePanel) {
+    public OBJ_Door( GamePanel gamePanel) {
 
         super(gamePanel);
+        this.gamePanel = gamePanel;
 
-        switch (this.name = name) {
-
-            case "Door_Purple":
-
-                type = typeDoor;
-
-                stay1 = setup("/items/sprite_mewDoor0", gamePanel.tileSize, gamePanel.tileSize);
+                type = typeObstacle;
+                name = "Door";
+                image = setup("/items/sprite_mewDoor0", gamePanel.tileSize, gamePanel.tileSize);
+                image2 = setup("/items/sprite_mewDoor1", gamePanel.tileSize, gamePanel.tileSize);
+                stay1 = image;
+                opened = false;
                 collision = true;
                 solidArea.x = 0;
                 solidArea.y = 16;
-                solidArea.width = 32;
-                solidArea.height = 32;
+                solidArea.width = 48;
+                solidArea.height = 25;
                 solidAreaDefaultX = solidArea.x;
                 solidAreaDefaultY = solidArea.y;
-                break;
-            case "Door_Blue":
-                up1 = setup("/items/sprite_mewDoor0", gamePanel.tileSize, gamePanel.tileSize);
-                collision = true;
-                solidArea.x = 0;
-                solidArea.y = 32;
-                solidArea.width = 32;
-                solidArea.height = 32;
-                solidAreaDefaultX = solidArea.x;
-                solidAreaDefaultY = solidArea.y;
+                openFirst = false;
 
-                break;
-            case  "Door_Orange":
-                stay1 = setup("/items/sprite_mewDoor0", gamePanel.tileSize, gamePanel.tileSize);
-                collision = true;
-                solidArea.x = 0;
-                solidArea.y = 16;
-                solidArea.width = 32;
-                solidArea.height = 32;
-                solidAreaDefaultX = solidArea.x;
-                solidAreaDefaultY = solidArea.y;
+                setDialogue();
 
+
+    }
+
+    public void setDialogue(){
+
+        dialogues[0][0] = "You need a key to open this!";
+    }
+
+    @Override
+    public void interact(){
+
+        if(opened == false) {
+
+           startDialogue(this, 0);
+           speakWithOldMan = true;
+        }
+        else {
+            stay1 = image2;
 
         }
     }

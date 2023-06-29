@@ -26,14 +26,14 @@ public class OBJ_GhostAttack extends Projectile {
     }
 
     public void getImage(){
-        up1 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize, gamePanel.tileSize);
-        up2 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize, gamePanel.tileSize);
-        down1 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize, gamePanel.tileSize);
-        down2 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize, gamePanel.tileSize);
-        left1 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize, gamePanel.tileSize);
-        left2 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize, gamePanel.tileSize);
-        right1 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize, gamePanel.tileSize);
-        right2 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize, gamePanel.tileSize);
+        up1 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize+15, gamePanel.tileSize+15);
+        up2 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize+15, gamePanel.tileSize+15);
+        down1 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize+15, gamePanel.tileSize+15);
+        down2 = setup("/items/sprite_ghostAttack0", gamePanel.tileSize+15, gamePanel.tileSize+15);
+        left1 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize+15, gamePanel.tileSize+15);
+        left2 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize+15, gamePanel.tileSize+15);
+        right1 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize+15, gamePanel.tileSize+15);
+        right2 = setup("/items/sprite_ghostAttack1", gamePanel.tileSize+15, gamePanel.tileSize+15);
     }
 }
 

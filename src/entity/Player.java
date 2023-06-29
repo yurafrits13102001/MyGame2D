@@ -45,21 +45,20 @@ public class Player extends Entity {
         screenY = gamePanel.worldHeight / 2 - (gamePanel.tileSize / 2);
 
         solidArea = new Rectangle();
-        solidArea.x = 5;
-        solidArea.y = 21;
+        solidArea.x = 10;
+        solidArea.y = 13;
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
-        solidArea.width = 20;
-        solidArea.height = 18;
+        solidArea.width = 23;
+        solidArea.height = 25;
 
         attackArea.width = 16;
         attackArea.height = 18;
 
         setDefaultValues();
-        getPlayerImage();
-        getPlayerAxeImages();
-        getPlayerBowImage();
-        setSpeech();
+
+
+
 
     }
 
@@ -82,6 +81,11 @@ public class Player extends Entity {
         mana = maxMana;
         inventory.add(hand);
         currentInstrument = hand;
+        speakWithOldMan = false;
+        getPlayerImage();
+        getPlayerAxeImages();
+//        getPlayerBowImage();
+        setSpeech();
     }
 
     public Entity currentInstrument;
@@ -152,13 +156,23 @@ public class Player extends Entity {
         axeRight3 = setup("/player/attackAxe/sprite_axeHitRight2", 100, gamePanel.tileSize);
     }
 
-    public void getPlayerBowImage() {
-        bowDown1 = setup("/player/bow/sprite_BowDown10", gamePanel.tileSize, gamePanel.tileSize);
-        bowUp1 = setup("/player/bow/sprite_BowUp0", gamePanel.tileSize, gamePanel.tileSize);
-        bowLeft1 = setup("/player/bow/sprite_bowRightLeft0", gamePanel.tileSize, gamePanel.tileSize);
-        bowRight1 = setup("/player/bow/sprite_bowRightLeft1", gamePanel.tileSize, gamePanel.tileSize);
+//    public void getPlayerBowImage() {
+//        bowDown1 = setup("/player/bow/sprite_BowDown10", gamePanel.tileSize, gamePanel.tileSize);
+//        bowUp1 = setup("/player/bow/sprite_BowUp0", gamePanel.tileSize, gamePanel.tileSize);
+//        bowLeft1 = setup("/player/bow/sprite_bowRightLeft0", gamePanel.tileSize, gamePanel.tileSize);
+//        bowRight1 = setup("/player/bow/sprite_bowRightLeft1", gamePanel.tileSize, gamePanel.tileSize);
+//
+//
+//    }
 
-
+    public int getCurrentInstrumentSlot(){
+        int currentInstrumentSlot = 0;
+        for(int i = 0; i < inventory.size(); i++){
+            if(inventory.get(i) == currentInstrument){
+                currentInstrumentSlot = i;
+            }
+        }
+        return currentInstrumentSlot;
     }
 
 
@@ -327,6 +341,11 @@ public class Player extends Entity {
         }
     }
 
+    public void setDialogue(){
+
+
+    }
+
     @Override
     public void startingSpeech() {
 
@@ -409,52 +428,59 @@ public class Player extends Entity {
                 if (gamePanel.obj[index].type == typePickupOnly) {
                     gamePanel.obj[index].use(this);
                     gamePanel.obj[index] = null;
-
-
+                }
+                else if(gamePanel.obj[index].type == typeObstacle){
+                    if(gamePanel.keyHandler.enterPressed == true){
+                        gamePanel.obj[index].interact();
+                        gamePanel.keyHandler.enterPressed = false;
+                    }
                 }
 
 
                 //pickup inventory
                 else {
 
-                if (inventory.size() != inventorySize) {
+                if (canObtainItem(gamePanel.obj[index]) == true) {
 
                     if (gamePanel.obj[index].type != typeDoor) {
 
-
-                        inventory.add(gamePanel.obj[index]);
                         gamePanel.playSound(13);
                         gamePanel.ui.addMessage("Pick up a " + gamePanel.obj[index].name);
+                        gamePanel.obj[index] = null;
                     }
 
 
                 } else {
                     text = "You can not carry any more items!";
                 }
-                if (gamePanel.obj[index].type == typeDoor && currentInstrument != null && hasKey == true) {
-                    gamePanel.playSound(11);
-                    gamePanel.obj[index] = null;
-                } else if (gamePanel.obj[index].type != typeDoor) {
-                    gamePanel.obj[index] = null;
-                }
+
             }
         }
     }
 
 
     public void interactNpc(int index) {
-        if (gamePanel.keyHandler.enterPressed == true) {
+
+
 
             if (index != 999) {
+                if(gamePanel.keyHandler.enterPressed == true) {
+                gamePanel.gameState = gamePanel.dialogueState;
 
-
-
+                gamePanel.saveLoad.save();
                 gamePanel.npc[index].speak();
                 haveFireball = true;
-
+                interactPlayer();
                 attacking = false;
+                this.speakWithOldMan = true;
+
+                gamePanel.keyHandler.enterPressed = false;
+
             }
         }
+
+
+
 
         if (keyHandler.kPressed == true) {
             if (currentInstrument != null && currentInstrument != hand) {
@@ -532,40 +558,88 @@ public class Player extends Entity {
                 gamePanel.ui.addMessage("You selected " + inventory.get(itemIndex).name);
                 holdBow = false;
                 attacking = true;
+                gamePanel.keyHandler.enterPressed = false;
 
 
 
 
             } else if (selectedItem.type == typeApple) {
-                gamePanel.playSound(3);
-                life = maxLife;
-                gamePanel.ui.addMessage("You ate apple!");
-                inventory.remove(itemIndex);
+                if(selectedItem.amount > 1) {
+                    selectedItem.amount--;
+
+                    if(life != maxLife) {
+                        gamePanel.playSound(3);
+                        life = maxLife;
+                        gamePanel.ui.addMessage("You ate apple!");
+                        gamePanel.keyHandler.enterPressed = false;
+                    }else{
+                        gamePanel.ui.addMessage( "Your life is full!");
+
+                    }
+
+                }else {
+                    gamePanel.playSound(3);
+                    life = maxLife;
+                    gamePanel.ui.addMessage("You ate apple!");
+                    inventory.remove(itemIndex);
+                    gamePanel.keyHandler.enterPressed = false;
+
+                }
             } else if (selectedItem.type == typeHand) {
                 currentInstrument = selectedItem;
                 gamePanel.ui.addMessage("You selected " + inventory.get(itemIndex).name);
                 attacking = false;
+                gamePanel.keyHandler.enterPressed = false;
+
 
 
             } else if (selectedItem.type == typePotion) {
-                gamePanel.playSound(9);
-                mana = maxMana;
-                gamePanel.ui.addMessage("You drank the mana potion");
-                inventory.remove(itemIndex);
-            } else if (selectedItem.type == typeKey) {
+                if(selectedItem.amount > 1) {
+                    selectedItem.amount--;
 
-                for (Entity entity : inventory) {
-                    if (entity.type == typeKey) {
-                        hasKey = true;
-                        break;
+                    if(mana != maxMana) {
+                        gamePanel.playSound(9);
+                        mana = maxMana;
+                        gamePanel.ui.addMessage("You drank the mana potion");
+                        gamePanel.keyHandler.enterPressed = false;
+                    }else{
+                        gamePanel.ui.addMessage("Your mana is full!");
+
                     }
-                }
-                if (hasKey) {
-                    gamePanel.ui.addMessage("You opened the door");
+
+
+                }else {
+                    gamePanel.playSound(9);
+                    mana = maxMana;
+                    gamePanel.ui.addMessage("You drank the mana potion");
                     inventory.remove(itemIndex);
-                } else {
-                    gamePanel.ui.addMessage("You need a key to open the door");
+                    gamePanel.keyHandler.enterPressed = false;
+
                 }
+            } else if (selectedItem.type == typeKey) {
+                if(selectedItem.use(this) == true){
+                    inventory.remove(itemIndex);
+                    gamePanel.keyHandler.enterPressed = false;
+
+                }
+
+
+//                for (Entity entity : inventory) {
+//                    if (entity.type == typeKey) {
+//                       entity.use(entity);
+//                        break;
+//                    }
+//                }
+//                if (hasKey) {
+//                    gamePanel.ui.addMessage("You opened the door");
+//                    inventory.remove(itemIndex);
+//                } else {
+//                    gamePanel.ui.addMessage("You need a key to open the door");
+//                }
+            }else if (selectedItem.type == typeLetter){
+
+                    selectedItem.read();
+
             }
 
 
@@ -574,6 +648,50 @@ public class Player extends Entity {
                 currentInstrument = null;
             }
         }
+    }
+
+    public int searchItemInInventory(String itemName){
+
+        int itemIndex = 999;
+
+        for(int i = 0; i < inventory.size(); i++){
+
+            if(inventory.get(i).name.equals(itemName)){
+                itemIndex = i;
+                break;
+            }
+        }
+        return itemIndex;
+    }
+
+    public boolean canObtainItem(Entity item){
+
+        boolean canObtain = false;
+
+        //check if stackable
+        if(item.stackable == true){
+
+            int index = searchItemInInventory(item.name);
+            if(index != 999){
+                inventory.get(index).amount++;
+                canObtain = true;
+            }
+            else{ //new item so need to check vacancy
+                if(inventory.size() != inventorySize){
+                    inventory.add(item);
+                    canObtain = true;
+                }
+
+            }
+        }else{  //not stackable so check vacancy
+            if(inventory.size() != inventorySize){
+                inventory.add(item);
+                canObtain = true;
+            }
+
+        }
+        return canObtain;
+
     }
 
 
