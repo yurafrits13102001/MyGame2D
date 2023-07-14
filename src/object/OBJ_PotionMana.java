@@ -20,11 +20,11 @@ public class OBJ_PotionMana extends Entity {
 
         this.name = name;
 
-        stay1 = setup("/items/sprite_newPotionMana0", gamePanel.tileSize, gamePanel.tileSize);
-        image = setup("/items/sprite_newPotionMana1", gamePanel.tileSize, gamePanel.tileSize);
-        image2 = setup("/items/sprite_newPotionMana2", gamePanel.tileSize, gamePanel.tileSize);
-        image3 = setup("/items/sprite_newPotionMana3", gamePanel.tileSize, gamePanel.tileSize);
-        imageApple = setup("/items/sprite_manaFramePlus0", gamePanel.tileSize, gamePanel.tileSize);
+        stay1 = setup("/items/sprite_newPotionMana0", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        image = setup("/items/sprite_newPotionMana1", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        image2 = setup("/items/sprite_newPotionMana2", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        image3 = setup("/items/sprite_newPotionMana3", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        imageApple = setup("/items/sprite_manaFramePlus0", gamePanel.tileSize-10, gamePanel.tileSize-10);
 
         collision = true;
         description = "< Mana potion > \n Restore full mana";

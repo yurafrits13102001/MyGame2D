@@ -658,7 +658,15 @@ public class UI {
             }
 
             if (gamePanel.player.inventory.get(i) != null) {
+                if(i == 7){
+                    slotX = slotXStart;
+                    slotY += gamePanel.tileSize;
+                }
                 g2.drawImage(gamePanel.player.inventory.get(i).stay1, slotX, slotY, null);
+
+
+
+
             }
 
 

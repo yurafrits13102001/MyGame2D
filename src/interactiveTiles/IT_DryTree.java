@@ -6,7 +6,7 @@ import main.GamePanel;
 import java.awt.*;
 import java.io.Serializable;
 
-public class IT_DryTree extends InteractiveTile implements Serializable {
+public class IT_DryTree extends InteractiveTile  {
 
     GamePanel gamePanel;
 

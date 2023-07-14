@@ -1,5 +1,6 @@
 package entity;
 
+import interactiveTiles.IT_Grass;
 import main.GamePanel;
 import main.KeyHandler;
 import main.UtilityTool;
@@ -86,6 +87,7 @@ public class Player extends Entity {
         getPlayerAxeImages();
 //        getPlayerBowImage();
         setSpeech();
+
     }
 
     public Entity currentInstrument;
@@ -245,6 +247,12 @@ public class Player extends Entity {
 
                 //CHECK INTERACTIVE COLLISION
                 int iTileIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.iTile);
+                interactGrass(iTileIndex);
+
+
+
+
+
 
 
                 //CHECK PLAYER COLLISION:
@@ -341,6 +349,18 @@ public class Player extends Entity {
         }
     }
 
+    private void interactGrass(int i){
+
+
+        if (i != 999  && gamePanel.iTile[i].destructible == true && gamePanel.iTile[i].type == typeGrass) {
+            gamePanel.playSound(18);
+
+
+
+            gamePanel.iTile[i] = null;
+        }
+    }
+
     public void setDialogue(){
 
 
@@ -397,6 +417,7 @@ public class Player extends Entity {
 
             int iTileIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.iTile);
             damageInteractiveTiles(iTileIndex);
+
 
             int monsterIndex = gamePanel.collisionChecker.checkEntity(this, gamePanel.monster);
             damageMonster(monsterIndex, attack);
@@ -482,6 +503,8 @@ public class Player extends Entity {
 
 
 
+
+
         if (keyHandler.kPressed == true) {
             if (currentInstrument != null && currentInstrument != hand) {
                 attacking = true;
@@ -526,6 +549,14 @@ public class Player extends Entity {
     }
     // gamePanel.keyHandler.enterPressed = false;
 
+    public void interactITiles(int index){
+        if(index != 999){
+            gamePanel.iTile[index].use(this);
+        }
+    }
+
+
+
 
     public void interactPlayer() {
 
@@ -569,7 +600,7 @@ public class Player extends Entity {
 
                     if(life != maxLife) {
                         gamePanel.playSound(3);
-                        life = maxLife;
+                        life += 2;
                         gamePanel.ui.addMessage("You ate apple!");
                         gamePanel.keyHandler.enterPressed = false;
                     }else{
@@ -579,7 +610,7 @@ public class Player extends Entity {
 
                 }else {
                     gamePanel.playSound(3);
-                    life = maxLife;
+                    life += 2;
                     gamePanel.ui.addMessage("You ate apple!");
                     inventory.remove(itemIndex);
                     gamePanel.keyHandler.enterPressed = false;
@@ -616,7 +647,23 @@ public class Player extends Entity {
                     gamePanel.keyHandler.enterPressed = false;
 
                 }
-            } else if (selectedItem.type == typeKey) {
+            } else if(selectedItem.type == typeJuice) {
+                if (selectedItem.amount > 1) {
+                    selectedItem.amount--;
+                    gamePanel.playSound(9);
+                    life = maxLife;
+                    gamePanel.ui.addMessage("You drank the Cherry Juice");
+                    gamePanel.keyHandler.enterPressed = false;
+                } else {
+                    gamePanel.playSound(9);
+                    life = maxLife;
+                    gamePanel.ui.addMessage("You drank the Cherry Juice");
+                    inventory.remove(itemIndex);
+                    gamePanel.keyHandler.enterPressed = false;
+                }
+            }
+
+            else if (selectedItem.type == typeKey) {
                 if(selectedItem.use(this) == true){
                     inventory.remove(itemIndex);
                     gamePanel.keyHandler.enterPressed = false;

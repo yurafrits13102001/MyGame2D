@@ -10,6 +10,9 @@ public class EventHandler {
     int previousEventX, previousEventY;
     boolean canTouchEvent = false;
     int eventCounter = 0;
+    int eventCounter2 = 0;
+    int eventCounter3 = 0;
+    int eventCounter4 = 0;
 
     public EventHandler(GamePanel gamePanel) {
 
@@ -61,12 +64,25 @@ public class EventHandler {
                 }
 
             }
-            if (hit(53, 59, "down") == true) {
+            if (hit(53, 60, "down") == true) {
 
                 gamePanel.player.dialogues[1][0] = "Unfortunately, this is still a very \n early version of the game.";
                 gamePanel.player.dialogues[1][1] = " If you find bugs or have ideas for\n the continuation of the game, \nplease let me know.";
                 gamePanel.player.dialogues[1][2] = " And also definitely rate the game \n(in any way)!";
                 gamePanel.player.startDialogue(gamePanel.player, 1);
+            }
+            if (hit(53, 59, "down") == true) {
+
+
+                if (eventCounter4 == 0) {
+                    gamePanel.stopMusic();
+                    gamePanel.playMusic(19);
+
+
+                    eventCounter4 = 1;
+                } else if (eventCounter4 < 0) {
+
+                }
             }
             if (hit(13, 13, "right") == true) {
 
@@ -104,17 +120,92 @@ public class EventHandler {
 
 
             }
-            if (hit(14, 27, "down") == true) {
+            if (hit(50, 22, "down") == true) {
 
                 if (eventCounter == 2) {
+
+                    gamePanel.player.dialogues[7][0] = "To cast a spell, \nyou need to have nothing\n in your hands!";
+                    gamePanel.player.dialogues[7][1] = "To do this, open the inventory \nand select ( Hand ).";
+                    gamePanel.player.dialogues[7][2] = "To cast a fireball hold ( J )\n and choose a direction.";
+                    gamePanel.player.dialogues[7][3] = "Do not forget to monitor\n the amount of mana!";
+
+                    gamePanel.player.startDialogue(gamePanel.player, 7);
+                    eventCounter = 3;
+                } else if (eventCounter < 2) {
+
+                }
+
+
+            }
+            if (hit(14, 25, "down") == true) {
+
+                if (eventCounter2 == 0) {
+
+                    gamePanel.player.dialogues[4][0] = "Be careful!!! There can be monsters \n in these bushes, namely Slimes.";
+                    gamePanel.player.dialogues[4][1] = "But you should go there because you\n can find a lot of useful things!";
+
+
+                    gamePanel.player.startDialogue(gamePanel.player, 4);
+                    eventCounter2 = 1;
+                } else if (eventCounter2 < 0) {
+
+                }
+            }
+            if (hit(14, 27, "down") == true) {
+
+                if (eventCounter2 == 1) {
 
                     gamePanel.player.dialogues[3][0] = "MARICHKA: Oh no!!! I was so hoping that\n there would be no monsters!!!";
                     gamePanel.player.dialogues[3][1] = "MARICHKA: I think if I don't touch them,\n they won't touch me either.";
 
 
                     gamePanel.player.startDialogue(gamePanel.player, 3);
-                    eventCounter = 3;
-                } else if (eventCounter < 2) {
+                    eventCounter2 = 2;
+                } else if (eventCounter2 < 1) {
+
+                }
+            }
+            if (hit(35, 33, "left") == true) {
+
+                if (eventCounter3 == 1) {
+
+                    gamePanel.player.dialogues[5][0] = "To use the Axe, first select \n it in the inventory ( C ).";
+                    gamePanel.player.dialogues[5][1] = "To cut down a dry tree, \nhold ( K )\n and choose a direction.";
+
+
+                    gamePanel.player.startDialogue(gamePanel.player, 5);
+                    eventCounter3 = 2;
+                } else if (eventCounter3 < 1) {
+
+                }
+            }
+            if (hit(35, 33, "down") == true) {
+
+                if (eventCounter3 == 1) {
+
+                    gamePanel.player.dialogues[5][0] = "To use the Axe, first select \n it in the inventory ( C ).";
+                    gamePanel.player.dialogues[5][1] = "To cut down a dry tree, \nhold ( K )\n and choose a direction.";
+
+
+                    gamePanel.player.startDialogue(gamePanel.player, 5);
+                    eventCounter3 = 2;
+                } else if (eventCounter3 < 1) {
+
+                }
+            }
+            if (hit(20, 14, "right") == true) {
+
+                if (eventCounter3 == 0) {
+
+                    gamePanel.player.dialogues[6][0] = "Some management tips.";
+                    gamePanel.player.dialogues[6][1] = "To open the inventory press ( C )\n and to select an item\n press ( Enter ).";
+                    gamePanel.player.dialogues[6][2] = "To interact with various objects\n such as NPCs, Doors or Chests,\n you need to get very close\n and press (Enter).";
+                    gamePanel.player.dialogues[6][3] = "To open doors and chests,\n you need to get very close \nand select the key \nin the inventory.";
+
+
+                    gamePanel.player.startDialogue(gamePanel.player, 6);
+                    eventCounter3 = 1;
+                } else if (eventCounter3 < 0) {
 
                 }
             }

@@ -7,84 +7,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b4b5f26-e418-4603-9b34-9d45879b15a6" name="Changes" comment="Yura">
-      <change afterPath="$PROJECT_DIR$/res/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/fonts/Ticketing.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/fonts/dpcomic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/fonts/neon_pixel-7.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/fonts/virus-01.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_appleNew0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_appleNew1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_appleNew2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_appleNew3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_chestKey0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_chestKey1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_chestKey2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_chestNew0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_chestNew1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_keyNew0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_keyNew1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_keyNew2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_letter0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_letter1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_letter2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_manaFramePlus0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newCoin0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newCoin1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newCoin2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newCoin3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newCoin4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newCoin5.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newPotionMana0.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newPotionMana1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newPotionMana2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newPotionMana3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/items/sprite_newPotionMana4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/slides/last1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/slides/last2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/slides/lastSlide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/Teenage Girl Owie 2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/chestOpen.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/clickKey.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/clickKey2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/introSound.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/introSoundtrack.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/printer.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/printer2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/sounds/printer3.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/save.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/DataStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/SaveLoad.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/monster/MON_GhostBig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Chest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Door2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Key2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/object/OBJ_Letter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MyGame2d1_jar2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MyGame2D_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MyGame2d1_jar3.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/background/interactiveTiles/sprite_grasSteped0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/background/interactiveTiles/sprite_grassInteract0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/background/interactiveTiles/sprite_grassStep0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/background/interactiveTiles/sprite_weeds0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/items/sprite_cherryJuise0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/items/sprite_cherryJuise1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/items/sprite_cherryJuise2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sounds/grass.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/sounds/motorolla.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/interactiveTiles/IT_Grass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/object/OBJ_CherryJuice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.txt" beforeDir="false" afterPath="$PROJECT_DIR$/config.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.dat" beforeDir="false" afterPath="$PROJECT_DIR$/save.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/NPC_OldMan.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/interactiveTiles/IT_DryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/interactiveTiles/IT_DryTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AssetSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AssetSetter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/EventHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/EventHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/GamePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/GamePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/KeyHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/TileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monster/MON_Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_Ghost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/monster/MON_GreenSlime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/OBJ_Apple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Apple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Axe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Axe.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/OBJ_Coin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Coin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Door.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Door.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_FireballGhost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_FireballGhost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_GhostAttack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_GhostAttack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Key.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/object/OBJ_Mana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_Mana.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/object/OBJ_PotionMana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/object/OBJ_PotionMana.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,11 +90,11 @@
       <recent name="main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\background\interactiveTiles" />
       <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\sounds" />
-      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\fonts" />
       <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\items" />
+      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\fonts" />
       <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\slides" />
-      <recent name="C:\Users\38050\OneDrive\Рабочий стол\MyGame2d\res\background" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="main" />
@@ -280,6 +227,12 @@
       <workItem from="1687936843304" duration="1388000" />
       <workItem from="1687997868036" duration="3386000" />
       <workItem from="1688073683702" duration="293000" />
+      <workItem from="1689175145739" duration="5358000" />
+      <workItem from="1689196443432" duration="9130000" />
+      <workItem from="1689257170884" duration="1112000" />
+      <workItem from="1689260672124" duration="10328000" />
+      <workItem from="1689288133115" duration="612000" />
+      <workItem from="1689338820751" duration="8779000" />
     </task>
     <task id="LOCAL-00001" summary="Yura Frits">
       <created>1680270720883</created>

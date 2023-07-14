@@ -18,13 +18,13 @@ public class OBJ_Coin extends Entity {
         name = "Coin";
         value = 1;
         collision = true;
-        stay1 = setup("/items/sprite_coin0", gamePanel.tileSize, gamePanel.tileSize);
-        coin1 = setup("/items/sprite_newCoin0", gamePanel.tileSize, gamePanel.tileSize);
-        coin2 = setup("/items/sprite_newCoin1", gamePanel.tileSize, gamePanel.tileSize);
-        coin3 = setup("/items/sprite_newCoin2", gamePanel.tileSize, gamePanel.tileSize);
-        coin4 = setup("/items/sprite_newCoin3", gamePanel.tileSize, gamePanel.tileSize);
-        coin5 = setup("/items/sprite_newCoin4", gamePanel.tileSize, gamePanel.tileSize);
-        coin6 = setup("/items/sprite_newCoin5", gamePanel.tileSize, gamePanel.tileSize);
+        stay1 = setup("/items/sprite_coin0", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin1 = setup("/items/sprite_newCoin0", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin2 = setup("/items/sprite_newCoin1", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin3 = setup("/items/sprite_newCoin2", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin4 = setup("/items/sprite_newCoin3", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin5 = setup("/items/sprite_newCoin4", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin6 = setup("/items/sprite_newCoin5", gamePanel.tileSize-10, gamePanel.tileSize-10);
         setAction();
 
 

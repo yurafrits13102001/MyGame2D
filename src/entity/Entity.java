@@ -112,6 +112,8 @@ public class Entity {
     public final int typeFireball = 11;
     public final int typeObstacle = 12;
     public final int typeLetter = 13;
+    public final int typeJuice = 14;
+    public  final int typeGrass = 15;
     public int value;
     public int coin;
     public boolean opened = false;

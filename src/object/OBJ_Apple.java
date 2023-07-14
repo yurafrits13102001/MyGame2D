@@ -18,14 +18,14 @@ public class OBJ_Apple extends Entity {
 
         this.name = name;
 
-        stay1 = setup("/items/sprite_apple0", gamePanel.tileSize, gamePanel.tileSize);
-        coin1 = setup("/items/sprite_appleNew0", gamePanel.tileSize, gamePanel.tileSize);
-        coin2 = setup("/items/sprite_appleNew1", gamePanel.tileSize, gamePanel.tileSize);
-        coin3 = setup("/items/sprite_appleNew2", gamePanel.tileSize, gamePanel.tileSize);
-        coin4 = setup("/items/sprite_appleNew3", gamePanel.tileSize, gamePanel.tileSize);
+        stay1 = setup("/items/sprite_apple0", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin1 = setup("/items/sprite_appleNew0", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin2 = setup("/items/sprite_appleNew1", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin3 = setup("/items/sprite_appleNew2", gamePanel.tileSize-10, gamePanel.tileSize-10);
+        coin4 = setup("/items/sprite_appleNew3", gamePanel.tileSize-10, gamePanel.tileSize-10);
 
         collision = true;
-        description = "< Apple > \n Restore full\n health";
+        description = "< Apple > \n Restore one\n health";
 
         stackable = true;
         setAction();
